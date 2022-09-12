@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content">
+            <div class="case">
+                <h1>Raphaël Daubelcour Portfolio</h1>
+            </div>
+            <div class="case">
+                <h2>About me</h2>
+                <p>Bonjour, je m'appelle Raphaël Daubelcour, je souhaite intégrer votre studio afin de me développer personnellement ainsi que d'apporter ma contribution sur vos projets à venir. Je sais à la fois travailler en autonomie
+                    et en équipe.   </p>
+            </div>
+            <div class="case">
+                <div class="grid">
+                    <div>
+                        <h2>Game project</h2>
+                        <video controls muted>
+                            <source src="videos/2022-02-26 21-50-44.mp4">
+                        </video>  
+                        <p>Blablabla projet en programmation Blablabla c'était cool Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla</p>
+                    </div>
+                    
+                    <div>
+                        <h2>Portal level</h2>
+                    <iframe src="https://www.youtube.com/embed/dY-DWKslMEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Blablabla projet en programmation Blablabla c'était cool Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla</p>
+                    </div>
+
+                    <div>
+                        <h2>Megaman level</h2>
+                        <video controls muted>
+                            <source src="videos/megaman-level.mp4">
+                        </video>
+                        <p>Blablabla projet en programmation Blablabla c'était cool Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla</p>
+                    </div>
+
+                    <div>
+                        <h2>Projet jeu de survie</h2>
+                        <video controls muted>
+                            <source src="videos/2022-02-11 13-37-55.mp4">
+                        </video>
+                        <p>Blablabla projet en programmation Blablabla c'était cool Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla</p>
+                    </div>
+                    
+                    <div>
+                        <h2>Terraria mod</h2>
+                        <img src="images/mod-boss.gif">
+                        <p>Projet personnelle de la création d'un mod sur Terraria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case">
+                <h2>Some software I use</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" style="width: 150px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/5969/5969294.png" style="width: 150px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Unreal_Engine_Logo.svg/1200px-Unreal_Engine_Logo.svg.png" style="width: 150px;">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/blender-icon.png" style="width: 150px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/2101px-Adobe_Photoshop_CC_icon.svg.png" style="width: 150px;">
+                <img src="https://i.pinimg.com/originals/a5/58/b4/a558b426cb8973523f37bbed94cf0f09.png" style="width: 150px;">
+            </div>
+            <div class="case">
+                <h2>Contact me</h2>
+                <div class="social-links">
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100075833618309"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://twitter.com/Raftatul"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/raftatul_/"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/rapha%C3%ABl-daubelcour-a986a922a/"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var videos = document.querySelectorAll('video');
+    for(var i=0; i<videos.length; i++)
+    videos[i].addEventListener('play', function(){pauseAll(this)}, true);
+
+    function pauseAll(elem){
+        for(var i=0; i<videos.length; i++){
+            //Is this the one we want to play?
+            if(videos[i] == elem) continue;
+            //Have we already played it && is it already paused?
+            if(videos[i].played.length > 0 && !videos[i].paused){
+            // Then pause it now
+            videos[i].pause();
+            }
+        }
+    }
+</script>
+</html>
