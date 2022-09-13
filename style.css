@@ -24,10 +24,6 @@ body{
 .content{
     width: var(--global-width);
 }
-a{
-    text-decoration: none;
-    color: black;
-}
 .case{
     background: rgba(255, 255, 255, 1);
     border-radius: 4px;
@@ -40,9 +36,12 @@ a{
     box-shadow: 0px 0px 20px black;
 }
 .case img{
+    background-color: black;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    aspect-ratio: 16/9;
     width: 100%;
+    object-fit: contain;
 }
 .case video{
     border-top-left-radius: 3px;
@@ -66,6 +65,16 @@ iframe{
 .sub_content p{
     margin-top: 0px;
     padding: 0px 20px;
+    height: 50px;
+}
+.project_link{
+    text-align: center;
+    margin: 30px 0px;
+}
+.project_link a{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid black;
 }
 .grid{
     display: grid;
