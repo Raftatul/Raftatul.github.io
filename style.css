@@ -1,5 +1,5 @@
 :root{
-    --global-width: clamp(900px, 80vw, 100vw);
+    --global-width: 80vw;
 }
 html{
     scroll-behavior: smooth;
@@ -56,6 +56,7 @@ iframe{
     border-top-right-radius: 3px;
 }
 .sub_content{
+    background-color: white;
     border-radius: 3px;
     border: 1px solid gray;
 }
