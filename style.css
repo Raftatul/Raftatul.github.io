@@ -39,6 +39,9 @@ body{
     text-align: center;
     margin-bottom: 30px;
 }
+.case p{
+    text-align: center;
+}
 .case img{
     background-color: black;
     border-top-left-radius: 3px;
@@ -71,7 +74,8 @@ iframe{
 .sub_content h2{
     padding: 0px 20px;
 }
-.sub_content p{
+.sub_content p{ 
+    text-align: left;
     margin-top: 0px;
     padding: 0px 20px;
     min-height: 50px;
