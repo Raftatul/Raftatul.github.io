@@ -1,108 +1,148 @@
-:root{
-    --global-width: 80vw;
-}
 html{
-    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    --global--margin_right : 24%;
 }
 body{
-    margin: auto;
-    font-family: 'Inter', sans-serif;
-}
-.page-container{
+    margin: 0px;
     position: relative;
-    min-height: 100vh;
-    background-image: url("https://wallpaperaccess.com/full/3071991.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+}
+header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    padding-left: var(--global--margin_right);
+    padding-right: var(--global--margin_right);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    z-index: 1;
+}
+.page_container{
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: var(--global--margin_right);
+    padding-right: var(--global--margin_right);
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.content{
-    width: var(--global-width);
-}
-.case{
-    background: rgba(255, 255, 255, 1);
-    border-radius: 4px;
-    height: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px 50px;
-
-    text-align: left;
-    box-shadow: 0px 0px 20px black;
-}
-.case h2{
-    text-align: center;
-    margin-bottom: 30px;
-}
-.case p{
+.page_container h2{
     text-align: center;
 }
-.case img{
-    background-color: black;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
 
+.case_project{
+    margin: 5px 0;
+    display: flex;
+    width: clamp(300px, 50vw, 1080px);
+    box-shadow: 0px 0px 1px black;
+    padding: 20px;
+}
+.case_project img{
     aspect-ratio: 16/9;
-    width: 100%;
+    width: 300px;
     object-fit: contain;
+    padding-right: 20px;
 }
-.case video{
-    background-color: black;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    
+.case_project video{
+    max-width: 300px;
     aspect-ratio: 16/9;
-    width: 100%;
-    object-fit: contain;
+    padding-right: 20px;
 }
-iframe{
-    width: 100%;
+.case_project iframe{
+    max-width: 300px;
     aspect-ratio: 16/9;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    padding-right: 20px;
 }
-.sub_content{
-    background-color: white;
-    border-radius: 3px;
-    border: 1px solid gray;
+.illustration_project{
+    display: flex;
+    align-items: center;
 }
-.sub_content h2{
-    padding: 0px 20px;
+.project_details{
+    width: 100%;    
 }
-.sub_content p{ 
-    text-align: left;
-    margin-top: 0px;
-    padding: 0px 20px;
-    min-height: 50px;
+.project_details h3{
+    width: 100%;
+    text-align: center;
 }
 .project_link{
+    margin-top: 20px;
     text-align: center;
-    margin: 30px 0px;
 }
 .project_link a{
-    background-color: black;
+    margin: 0px 5px;
+    background-color: rgb(30, 30, 30);
     color: white;
+    padding: 10px;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: 2px solid black;
 }
-.grid{
-    display: grid;
-	grid-gap: 2em;
-	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+p{
+    color: gray;
+    padding: 0 10px;
+}
+h2 {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    line-height: 0.1em;
+ }
+ h2 span {  
+    color: white;
+    background-color: rgb(30, 30, 30);
+    padding:0 20px;
+ }
+ .about_me_detail{
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: row;
+ }
+ .about_me_detail img{
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+ }
+ .about_me_detail p{
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 0;
+ }
+ .about_me_detail h3{
+    width: 250px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 5px;
+ }
+.softwares_and_game_engines img{
+    max-height: 50px;
+    margin: 10px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(30, 30, 30);
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .social-links a{
 	display: inline-block;
 	height: 50px;
 	width: 50px;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 255);
+	background-color: rgb(30, 30, 30);
 	color: white;
 	line-height: 50px;
 	border-radius: 50%;
@@ -111,13 +151,6 @@ iframe{
 	transition: all 0.5s ease;
 }
 .social-links a:hover{
-	color: black;
+	color: rgb(30, 30, 30);
 	background-color: white;
-}
-.sprite{
-    width: 10%;
-}
-.sprite:hover{
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
 }
