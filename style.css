@@ -120,6 +120,9 @@ h2 {
     margin-top: 0;
     margin-bottom: 5px;
  }
+ .softwares_and_game_engines{
+    text-align: center;
+ }
 .softwares_and_game_engines img{
     max-height: 50px;
     margin: 10px;
