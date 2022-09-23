@@ -1,6 +1,6 @@
 html{
     font-family: 'Inter', sans-serif;
-    --global--margin_right : 24%;
+    --global--padding_width : calc(10 * 1vw);
 }
 body{
     margin: 0px;
@@ -11,10 +11,14 @@ header{
     display: flex;
     align-items: center;
     top: 0;
-    width: 100vw;
+    left: 0;
+    right: 0;
+    width: 100%;
     height: 100px;
-    padding-left: var(--global--margin_right);
-    padding-right: var(--global--margin_right);
+
+    padding-left: var(--global--padding_width);
+    padding-right: var(--global--padding_width);
+
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     background-color: white;
     z-index: 1;
@@ -25,8 +29,8 @@ header{
 
     padding-top: 150px;
     padding-bottom: 150px;
-    padding-left: var(--global--margin_right);
-    padding-right: var(--global--margin_right);
+    padding-left: var(--global--padding_width);
+    padding-right: var(--global--padding_width);
 
     display: flex;
     flex-direction: column;
@@ -35,33 +39,29 @@ header{
 .page_container h2{
     text-align: center;
 }
-
 .case_project{
     margin: 5px 0;
     display: flex;
-    width: clamp(300px, 50vw, 1080px);
+    width: 100%;
     box-shadow: 0px 0px 1px black;
     padding: 20px;
-}
-.case_project img{
-    aspect-ratio: 16/9;
-    width: 300px;
-    object-fit: contain;
-    padding-right: 20px;
-}
-.case_project video{
-    max-width: 300px;
-    aspect-ratio: 16/9;
-    padding-right: 20px;
-}
-.case_project iframe{
-    max-width: 300px;
-    aspect-ratio: 16/9;
-    padding-right: 20px;
 }
 .illustration_project{
     display: flex;
     align-items: center;
+    width: 40%;
+    padding-right: 20px;
+}
+.illustration_project img{
+    width: 100%;
+    object-fit: contain;
+}
+.illustration_project video{
+    width: 100%;
+}
+.illustration_project iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
 }
 .project_details{
     width: 100%;    
@@ -123,14 +123,27 @@ h2 {
     text-align: center;
  }
 .softwares_and_game_engines img{
-    max-height: 50px;
+    max-height: calc(70px - 1vw);
     margin: 10px;
+}
+.form_input{
+    width: 100%;
+}
+.form_input input{
+    width: 100%;
+}
+.form_input textarea{
+    width: 100%;
+}
+.form_input button{
+    width: 50%;
 }
 footer{
     position: absolute;
     bottom: 0;
     background-color: rgb(30, 30, 30);
     width: 100%;
+
     height: 200px;
 
     display: flex;
@@ -141,15 +154,15 @@ footer{
 }
 .social-links a{
 	display: inline-block;
-	height: 50px;
-	width: 50px;
+	height: 100px;
+	width: 100px;
 	text-align: center;
 	background-color: rgb(30, 30, 30);
 	color: white;
-	line-height: 50px;
+	line-height: 100px;
 	border-radius: 50%;
-	font-size: 25px;
-	margin: 0 10px;
+	font-size: 50px;
+	margin: 0 30px;
 	transition: all 0.5s ease;
 }
 .social-links a:hover{
