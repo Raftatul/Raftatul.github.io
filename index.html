@@ -4,25 +4,94 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">]
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>
-    <header>
-        <div class="name_job">
-            <h1 style="margin-bottom: 0; font-size: xx-large;">Raphaël Daubelcour</h1>
-            <h3 style="margin-top: 0; font-size: large;">Student Technical Game Designer</h3>
-        </div>
-    </header>
 
-    <div class="page_container">
-        <h1 style="margin-bottom: 2vh;">Projects</h1>
+<header>
+    <div class="name_job" style="width: 70%;">
+        <h1 style="margin-bottom: 0; font-size: xx-large; color: white; text-decoration: none;">Raphaël Daubelcour</h1>
+        <h3 style="margin-top: 0; font-size: large; color: white;">Student Technical Game Designer</h3>
+    </div>
+    <a href="#" class="nav-button">Home</a>
+    <a href="#Projects" class="nav-button">Projects</a>
+    <a href="#About" class="nav-button">About</a>
+    <a href="#Contact" class="nav-button">Contact</a>
+</header>
+
+<body>
+    <section class="home-page">
+        <span style="width: 50%;">Raphaël Daubelcour</span>
+        <!-- <img src="images/1663696871472.jfif" style="width: 20%;"> -->
+    </section>
+    <section class="page-container" id="Projects">
+        <div class="title"><h1>PROJECTS</h1></div>
+        <div class="project-grid">
+
+            <div class="card card-flip h-100">
+                <div class="card-front text-white bg-dark">
+                    <img src="images/Garden Wars - Instructions.png" alt="...">
+                </div>
+                <div class="card-back bg-white">
+                    <div class="card-body">
+                        <h3 class="card-title">Garden Wars</h3>
+                        <p class="card-text">Garden Wars is a Tabletop games developed by me and others student as part of a school project.
+                            As a Game Designer, I and my team had to think about an idea and iterate.
+                            After enough iterations, we balance the game and communicate our visuals needs with the artists.
+                        </p>
+                        <a target="_blank" href="doc/Garden Wars - Instructions.pdf" class="btn btn-outline-secondary">Access Rules</a>
+                        <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2803274043" class="btn btn-outline-secondary">Access Project</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card card-flip h-100">
+                <div class="card-front text-white bg-dark">
+                    <img src="images/ImageAffiche.jpg" alt="..." style="object-position: 50% 0;">
+                </div>
+                <div class="card-back bg-white">
+                    <div class="card-body">
+                        <h3 class="card-title">Tricolor</h3>
+                        <p class="card-text">TriColor is a Game Jam project. The subject was "10,000,000,000 de consomateurs". I worked on this project as a programmer.</p>
+                        <a target="_blank" href="games/TriColor-Final-WebGL/index.html" class="btn btn-outline-secondary">Access Game</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-flip h-100">
+                <div class="card-front text-white bg-dark">
+                    <img src="https://assets-prd.ignimgs.com/2021/12/08/portal2-1638924084230.jpg" alt="...">
+                </div>
+                <div class="card-back bg-white">
+                    <div class="card-body">
+                        <h3 class="card-title">Portal 2 - Level Design</h3>
+                        <p class="card-text">This portal level is my collaboration with other game designers. My level introduces ingredients used in other levels.</p>
+                        <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2785310108" class="btn btn-outline-secondary">Access Project</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dY-DWKslMEg&ab_channel=Raftatul" class="btn btn-outline-secondary">Watch</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-flip h-100">
+                <div class="card-front text-white bg-dark">
+                    <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo/d4850944bd4d0817ba6ddc03eeabd1cb.png" alt="..." style="width: 100%; height: 100%;">
+                </div>
+                <div class="card-back bg-white">
+                    <div class="card-body">
+                        <h3 class="card-title">Modding - Terraria</h3>
+                        <p class="card-text">Sometimes I work on my Terraria mod which I have been developing for 1 year.</p>
+                        <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2816636342&searchtext=extra+vanilla" class="btn btn-outline-secondary">Access Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--         
         <div class="container-fuid">
             <div class="row">
                 <div class="col-md">
-                    <!-- Card -->
                     <div class="card mb-8">
-                        <div class="row g-0">
+                        <div class="row g-0" id="card-front">
                         <div class="col-md-4" style="margin: auto;">
                             <img src="images/Garden Wars - Instructions.png" class="img-fluid rounded-start" alt="...">
                         </div>
@@ -52,8 +121,6 @@
                         </div>
                         </div>
                     </div>
-                    <!-- End Card -->
-                    <!-- Card -->
                     <div class="card mb-8">
                         <div class="row g-0">
                         <div class="col-md-4" style="margin: auto;">
@@ -84,8 +151,6 @@
                         </div>
                         </div>
                     </div>
-                    <!-- End Card -->
-                    <!-- Card -->
                     <div class="card mb-8">
                         <div class="row g-0">
                         <div class="col-md-4" style="margin: auto;">
@@ -115,43 +180,38 @@
                         </div>
                         </div>
                     </div>
-                    <!-- End Card -->
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
 
-    <div class="page_container" style="background-color: rgb(30, 30, 30);">
-        <h1 style="color: white;">About Me</h1>
-        <!-- Card -->
-        <div class="card mb-3" style="background-color: rgb(30, 30, 30); border: none;">
-            <div class="row g-0">
-                <div class="col-md-4" style="margin: auto;">
-                    <img src="images/1663696871472.jfif">
-                </div>
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <p>Hello, my name is Raphaël Daubelcour. I'm a French student at Isart Digital school. I'm about to begin my second years of study as Game Designer.
-                            My goal is to become a Technical Designer, I love working and learn all the features inside game engines.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="about_me_detail">
-                        <h3>Student Game Designer</h3>
-                        <p>1 years of study as Isart Digital</p>
-                        <h3>Technical Orientation</h3>
-                        <p>I love programming and use game engines.</p>
-                        <h3><img draggable="false" role="img" class="emoji" alt="🇫🇷" src="https://s.w.org/images/core/emoji/13.1.0/svg/1f1eb-1f1f7.svg" style="width: 15px; margin-right: 0;"> French</h3>
-                        <p>French is my native language</p>
-                        <h3><img draggable="false" role="img" class="emoji" alt="🇬🇧" src="https://s.w.org/images/core/emoji/13.1.0/svg/1f1ec-1f1e7.svg" style="width: 15px; margin-right: 0;"> English</h3>
-                        <p>I've pass the Cambridge English Certificate</p>
-                    </div>
-                </div>
+    </section>
+
+    <section class="page-container" id="About" style="background-color: rgb(15, 17, 15);">
+        <div class="title"><h1>ABOUT ME</h1></div>
+        <div style="display: flex; width: 100%;">
+
+            <div style="width: 25%;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" style="width: 100%;">
+            </div>
+
+            <div style="width: 50%; padding: 0 20px;">
+                <p>Hello, my name is Raphaël Daubelcour. I'm a French student at Isart Digital school. I'm in my second years of study as Game Designer.
+                    My goal is to become a Technical Designer, I love used and learn all the new features inside game engines.
+                </p>
+            </div>
+
+            <div style="width: 25%;">
+                <h3>Student Game Designer</h3>
+                    <p>1 years of study as Isart Digital</p>
+                    <h3>Technical Orientation</h3>
+                    <p>I love programming and use game engines.</p>
+                    <h3><img draggable="false" role="img" class="emoji" alt="🇫🇷" src="https://s.w.org/images/core/emoji/13.1.0/svg/1f1eb-1f1f7.svg" style="width: 15px; margin-right: 0;"> French</h3>
+                    <p>French is my native language</p>
+                    <h3><img draggable="false" role="img" class="emoji" alt="🇬🇧" src="https://s.w.org/images/core/emoji/13.1.0/svg/1f1ec-1f1e7.svg" style="width: 15px; margin-right: 0;"> English</h3>
+                    <p>I've pass the Cambridge English Certificate</p>
             </div>
         </div>
-        <!-- End Card -->
-        <h2><span style="font-size: 30px;">Softwares & Game Engines</span></h2>
+        <!-- <h2><span style="font-size: 30px;">Softwares & Game Engines</span></h2>
         <div class="container-fuid">
             <div class="row">
                 <div class="col-sm" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
@@ -180,31 +240,37 @@
                     <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png">
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="page_container" style="padding-bottom: 350px;">
-        <h1>Contact Me</h1>
+        </div> -->
+    </section>
+    
+    <section class="page-container" id="Contact" style="padding-bottom: 350px;">
+        <div class="title"><h1>CONTACT</h1></div>
         <form class="form_input" action="https://formsubmit.co/c000ca14d54f3db0219a488c0a73d96b" method="POST" style="display: flex; flex-direction: column; align-items: center;">
             <input type="text" name="Name" placeholder="Full Name" required style="margin: 5px 0; height: 50px;">
             <input type="email" name="Email" placeholder="Email" required style="margin: 5px 0; height: 50px;">
             <textarea name="Message" placeholder="Message" required style="margin: 5px 0; resize: none; height: 150px;"></textarea>
-            <button type="submit" style="color: white; font-size: large; margin: 5px 0; height: 50px; background-color: cornflowerblue; border: none; cursor: pointer; border-radius: 50px;">Send</button>
+            <br>
+            <button type="submit" style="color: white; font-size: large; margin: 5px 0; height: 50px; background-color: #557153; border: none; cursor: pointer; border-radius: 50px;">Send</button>
         </form>
-        <!-- <a href="http://chris-michiels.fr/" style="color: black; margin-top: 50px; margin-bottom: 0;"><span>Portfolio inspiration</span></a> -->
-    </div>
-    <footer>
-        <div class="social-links">
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=100075833618309"><i class="fab fa-facebook-f"></i></a>
-            <a target="_blank" href="https://twitter.com/Raftatul"><i class="fab fa-twitter"></i></a>
-            <a target="_blank" href="https://www.instagram.com/raftatul_/"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://www.linkedin.com/in/rapha%C3%ABl-daubelcour-a986a922a/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 </body>
+
+<footer>
+    <div class="social-links">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100075833618309"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" href="https://twitter.com/Raftatul"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="https://www.instagram.com/raftatul_/"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/rapha%C3%ABl-daubelcour-a986a922a/"><i class="fab fa-linkedin-in"></i></a>
+        <a target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+
+<script src="observer.js"></script>
+
 <script>
     var videos = document.querySelectorAll('video');
     for(var i=0; i<videos.length; i++)
