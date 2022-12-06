@@ -1,6 +1,6 @@
 html{
     font-family: 'Inter', sans-serif;
-    --global--padding_width : calc(20%);
+    --global--padding_width : 20%;
 
     --background: transparent;
     --header-height: 100px;
@@ -229,7 +229,7 @@ footer{
     width: 100%;
 }
 .about-me-detail{
-    color: var(--bright-green);
+    color: var(-);
 }
 
 nav #icon{
@@ -249,25 +249,47 @@ nav a:hover{
 }
 
 @media only screen and (max-width: 1048px){
+    html{
+        --global--padding_width : 20%;
+    }
     header{
         background: var(--secondary-backgrond);
     }
     .home-page{
         text-align: center;
     }
+    .page-container{
+        padding: 0 5%;
+    }
     .project-grid{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
+    }
+    .card{
+        width: 100%;
+    }
+    .card h3{
+        font-size: 30px;
+    }
+    .btn{
+        font-size: 30px !important;
+    }
+    .card-text{
+        font-size: 30px;
     }
     .about-me{
         display: block;
         text-align: center;
         justify-content: center;
     }
+    .about-me h3{
+        font-size: 45px;
+    }
     .about-me div{
         text-align: center;
         width: 100% !important;
         padding: 20px 0;
+        font-size: 25px;
     }
     label.logo{
         font-size: 32px;
