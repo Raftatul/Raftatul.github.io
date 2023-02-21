@@ -137,7 +137,7 @@ p{
 footer{
     position: absolute;
     bottom: 0;
-    background-color: var(--secondary-backgrond);
+    background-color: var(--main-background);
     width: 100%;
 
     height: var(--footer-height);
