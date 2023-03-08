@@ -6,8 +6,8 @@ html{
     --header-height: 100px;
     --footer-height: 100px;
 
-    --main-background: rgb(20, 21, 20);
-    --secondary-backgrond: rgb(15, 17, 15);
+    --main-color: rgb(20, 21, 20);
+    --secondary-color: rgb(15, 17, 15);
     --bright-green: #E6E5A3;
 }
 body{
@@ -94,7 +94,7 @@ a.active,a:hover{
     font-size: 100px;
 }
 .page-container{
-    background-color: var(--main-background);
+    background-color: var(--main-color);
     padding: 0 var(--global--padding_width);
     padding-top: 50px;
     padding-bottom: 50px;
@@ -137,7 +137,7 @@ p{
 footer{
     position: absolute;
     bottom: 0;
-    background-color: var(--main-background);
+    background-color: var(--main-color);
     width: 100%;
 
     height: var(--footer-height);
@@ -153,7 +153,7 @@ footer{
 	height: 50px;
 	width: 50px;
 	text-align: center;
-	background-color: var(--main-background);
+	background-color: var(--main-color);
 	color: white;
 	line-height: 50px;
 	border-radius: 50%;
@@ -168,7 +168,7 @@ footer{
 
 .card img{
     border-radius: var(--bs-border-radius) !important;
-    width: 100%;
+    width: 80%;
 }
 .card iframe{
     border-radius: var(--bs-border-radius) !important;
@@ -186,7 +186,7 @@ footer{
 
 .card{
     margin-bottom: 10px;
-    background-color: var(--main-background) !important;
+    background-color: var(--main-color) !important;
     width: 100%;
 }
 .card-flip > div{
@@ -203,7 +203,9 @@ footer{
 }
 .card-front{
     transform: rotateY(0deg);
-    background-color: white !important;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
 }
 .card-back{
     transform: rotateY(180deg);
@@ -217,7 +219,7 @@ footer{
     transform: rotateY(0deg);
 }
 .card-body{
-    background-color: var(--secondary-backgrond);
+    background-color: var(--secondary-color);
 }
 .card img{
     aspect-ratio: 1/1;
@@ -241,9 +243,6 @@ nav #icon{
      cursor: pointer;
      display: none;
 }
-nav a{
-    text-decoration: none;
-}
 nav a:hover{
     color: #7D8F69;
 }
@@ -253,7 +252,7 @@ nav a:hover{
         --global--padding_width : 20%;
     }
     header{
-        background: var(--secondary-backgrond);
+        background: var(--secondary-color);
     }
     .home-page{
         text-align: center;
@@ -311,7 +310,7 @@ nav a:hover{
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: var(--secondary-backgrond);
+        background: var(--secondary-color);
         top: 80px;
         left: -100%;
         text-align: center;
