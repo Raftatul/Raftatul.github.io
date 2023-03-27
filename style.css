@@ -4,17 +4,28 @@ body{
     height: 100%;
     width: 100%;
 
-    background-color: black;
+    background-color: var(--main-color);
 
     font-family: 'Kanit', sans-serif;
+
+    --acc-color: #C252E1;
+    --sec-color: #00FFC0;
+    --main-color: black;
+
+    --categorie-color: #FF6B6B;
+    --content-color: white;
+}
+
+header{
+    display: flex;
 }
 
 h1{
-    color: white;
+    color: var(--categorie-color);
 }
 
 h2{
-    color: white;
+    color: var(--categorie-color);
 }
 
 img{
@@ -25,35 +36,33 @@ img{
 }
 
 hr{
-    border-color: rgb(252, 70, 100);
+    border-color: var(--acc-color);
     margin: 0 20%;
 }
 
-.container{
+.marge{
+    margin-bottom: 50px;
+}
+
+.my-container{
     padding: 0 26%;
 }
 
 .category{
-    color: white;
+    color: var(--categorie-color);
     text-align: center;
-}
-
-.bullet-point{
-    color: white;
-}
-
-.text{
-    color: white;
 }
 
 .project{
     text-align: center;
-    background-color: black;
+    background-color: var(--main-color);
     margin: 20px 0;
     margin-bottom: 50px;
     padding: 40px;
 
-    border: 3px solid rgb(252, 70, 100); 
+    border: 3px solid var(--acc-color); 
+
+    color: var(--sec-color);
 }
 
 .project a{
@@ -61,12 +70,12 @@ hr{
 }
 
 .project p{
-    color: white;
+    color: var(--content-color);
     text-align: left;
 }
 
 .project ul{
-    color: white;
+    color: var(--content-color);
     text-align: left;
 }
 
@@ -76,7 +85,7 @@ hr{
     font-size: 16px;
     font-weight: 700;
     color: white;
-    border: 3px solid rgb(252, 70, 100);
+    border: 3px solid var(--acc-color);
     cursor: pointer;
     position: relative;
     background-color: transparent;
@@ -93,7 +102,7 @@ hr{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(252, 70, 100);
+    background-color: var(--acc-color);
     transform: translateX(-100%);
     transition: all .3s;
     z-index: -1;
@@ -108,7 +117,7 @@ hr{
 	height: 50px;
 	width: 50px;
 	text-align: center;
-	color: white;
+	color: var(--acc-color);
 	background-color: black;
 	line-height: 50px;
 	border-radius: 50%;
@@ -119,11 +128,16 @@ hr{
 
 .social-links a:hover{
 	color: black;
-	background-color: white;
+	background-color: var(--acc-color);
 }
 
 @media (max-width: 909px){
-    .container{
-        padding: 0 5%;
+    .my-container{
+        padding: 0 3%;
+        font-size: 20px;
+    }
+    header{
+        text-align: center;
+        display: block;
     }
 }
