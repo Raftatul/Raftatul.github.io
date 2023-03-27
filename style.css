@@ -40,6 +40,11 @@ hr{
     margin: 0 20%;
 }
 
+.software{
+    text-decoration: none;
+    color: var(--content-color);
+}
+
 .marge{
     margin-bottom: 50px;
 }
@@ -63,6 +68,8 @@ hr{
     border: 3px solid var(--acc-color); 
 
     color: var(--sec-color);
+
+    font-size: larger;
 }
 
 .project a{
@@ -140,4 +147,20 @@ hr{
         text-align: center;
         display: block;
     }
+}
+
+.software img:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+  
+@keyframes shake {
+    0% { transform: rotate(0deg) scale(2); }
+    25% { transform: rotate(5deg) scale(2); }
+    50% { transform: rotate(0deg) scale(2); }
+    75% { transform: rotate(-5deg) scale(2); }
+    100% { transform: rotate(0deg) scale(2); }
 }
