@@ -8,6 +8,8 @@ body{
 
     font-family: 'Kanit', sans-serif;
 
+    overflow-x: hidden;
+
     --acc-color: #C252E1;
     --sec-color: #00FFC0;
     --main-color: black;
@@ -58,6 +60,21 @@ hr{
     text-align: center;
 }
 
+.effect{
+    opacity: 0.0;
+    transform: translateX(300%);
+    transition: transform 1s ease, opacity 3s ease;
+}
+
+.effect:nth-of-type(even){
+    transform: translateX(-300%);
+}
+
+.effect.show{
+    opacity: 1.0;
+    transform: translateX(0);
+}
+
 .project{
     text-align: center;
     background-color: var(--main-color);
@@ -65,11 +82,14 @@ hr{
     margin-bottom: 50px;
     padding: 40px;
 
-    border: 3px solid var(--acc-color); 
-
     color: var(--sec-color);
 
     font-size: larger;
+}
+
+.clickable-text{
+    text-decoration: none;
+    color: white;
 }
 
 .project a{
