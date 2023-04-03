@@ -3,119 +3,184 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav-bar.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Raphaël Daubelcour Portfolio</title>
+    <title>Tech Design Portfolio - Raphaël Daubelcour</title>
     <script src="app.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="my-container effect">
-        <header>
-            <div style="width: 100%;">
-                <h1>Raphaël Daubelcour</h1>
-                <h2>Technical Game Designer</h2>
-            </div>
-            <div class="social-links" style="display: flex; justify-content: center; align-items: center;">
-                <a target="_blank" href="https://twitter.com/Raftatul"><i class="fab fa-twitter"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/rapha%C3%ABl-daubelcour-a986a922a/"><i class="fab fa-linkedin-in"></i></a>
-                <a target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github"></i></a>
-            </div>
-        </header>
-        <hr class="marge" style="margin-left: 2%; margin-right: 2%;">
+    <div class="nav-bar">
+        <script>
+            window.onload = function() {
+                setDefaultNav(document.getElementsByClassName('nav-btn')[0]);
+            };
+        </script>
+        <a class="nav-btn" href="index.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
+            <label>Home</label>
+            <i class="fa-solid fa-house nav-icon"></i>
+        </a>
+        <a class="nav-btn" href="portfolio.html" style="color: gray;">
+            <label>Portfolio</label>
+            <i class="fa-solid fa-file-alt nav-icon"></i>
+        </a>
+        <a class="nav-btn" href="contact.html" style="color: gray;">
+            <label>Contact</label>
+            <i class="fa-solid fa-user nav-icon"></i>
+        </a>
+        <a class="nav-btn" target="_blank" href="https://github.com/Raftatul" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)">
+            <label>GitHub</label>
+            <i class="fab fa-github nav-icon"></i>
+        </a>
+    </div>
+    <div class="background">
+        <div class="blur"></div>
+        <video autoplay muted loop>
+            <source src="videos/Terraria_ Journey's End.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="hiddenElement" class="home-page big-title">
+        <label style="font-size: 120px;">Raphaël Daubelcour</label>
+        <label style="font-size: 40px; text-transform: capitalize;">Technical Designer</label>
+    </div>
+    <div class="my-container">
         <div class="content">
-            <h1 class="category effect">Welcome to my portfolio !</h1>
-            <hr class="effect">
-            <div class="project effect">
-                <p>Who I am ?</p>
-                <ul>
-                    <li>Programmer enjoyer</li>
-                    <li>Native French</li>
-                    <li>Student at Isart Digital</li>
-                </ul>
-                <p>What software do I use ?</p>
-                <ul>
-                    <li><img src="images/svg/unity-white.svg" style="width: 15px;"> Unity</li>
-                    <li><img src="images/svg/unreal-engine-white.svg" style="width: 15px;"> Unreal Engine</li>
-                    <li><a href="images/GodotSupremacy.png" target="_blank" class="software"><img src="images/svg/godot-engine-white.svg" style="width: 15px;"></a> Godot</li>
-                    <li><img src="images/svg/blender.svg" style="width: 15px;"> Blender</li>
-                    <li><img src="images/svg/aseprite-white.svg" style="width: 15px;"> Aseprite</li>
-                </ul>
-                <p>Programming language ?</p>
-                <ul>
-                    <li>C#</li>
-                    <li>Python</li>
-                    <li>Unreal Engine Nodes</li>
-                    <li>GDScript (Godot integrated language)</li>
-                </ul>
-                <p>What do I like ?</p>
-                <ul>
-                    <li>Gorillaz &#127911x</li>
-                    <li>Terraria &#129309 Minecraft</li>
-                    <li>Couscous &#129367</li>
-                </ul>
-                <p class="text">
-                    My goal is to become a technical game designer, using my skills and knowledge to help bring game ideas to life through programming and technical implementation.
-                    <br>
-                    <br>
-                    I am excited to continue learning about programming and game engine features.
-                </p>
+            <div class="project">
+                <div class="grid" style="height: 60vh;">
+                    <div class="column" style="width: 10%;">
+                        <div class="project-overview column">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <label style="font-size: large; color: black;">1</label>
+                            <label style="font-size: medium;">Professional Project</label>
+                        </div>
+                        <div class="project-overview column">
+                            <i class="fa-solid fa-file"></i>
+                            <label style="font-size: large; color: black;">2</label>
+                            <label style="font-size: medium;">Personnal Projects</label>
+                        </div>
+                    </div>
+                    <div class="vertical-separator"></div>
+                    <div class="column" style="width: 100%; padding: 0 100px;">
+                        <p class="big-title" style="font-size: xx-large; text-align: center;">My name is Raphaël Daubelcour, Technical Designer Student</p>
+                        <p class="text" style="text-align: center;">
+                            Hello! I am a native <b>French</b> student at Isart Digital who enjoys programming. 
+                            I use various software like Unity, Unreal Engine, Godot, Blender, and Aseprite. <br><br>
+                            My preferred programming languages are <b>Unity C#, C#, Unreal Engine Nodes</b>, and <b>GDScript</b> (Godot integrated language). 
+                            When I'm not programming, I like to listen to <a class="clickable-text" target="_blank" href="https://i.kym-cdn.com/photos/images/original/001/420/754/5a3.jpg"><b>Gorillaz</b></a>, play <a class="clickable-text" target="_blank" href="https://i.redd.it/88zpezeemkd61.png"><b>Terraria</b></a> and 
+                            <a class="clickable-text" target="_blank" href="https://imgix.ranker.com/list_img_v2/19780/2859780/original/2859780"><b>Minecraft</b></a>, and eat couscous. <br><br>
+                            My ultimate goal is to become a <b>technical game designer</b>, where I can use my skills and knowledge to help bring game ideas to life through programming and technical implementation. 
+                            <b>I am always excited to continue learning about programming and game engine features</b>.
+                        </p>
+                    </div>
+                    <div class="vertical-separator"></div>
+                    <div class="column" style="width: 100%;">
+                        <img src="images/Moi.png" style="width: 100%;">
+                    </div>
+                </div>
             </div>
-            <h1 class="category effect">Professional Projects</h1>
-            <hr class="effect">
-            <div class="project effect">
-                <img src="images/vetrix_world.png">
-                <h2 class="bullet-point" style="text-align: center;">Game Designer</h2>
-                <p>On Vetrix World, I have work on the campain as a Game Designer. My duties included:</p>
-                <ul>
-                    <li>Balance the campain</li>
-                    <li>Introducing the mechanic of the game through the campain</li>
-                </ul>
-                <p>In general, my responsibility involved maintaining equilibrium among the scriptable objects' values in Unity.
-                    <br>This entailed incorporating core gameplay mechanics, such as blocks that vanish after a certain period or blocks that require two hits to destroy.</p>
-                <a class="btn" href="https://store.steampowered.com/app/1992860/Vetrix_Worlds/" target="_blank">Access Project</a> 
+            <div class="project column" style="background-color: #0f82c5; padding: 50px 0;">
+                <a class="hover-scale egg" target="_blank" href="https://preview.redd.it/0cxiwyvthgc61.png?auto=webp&s=e4d2542005d4ec46cf7f62fa9f34511a6991cb24"><i class="fab fa-github nav-icon" style="color: black; font-size: 50px;"></i></a>
+                <br>
+                <a class="clickable-text">CHECK OUT MY REPOSTERIES</a>
+                <br>
+                <a class="clickable-text big-btn hover-scale" style="border-radius: 2rem; padding: 10px 20px;" target="_blank" href="https://github.com/Raftatul">Raftatul's GitHub</a>
+            </div>
+            <div class="project" style="display: block;">
+                <label style="font-size: xx-large;">Technical Skills</label>
+                <div class="grid" style="padding: 40px 0;">
+                    <div class="column">
+                        <label>Software & Languages</label>
+                        <ul>
+                            <li>Unity C#</li>
+                            <li>C#</li>
+                            <li>Blueprint Visual Scripting</li>
+                            <li>GDScript</li>
+                            <li>Visual Studio, Rider, VS Code</li>
+                            <li>GitHub Desktop</li>
+                        </ul>
+                    </div>
+                    <div><div class="vertical-separator"></div></div>
+                    <div class="column" style="justify-content: left;">
+                        <label>Engines</label>
+                        <ul>
+                            <li><img class="software" src="images/svg/unity-white.svg" style="filter: invert();"> Unity</li>
+                            <li><img class="software" src="images/svg/brand-unreal-engine.svg"> Unreal Engine 4/5</li>
+                            <li><a href="images/GodotSupremacy.png" target="_blank"><img class="software hover-scale egg" src="images/svg/godot-engine-white.svg" style="filter: invert();"></a> Godot</li> 
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <h1 class="category effect">Personnal Projects</h1>
-            <hr class="effect">
-            <div class="project effect">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1281930/capsule_616x353.jpg?t=1654800634">
-                <h2 class="bullet-point" style="text-align: center;">PROGRAMMER</h2>
-                <p>On my free time, I'm working on a little mod for my favorite game Terraria (Using Tmodloader).</p>
-                <p>This mod add:</p>
-                <ul>
-                    <li><a href="https://i.redd.it/8yv09hfc69n11.jpg" target="_blank" class="clickable-text">Bosses</a></li>
-                    <li>Items</li>
-                    <li>Weapons</li>
-                    <li><a href="images/BaldCat.png" target="_blank" class="clickable-text">Pets</a></li>
-                    <li>Alternative Crafts</li>
-                </ul>
-                <p>There is also a little bit of lore. The mod is programmed in C#, making this mod help me improve my C# skills.</p>
-                <a class="btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2816636342&searchtext=extra+vanilla" target="_blank">Access Project</a>
-            </div>
-            <hr class="effect">
-            <div class="project effect">
-                <img src="images/SquareRoots.png">
-                <h2 class="bullet-point" style="text-align: center;">PROGRAMMER - DESIGNER</h2>
-                <p>This project was created using Unity during the Global Game Jam, with the theme of "Root" serving as the inspiration.<br><br>
-                    The game involves growing a tree by creating branches and roots.<br><br>
-                    The branches collect sunlight and clouds on the surface and consume water, while the roots collect nutrients and water underground and consume air.<br><br>
-                    To grow the branches and roots, you must manage resources such as water, sunlight, air, and nutrients.
-                </p>
-                <p>On this project, I work as a programmer / designer, my duties included:</p>
-                <ul>
-                    <li>
-                        Programming the roots and branches animations using DoTweens.
-                    </li>
-                    <li>
-                        Designing the game loop.
-                    </li>
-                </ul>
-                <a class="btn" href="https://play.unity.com/mg/other/squaredroots" target="_blank">Access Project</a>
-            </div>
+            <div class="project" style="background-color: rgba(0, 0, 0, 0.8); color: white; height: 100vh;">
+                <h1 class="category" style="color: white; position: absolute; top: 7%;">Portfolio</h1>
+
+                <div class="article-container">
+                    <article class="project-preview" data-index="0" data-status="active">
+                        <img class="project-image" src="images/vetrix_world.png">
+                        <div style="width: 100%; margin-left: 40px; height: 100%; position: relative;">
+                            <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;"><a class="clickable-text" target="_blank" href="images/vagabond-meme.jpg" style="color: white;">Vetrix World</a> - Game Designer</h2>
+                            <p>On Vetrix World, I have worked on the campain as a Game Designer. My duties included:</p>
+                            <ul>
+                                <li>Balance the campain</li>
+                                <li>Introducing the mechanic of the game through the campain</li>
+                            </ul>
+                            <p>In general, my responsibility involved maintaining equilibrium among the scriptable objects' values in Unity.
+                                <br>This entailed incorporating core gameplay mechanics, such as blocks that vanish after a certain period or blocks that require two hits to destroy.
+                            </p>
+                        </div>
+                    </article>
+    
+                    <article class="project-preview" data-index="1" data-status="inactive left">
+                        <img class="project-image" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1281930/capsule_616x353.jpg?t=1654800634">
+                        <div style="width: 100%; margin-left: 40px; height: 100%; position: relative;">
+                            <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">TmodLoader - PROGRAMMER</h2>
+                            <p>On my <b>free time</b>, I'm working on a little mod for my favorite game <b>Terraria</b> (Using Tmodloader).</p>
+                            <p>This mod add:</p>
+                            <ul>
+                                <li>Bosses</li>
+                                <li>Items</li>
+                                <li>Weapons</li>
+                                <li>Pets</li>
+                                <li>Alternative Crafts</li>
+                            </ul>
+                            <p>There is also a little bit of lore. The mod is <b>programmed in C#</b>, making this mod help me <b>improve my C# skills</b>.</p>
+                        </div>
+                    </article>
+    
+                    <article class="project-preview" data-index="2" data-status="inactive right">
+                        <img class="project-image" src="images/SquareRoots.png" style="object-fit: contain;">
+                        <div style="width: 100%; margin-left: 40px; height: 100%; position: relative;">
+                            <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">Square Roots ! - PROGRAMMER/DESIGNER</h2>
+                            <p>This project was created during the Global Game Jam was developed using Unity and inspired by the theme "Root".</p>
+                            <p>
+                                In the game, players grow a tree by creating branches and roots. 
+                                The branches collect sunlight and clouds, while the roots collect nutrients and water underground.</p>
+                            <p>Proper management of resources such as water, sunlight, air, and nutrients is essential to grow the tree.</p>
+                            <p>On this project, I work as a programmer / designer, my duties included:</p>
+                            <ul>
+                                <li>
+                                    Programming the roots and branches animations using DoTweens.
+                                </li>
+                                <li>
+                                    Designing the game loop.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
 
+                <button class="button-left hover-scale" onclick="handleRightClick()" style="margin-left: 100px;"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="button-right hover-scale" onclick="handleLeftClick()" style="margin-right: 100px;"><i class="fa-solid fa-arrow-right"></i></button>
+
+                <a class="btn" style="border-style: dashed;">CHECK OUT MY PROJECTS (Soon)</a>
+            </div>
         </div>
     </div>
 </body>

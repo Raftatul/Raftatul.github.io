@@ -6,16 +6,15 @@ body{
 
     background-color: var(--main-color);
 
-    font-family: 'Kanit', sans-serif;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 
     overflow-x: hidden;
 
-    --acc-color: #C252E1;
-    --sec-color: #00FFC0;
-    --main-color: black;
+    --main-rgb: 15, 130, 197;
+}
 
-    --categorie-color: #FF6B6B;
-    --content-color: white;
+body::-webkit-scrollbar {
+    display: none;
 }
 
 header{
@@ -30,34 +29,79 @@ h2{
     color: var(--categorie-color);
 }
 
-img{
-    height: 100%;
-    max-height: 400px;
-    max-width: 100%;
-    object-fit: contain;
-}
-
 hr{
     border-color: var(--acc-color);
     margin: 0 20%;
 }
 
-.software{
-    text-decoration: none;
-    color: var(--content-color);
+.hidden{
+    display: none !important;
 }
 
-.marge{
-    margin-bottom: 50px;
+.background{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    z-index: -1;
+
+    filter: saturate(5%);
+}
+
+.background video{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.blur{
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.home-page{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    z-index: -1;
+}
+
+.big-title{
+    font-family: 'Changa One', cursive;
+    text-transform: uppercase;
 }
 
 .my-container{
-    padding: 0 26%;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 100vh;
+}
+
+.grid{
+    display: flex;
+    flex-direction: row;
 }
 
 .category{
-    color: var(--categorie-color);
+    color: black;
     text-align: center;
+    font-size: 50px;
 }
 
 .effect{
@@ -75,12 +119,51 @@ hr{
     transform: translateX(0);
 }
 
-.project{
-    text-align: center;
-    background-color: var(--main-color);
+.project-overview{
+    color: black;
     margin: 20px 0;
-    margin-bottom: 50px;
-    padding: 40px;
+    font-size: xx-large;
+}
+
+.project-overview label{
+    color: gray;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.vertical-separator{
+    border-left: 2px solid gray;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    color: black;
+    border-style: dotted;
+    height: 100%;
+    margin: 0 25px;
+}
+
+.software{
+    width: 20px;
+}
+
+.project{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: white;
+    padding: 40px 10%;
 
     color: var(--sec-color);
 
@@ -89,11 +172,19 @@ hr{
 
 .clickable-text{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
-.project a{
-    text-align: center;
+.big-btn{
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+}
+
+.big-btn:hover{
+    color: black;
+    background-color: transparent;
 }
 
 .project p{
@@ -106,37 +197,136 @@ hr{
     text-align: left;
 }
 
-.btn {
-    display: inline-block;
-    padding: 0.9rem 1.8rem;
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
-    border: 3px solid var(--acc-color);
-    cursor: pointer;
+.article-container{
     position: relative;
-    background-color: transparent;
-    text-decoration: none;
-    overflow: hidden;
-    z-index: 1;
-    font-family: inherit;
-}
-   
-.btn::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
-    background-color: var(--acc-color);
-    transform: translateX(-100%);
-    transition: all .3s;
-    z-index: -1;
+    height: 500px;
+
+    overflow: hidden;
 }
-   
-.btn:hover::before {
-    transform: translateX(0);
+
+.article-container > article{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    display: flex;
+    height: 500px;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.article-container > article[data-status="inactive left"]{
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%);
+
+    opacity: 0;
+}
+
+.article-container > article[data-status="inactive right"]{
+    top: 50%;
+    transform: translateX(100%) translateY(-50%);
+
+    opacity: 0;
+}
+
+.project > button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.button-left{
+    left: 0;
+}
+
+.button-right{
+    right: 0;
+}
+
+.project-image{
+    height: 100%;
+    max-height: 400px;
+
+    aspect-ratio: 16/9;
+
+    object-fit: cover;
+}
+
+.square{
+    aspect-ratio: 1/1;
+}
+
+.screen-overlay{
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(
+        rgba(var(--main-rgb), 0.4),
+        rgba(var(--main-rgb), 0.4) 3px,
+        rgba(var(--main-rgb), 0.2) 3px,
+        rgba(var(--main-rgb), 0.2) 9px
+    );
+
+    background-size: 100% 9px;
+
+    height: 100%;
+    width: 100%;
+
+    animation: pan-overlay 12s infinite linear;
+}
+
+@keyframes pan-overlay{
+    from{
+        background-position: 0% 0%;
+    }
+
+    to{
+        background-position: 0% -100%;
+    }
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 35px;
+    width: fit-content;
+
+    border: none;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgb(var(--main-rgb));
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+
+    border: 3px solid rgb(var(--main-rgb));
+}
+
+.btn:after{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+}
+
+.btn:hover{
+    background-color: rgb(var(--main-rgb));
+    color: white;
 }
 
 .social-links a{
@@ -169,18 +359,23 @@ hr{
     }
 }
 
-.software img:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 0.5s;
+.hover-scale{
+    transition: all 0.3s ease-in-out;
+}
 
-    /* When the animation is finished, start again */
+.hover-scale:hover{
+    scale: 1.1;
+}
+
+.egg:hover{
+    animation: shake 0.5s;
     animation-iteration-count: infinite;
 }
-  
+
 @keyframes shake {
-    0% { transform: rotate(0deg) scale(2); }
-    25% { transform: rotate(5deg) scale(2); }
-    50% { transform: rotate(0deg) scale(2); }
-    75% { transform: rotate(-5deg) scale(2); }
-    100% { transform: rotate(0deg) scale(2); }
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }

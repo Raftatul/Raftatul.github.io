@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav-bar.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Design Portfolio - Raphaël Daubelcour</title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <script>
+            window.onload = function() {
+                setDefaultNav(document.getElementsByClassName('nav-btn')[2]);
+            };
+        </script>
+        <a class="nav-btn" href="index.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
+            <label>Home</label>
+            <i class="fa-solid fa-house nav-icon"></i>
+        </a>
+        <a class="nav-btn" href="portfolio.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
+            <label>Portfolio</label>
+            <i class="fa-solid fa-file-alt nav-icon"></i>
+        </a>
+        <a class="nav-btn" href="contact.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
+            <label>Contact</label>
+            <i class="fa-solid fa-user nav-icon"></i>
+        </a>
+        <a class="nav-btn" target="_blank" href="https://github.com/Raftatul" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)">
+            <label>GitHub</label>
+            <i class="fab fa-github nav-icon"></i>
+        </a>
+    </div>
+</body>
