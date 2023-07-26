@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
     <link rel="stylesheet" href="nav-bar.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <meta charset="UTF-8">
@@ -23,13 +24,101 @@
             <label>Portfolio</label>
             <i class="fa-solid fa-file-alt nav-icon"></i>
         </a>
-        <a class="nav-btn" href="contact.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
+        <!-- <a class="nav-btn" href="contact.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
             <label>Contact</label>
             <i class="fa-solid fa-user nav-icon"></i>
-        </a>
+        </a> -->
         <a class="nav-btn" target="_blank" href="https://github.com/Raftatul" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)">
             <label>GitHub</label>
             <i class="fab fa-github nav-icon"></i>
         </a>
     </div>
+
+    <div class="background">
+        <div class="blur"></div>
+        <img src="https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png">
+    </div>
+    <section style="height: 300px; display: flex; align-items: center; justify-content: center;">
+        <label style="color: white; font-size: 60px;">Portfolio</label>
+    </section>
+
+    <section class="back-white">
+        <div class="projects-holder">
+            <div class="project">
+                <img src="images/vetrix_world.png">
+                <div class="project-details">
+                    <p class="title">Vetrix World (2022)</p>
+                    <div>
+                        <p>On Vetrix World, I have worked on the campain as a Game Designer.</p>
+                        <b>My duties included:</b>
+                        <ul>
+                            <li>Balancing the campain</li>
+                            <li>Introducing the mechanic of the game through the campain</li>
+                        </ul>
+                        <p>In general, my responsibility involved maintaining equilibrium among the scriptable objects' values in Unity.
+                            <br>This entailed incorporating core gameplay mechanics, such as blocks that vanish after a certain period or blocks that require two hits to destroy.
+                        </p>
+                    </div>
+                    <div class="project-btns">
+                        <a class="project-btn">More Info</a>
+                        <a class="project-btn other-btn" target="_blank" href="https://store.steampowered.com/app/1992860/Vetrix_Worlds/">
+                            <img src="images/svg/steam-seeklogo.com.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1281930/capsule_616x353.jpg?t=1654800634">
+                <div class="project-details">
+                    <p class="title">Terraria Mod (2022)</p>
+                    <div>
+                        <p>
+                            On my <b>free time</b>, I'm working on a little mod for my favorite game <b>Terraria</b> (Using Tmodloader).
+                        </p>
+                        <b>This mod add:</b>
+                        <ul>
+                            <li>Bosses</li>
+                            <li>Items</li>
+                            <li>Weapons</li>
+                            <li>Pets</li>
+                            <li>Alternative Crafts</li>
+                        </ul>
+                        <p>
+                            There is also a little bit of lore. The mod is <b>programmed in C#</b>, making this mod help me <b>improve my C# skills</b>.
+                        </p>
+                    </div>
+                    <div class="project-btns">
+                        <a class="project-btn">More Info</a>
+                        <a class="project-btn other-btn" target="_blank" href="https://github.com/Raftatul/ExtraVanilla">
+                            <i class="fab fa-github nav-icon" style="color: black; font-size: 41px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="images/SquareRoots.png">
+                <div class="project-details">
+                    <p class="title">Square Roots ! - PROGRAMMER/DESIGNER (2023)</p>
+                    <div>
+                        <p>
+                            This project was created during the Global Game Jam and was developed using Unity, inspired by the theme "Root". 
+                            <br><br>
+                            In the game, players grow a tree by creating branches and roots, which collect sunlight, clouds, nutrients, and water. 
+                            Proper resource management is crucial for success. 
+                            <br><br>
+                            As a programmer/designer on this project, my duties included programming animations for roots and branches using DoTweens and designing the game loop.
+                        </p>
+                    </div>
+                    <div class="project-btns">
+                        <a class="project-btn">More Info</a>
+                        <a class="project-btn other-btn" target="_blank" href="https://play.unity.com/mg/other/squaredroots">
+                            <img class="software" src="images/svg/unity-white.svg" style="filter: invert(); width: 41px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
