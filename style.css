@@ -97,12 +97,16 @@ hr{
     width: 200%;
 }
 
+.page-section .fr3{
+    width: 300%;
+}
+
 .page-section div img{
     height: 100%;
 }
 
 .page-section .vertical-separator{
-    height: 25%;
+    height: 50%;
     width: 0;
     border-top: 0;
     border-bottom: 0;
