@@ -75,6 +75,12 @@
     color: rgb(var(--main-rgb));
 }
 
+@media (max-width: 909px){
+    .nav-bar{
+        display: none;
+    }
+}
+
 /* .nav-btn:hover label::before{
     content: "";
     position: absolute;
