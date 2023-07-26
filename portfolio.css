@@ -1,3 +1,12 @@
+.page-title{
+    height: 300px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+}
+
 .projects-holder{
     display: flex;
     flex-direction: column;
@@ -19,10 +28,11 @@
     background-color: #f9f9f9;
     overflow: hidden;
     border-radius: 7px;
-    width: 1200px;
+    width: 90%;
+    max-width: 1200px;
 }
 
-.project img{
+.project-cover{
     width: 25%;
     object-fit: cover;
 }
@@ -31,7 +41,7 @@
     display: flex;
     flex-direction: column;
     
-    width: 100%;
+    width: auto;
 
     font-family: 'Montserrat',sans-serif;
     font-size: 14px;
@@ -42,6 +52,7 @@
 .title{
     font-size: 30px;
     font-weight: 600;
+    height: auto;
 }
 
 .project-btns{
@@ -90,4 +101,22 @@
 .other-btn:hover{
     background: none;
     transform: scale(1.075);
+}
+
+@media (max-width: 909px){
+    .page-title{
+        height: 150px;
+    }
+    .projects-holder:first-child{
+        padding-top: 25px;
+    }
+    .project{
+        display: block;
+    }
+    .project-cover{
+        width: 100%;
+    }
+    .project-details{
+        padding: 15px;
+    }
 }
