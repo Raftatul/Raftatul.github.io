@@ -230,11 +230,15 @@ p{
 }
 
 .button-left{
+    height: fit-content;
     left: 0;
+    margin-left: 100px;
 }
 
 .button-right{
+    height: fit-content;
     right: 0;
+    margin-right: 100px;
 }
 
 .project-image{
@@ -467,5 +471,19 @@ button{
     }
     .project-overview{
         display: none;
+    }
+
+    .button-left{
+        left: 50%;
+        transform: translate(-100%, -300%);
+        margin-left: 0;
+
+        top: 100%;
+    }
+    .button-right{
+        right: 50%;
+        transform: translate(100%, -300%);
+        margin-right: 0;
+        top: 100%;
     }
 }
