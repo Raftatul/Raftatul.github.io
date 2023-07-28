@@ -170,6 +170,10 @@ p{
     font-size: xx-large;
 }
 
+.project-preview div{
+    margin-left: 40px;
+}
+
 .project-overview label{
     color: gray;
 }
@@ -449,10 +453,22 @@ button{
     height: auto;
 }
 
+.touch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
 @media (max-width: 909px){
     header{
         text-align: center;
         display: block;
+    }
+    body:last-child{
+        padding-bottom: 50px;
     }
     .vertical-separator{
         display: none;
@@ -472,18 +488,21 @@ button{
     .project-overview{
         display: none;
     }
+    .project-preview div{
+        margin: 0;
+        padding: 10px;
+    }
 
     .button-left{
-        left: 50%;
-        transform: translate(-100%, -300%);
-        margin-left: 0;
-
-        top: 100%;
+        display: none;
     }
     .button-right{
-        right: 50%;
-        transform: translate(100%, -300%);
-        margin-right: 0;
-        top: 100%;
+        display: none;
+    }
+    .touch-overlay {
+        pointer-events: auto;
+    }
+    .game-link{
+        display: none;
     }
 }

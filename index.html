@@ -130,13 +130,13 @@
             </div>
         </section>
 
-        <section class="flex-box flex-column" style="color: white; height: 850px;"">
+        <section class="flex-box flex-column" style="color: white; height: 850px;">
             <label style="font-size: 60px; padding-top: 50px;">Portfolio</label>
             
-            <div class="flex-box flex-row article-container">
+            <div class="flex-box flex-row article-container" id="swipe-area-portfolio">
                 <article class="project-preview flex-box flex-row" data-index="0" data-status="active" style="height: auto; align-items: start;">
                     <img class="project-image" src="images/vetrix_world.png">
-                    <div style="margin-left: 40px; position: relative; align-items: flex-start;">
+                    <div style="position: relative; align-items: flex-start;">
                         <h2 class="bullet-point" style="padding: 0; margin: 0;"><a class="clickable-text" target="_blank" href="images/vagabond-meme.jpg" style="color: white;">Vetrix World</a> - GAME DESIGNER (2022)</h2>
                         <p>On Vetrix World, I have worked on the campain as a Game Designer. My duties included:</p>
                         <ul>
@@ -151,7 +151,7 @@
                 
                 <article class="project-preview flex-box flex-row" data-index="2" data-status="inactive left" style="height: auto; align-items: start;">
                     <img class="project-image" src="images/SquareRoots.png" style="object-fit: contain;">
-                    <div style="margin-left: 40px; position: relative; align-items: flex-start; width: 100%;">
+                    <div style="position: relative; align-items: flex-start; width: 100%;">
                         <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">Square Roots ! - PROGRAMMER (2023)</h2>
                         <p>
                             This project was created during the Global Game Jam and was developed using Unity, inspired by the theme "Root". 
@@ -161,13 +161,13 @@
                             <br><br>
                             As a programmer/designer on this project, my duties included programming animations for roots and branches using DoTweens and designing the game loop.
                         </p>
-                        <a target="_blank" href="https://play.unity.com/mg/other/squaredroots"><img class="software hover-scale" src="images/svg/unity-white.svg" style="width: 40px;"></a>
+                        <a class="game-link" target="_blank" href="https://play.unity.com/mg/other/squaredroots"><img class="software hover-scale" src="images/svg/unity-white.svg" style="width: 40px;"></a>
                     </div>
                 </article>
 
                 <article class="project-preview flex-box flex-row" data-index="1" data-status="inactive right" style="height: auto; align-items: start;">
                     <img class="project-image" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1281930/capsule_616x353.jpg?t=1654800634">
-                    <div style="margin-left: 40px; position: relative; align-items: flex-start;">
+                    <div style="position: relative; align-items: flex-start;">
                         <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">TmodLoader - PROGRAMMER (2022)</h2>
                         <p>On my <b>free time</b>, I'm working on a little mod for my favorite game <b>Terraria</b> (Using Tmodloader).</p>
                         <p>This mod add:</p>
@@ -181,10 +181,12 @@
                         <p>The mod is <b>programmed in C#</b>, making this mod help me <b>improve my C# skills</b>.</p>
                     </div>
                 </article>
+
+                <div class="touch-overlay"></div>
             </div>
 
-            <button class="button-left hover-scale hover-main-rgb" onclick="handleRightClick()"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="button-right hover-scale hover-main-rgb" onclick="handleLeftClick()"><i class="fa-solid fa-arrow-right"></i></button>
+            <button class="button-left hover-scale hover-main-rgb" onclick="handleRightAction()"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="button-right hover-scale hover-main-rgb" onclick="handleLeftAction()"><i class="fa-solid fa-arrow-right"></i></button>
 
             <a class="btn" href="portfolio.html" style="text-align: center; width: 250px;">CHECK OUT MY PROJECTS</a>
         </section>

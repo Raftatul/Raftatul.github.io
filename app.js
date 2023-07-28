@@ -66,38 +66,70 @@ window.addEventListener('scroll', function() {
 });
 
 var previewIndex = 0;
+var startX = 0;
 
-function handleLeftClick(){
-    updatePreviewIndex(1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
+document.addEventListener('DOMContentLoaded', function () {
+    var touchOverlay = document.querySelector('.touch-overlay');
 
-    updatePreviewIndex(-1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
+    // Add touch event listeners to the touch overlay
+    touchOverlay.addEventListener('touchstart', handleTouchStart, { passive: true });
+    touchOverlay.addEventListener('touchmove', handleTouchMove, { passive: true });
+    touchOverlay.addEventListener('touchend', handleTouchEnd, { passive: true });
+});
 
-    updatePreviewIndex(-1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'active');
+function handleTouchStart(event) {
+    startX = event.touches[0].clientX;
 }
 
-function handleRightClick(){
-    updatePreviewIndex(-1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
-
-    updatePreviewIndex(1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
-
-    updatePreviewIndex(1);
-    projectsPreview[previewIndex].setAttribute('data-status', 'active');
+function handleTouchMove(event) {
+  event.preventDefault();
 }
 
-function updatePreviewIndex(value){
-    previewIndex += value;
+function handleTouchEnd(event) {
+  const endX = event.changedTouches[0].clientX;
+  const deltaX = startX - endX;
 
-    if(previewIndex < 0){
-        previewIndex = projectsPreview.length - 1;
+  console.log(deltaX);
+  // Determine swipe direction and call appropriate handler
+  if (Math.abs(deltaX) > 50) {
+    if (deltaX > 0) {
+        handleLeftAction();
+    } else {
+        handleRightAction();
     }
-    else if(previewIndex == projectsPreview.length){
-        previewIndex = 0;
-    }
+  }
+}
 
-    console.log(previewIndex)
+function handleLeftAction() {
+  updatePreviewIndex(1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
+
+  updatePreviewIndex(-1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
+
+  updatePreviewIndex(-1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'active');
+}
+
+function handleRightAction() {
+  updatePreviewIndex(-1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
+
+  updatePreviewIndex(1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
+
+  updatePreviewIndex(1);
+  projectsPreview[previewIndex].setAttribute('data-status', 'active');
+}
+
+function updatePreviewIndex(value) {
+  previewIndex += value;
+
+  if (previewIndex < 0) {
+    previewIndex = projectsPreview.length - 1;
+  } else if (previewIndex == projectsPreview.length) {
+    previewIndex = 0;
+  }
+
+  console.log(previewIndex);
 }
