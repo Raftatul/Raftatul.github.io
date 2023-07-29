@@ -59,6 +59,7 @@ body:last-child{
     background-color: black;
     color: white;
     font-size: 16px;
+    text-align: center;
     text-decoration: none;
     letter-spacing: 1.5px;
     
@@ -95,6 +96,9 @@ body:last-child{
 }
 
 @media (max-width: 909px){
+    .projects-holder{
+        padding-bottom: 10px;
+    }
     .page-title{
         height: 150px;
     }
