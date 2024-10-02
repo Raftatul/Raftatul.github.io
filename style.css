@@ -9,12 +9,16 @@ body{
 
     overflow-x: hidden;
 
-    --main-rgb: 15, 130, 197;
+    --main-rgb: 50, 0, 150;
+    --secondary-color: 255, 255, 255;
+    --text-color: 255, 255, 255;
+
+    color: white;
 }
 
-body:last-child{
+/* body:last-child{
     padding-bottom: 110px;
-}
+} */
 
 body::-webkit-scrollbar {
     display: none;
@@ -425,7 +429,7 @@ button{
     align-items: center;
     justify-content: center;
 
-    padding: 20px 200px;
+    padding: 20px 300px;
 }
 
 .flex-row{

@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav-bar.css">
+    <link rel="stylesheet" href="text-style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +43,7 @@
     <div class="background">
         <div class="blur"></div>
         <video autoplay muted loop>
-            <source src="videos/Terraria_ Journey's End.mp4" type="video/mp4">
+            <source src="videos/TheAtriumTrailer.mp4" type="video/mp4">
         </video>
     </div>
     <div id="hiddenElement" class="home-page big-title">
@@ -50,35 +51,38 @@
         <label class="sub-big-title">Technical Designer</label>
     </div>
     <div class="my-container">
-        <section class="flex-box flex-row back-white">
-            <div class="bio-projects">
+        <section class="flex-box flex-row back-black">
+            <!-- <div class="bio-projects">
                 <div class="project-overview flex-box flex-column">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <label style="font-size: large; color: black;">1</label>
-                    <label style="font-size: medium;">Professional Project</label>
+                    <div class="flex-row">
+                        <i class="fa-solid fa-gamepad text-white"></i>
+                        <label class="text-white" style="font-size: large;">1</label>
+                    </div>
+                    <label class="text-white" style="font-size: medium;">Professional Project</label>
                 </div>
                 <div class="project-overview flex-box flex-column">
-                    <i class="fa-solid fa-file"></i>
-                    <label style="font-size: large; color: black;">2</label>
-                    <label style="font-size: medium;">Personnal Projects</label>
+                    <div class="flex-box">
+                        <i class="fa-solid fa-file text-white"></i>
+                        <label class="text-white" style="font-size: large;">2</label>
+                    </div>
+                    <label class="text-white" style="font-size: medium;">Personnal Projects</label>
                 </div>
                 <div class="project-overview flex-box flex-column">
-                    <i class="fa-solid fa-trash"></i>
-                    <label style="font-size: large; color: black;">+9000</label>
-                    <label style="font-size: medium;">Unfinished Garbage</label>
+                    <div class="flex-box">
+                        <i class="fa-solid fa-trash text-white"></i>
+                        <label class="text-white" style="font-size: large;">+9000</label>
+                    </div>
+                    <label class="text-white" style="font-size: medium;">Unfinished Garbage</label>
                 </div>
             </div>
 
-            <div class="vertical-separator" style="height: 175px;"></div>
+            <div class="vertical-separator" style="height: 175px;"></div> -->
 
             <div style="margin: 0 15px;">
                 <p class="title" style="text-align: center;">My name is Raphaël Daubelcour, Technical Designer Student</p>
                 <p style="text-align: center;">
-                    Hello! I am a native <b>French</b> student at Isart Digital who enjoys programming. 
-                    I use various software like Unity, Unreal Engine, Godot, Blender, and Aseprite. <br><br>
-                    My preferred programming languages are <b>Unity C#, C#, Unreal Engine Nodes</b>, and <b>GDScript</b> (Godot integrated language). 
-                    When I'm not programming, I like to listen to <a class="clickable-text" target="_blank" href="https://i.kym-cdn.com/photos/images/original/001/420/754/5a3.jpg"><b>Gorillaz</b></a>, play <a class="clickable-text" target="_blank" href="https://i.redd.it/88zpezeemkd61.png"><b>Terraria</b></a> and 
-                    <a class="clickable-text" target="_blank" href="https://imgix.ranker.com/list_img_v2/19780/2859780/original/2859780"><b>Minecraft</b></a>, and eat couscous. <br><br>
+                    I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game development easier by making tools and I love prototyping features from other games. 
+                    I mainly use C# languages and GDScripts (Godot programming language)
                     My ultimate goal is to become a <b>technical game designer</b>, where I can use my skills and knowledge to help bring game ideas to life through programming and technical implementation. 
                     <b>I am always excited to continue learning about programming and game engine features</b>.
                 </p>
@@ -90,16 +94,13 @@
         </section>
 
         <section class="flex-box flex-column back-main-rgb">
-            <a class="hover-scale egg" target="_blank" href="https://preview.redd.it/0cxiwyvthgc61.png?auto=webp&s=e4d2542005d4ec46cf7f62fa9f34511a6991cb24"><i class="fab fa-github nav-icon" style="color: black; font-size: 50px;"></i></a>
-                <br>
-                    <a class="clickable-text">CHECK OUT MY REPOSTERIES</a>
-                <br>
-            <a class="clickable-text big-btn hover-scale" style="border-radius: 2rem; padding: 10px 20px;" target="_blank" href="https://github.com/Raftatul">Raftatul's GitHub</a>
+            <a class="hover-scale egg" target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github nav-icon" style="color: white; font-size: 50px; margin-bottom: 15px;"></i></a>
+            <a class="clickable-text text-white">CHECK OUT MY REPOSTERIES</a>
         </section>
 
-        <section class="flex-box flex-column back-white">
+        <section class="flex-box flex-column back-black">
             <label class="title">Technical Skills</label>
-            <div class="flex-box flex-row" style="align-items: start;">
+            <div class="flex-box flex-row" style="align-items: start; padding: 0;">
                 <div style="width: 100%; height: 100%;">
                     <p class="bold">Softwares</p>
                     <ul>
@@ -107,13 +108,14 @@
                         <li>Rider</li>
                         <li>VS Code</li>
                         <li>GitHub Desktop</li>
+                        <li>GitKraken</li>
                     </ul>
                 </div>
         
                 <div style="width: 100%; height: 100%;">
                     <p class="bold">Languages</p>
                     <ul>
-                        <li>Unity C# and C#</li>
+                        <li>Unity C#</li>
                         <li>Blueprint Visual Scripting</li>
                         <li>GDScript</li>
                     </ul>
@@ -130,8 +132,8 @@
             </div>
         </section>
 
-        <section class="flex-box flex-column" style="color: white; height: 850px;">
-            <label style="font-size: 60px; padding-top: 50px;">Portfolio</label>
+        <section class="flex-box flex-column" style="color: white; height: 100vh;">
+            <label style="font-size: 60px; padding-top: 50px;">Portfolio Overview</label>
             
             <div class="flex-box flex-row article-container" id="swipe-area-portfolio">
                 <article class="project-preview flex-box flex-row" data-index="0" data-status="active" style="height: auto; align-items: start;">
@@ -188,7 +190,7 @@
             <button class="button-left hover-scale hover-main-rgb" onclick="handleRightAction()"><i class="fa-solid fa-arrow-left"></i></button>
             <button class="button-right hover-scale hover-main-rgb" onclick="handleLeftAction()"><i class="fa-solid fa-arrow-right"></i></button>
 
-            <a class="btn" href="portfolio.html" style="text-align: center; width: 250px;">CHECK OUT MY PROJECTS</a>
+            <!-- <a class="btn" href="portfolio.html" style="text-align: center; width: 250px;">CHECK OUT MY PROJECTS</a> -->
         </section>
     </div>
 
