@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const projects = document.querySelectorAll('.effect');
 
     projectsPreview = document.querySelectorAll('.project-preview');
@@ -9,18 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     checkProjects();
 
-    function checkProjects(){
+    function checkProjects() {
         const triggerBottom = window.innerHeight / 5 * 4;
 
-        projects.forEach((project)=>{
+        projects.forEach((project) => {
             const topProject = project.getBoundingClientRect().top;
 
-            if(topProject < triggerBottom){
+            if (topProject < triggerBottom) {
                 project.classList.add('show');
             }
         })
     }
-}); 
+});
 
 var lastSelectedNav = null;
 
@@ -47,14 +47,14 @@ function highlightNav(navItem) {
 
 function unhighlightNav(navItem) {
     navItem.classList.remove("nav-selected")
-    
+
     // Remove nav-selected class from last selected nav item
     if (lastSelectedNav != null) {
         lastSelectedNav.classList.add("nav-selected");
     }
 }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     var hiddenElement = document.getElementById('hiddenElement');
     var scrollPosition = window.scrollY;
     var navbar = this.document.getElementById('navbar');
@@ -89,62 +89,62 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
-  event.preventDefault();
+    event.preventDefault();
 }
 
 function handleTouchEnd(event) {
-  const endX = event.changedTouches[0].clientX;
-  const deltaX = startX - endX;
+    const endX = event.changedTouches[0].clientX;
+    const deltaX = startX - endX;
 
-  console.log(deltaX);
-  // Determine swipe direction and call appropriate handler
-  if (Math.abs(deltaX) > 50) {
-    if (deltaX > 0) {
-        handleLeftAction();
-    } else {
-        handleRightAction();
+    console.log(deltaX);
+    // Determine swipe direction and call appropriate handler
+    if (Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+            handleLeftAction();
+        } else {
+            handleRightAction();
+        }
     }
-  }
 }
 
 function handleLeftAction() {
-  updatePreviewIndex(1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
+    updatePreviewIndex(1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
 
-  updatePreviewIndex(-1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
+    updatePreviewIndex(-1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
 
-  updatePreviewIndex(-1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'active');
+    updatePreviewIndex(-1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'active');
 }
 
 function handleRightAction() {
-  updatePreviewIndex(-1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
+    updatePreviewIndex(-1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'inactive left');
 
-  updatePreviewIndex(1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
+    updatePreviewIndex(1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'inactive right');
 
-  updatePreviewIndex(1);
-  projectsPreview[previewIndex].setAttribute('data-status', 'active');
+    updatePreviewIndex(1);
+    projectsPreview[previewIndex].setAttribute('data-status', 'active');
 }
 
 function updatePreviewIndex(value) {
-  previewIndex += value;
+    previewIndex += value;
 
-  if (previewIndex < 0) {
-    previewIndex = projectsPreview.length - 1;
-  } else if (previewIndex == projectsPreview.length) {
-    previewIndex = 0;
-  }
+    if (previewIndex < 0) {
+        previewIndex = projectsPreview.length - 1;
+    } else if (previewIndex == projectsPreview.length) {
+        previewIndex = 0;
+    }
 
-  console.log(previewIndex);
+    console.log(previewIndex);
 }
 
-function lerp(a, b, alpha ) {
+function lerp(a, b, alpha) {
     return a + alpha * (b - a);
 }
 
-function clamp( val, min, max ) {
-    return Math.min(Math.max(val, min ), max);
+function clamp(val, min, max) {
+    return Math.min(Math.max(val, min), max);
 }
