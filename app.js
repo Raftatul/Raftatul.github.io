@@ -58,7 +58,7 @@ window.addEventListener('scroll', function() {
     var hiddenElement = document.getElementById('hiddenElement');
     var scrollPosition = window.scrollY;
 
-    if (scrollPosition < 700) {
+    if (scrollPosition < window.innerHeight * 0.6) {
         hiddenElement.classList.remove('hidden');
     } else {
         hiddenElement.classList.add('hidden');

@@ -2,13 +2,24 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="nav-bar.css">
-    <link rel="stylesheet" href="text-style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title>Tech Design Portfolio - Raphaël Daubelcour</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="text-style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <script src="app.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,182 +28,132 @@
 </head>
 
 <body>
-    <div class="nav-bar">
-        <script>
-            window.onload = function() {
-                setDefaultNav(document.getElementsByClassName('nav-btn')[0]);
-            };
-        </script>
-        <a class="nav-btn" href="index.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
-            <label>Home</label>
-            <i class="fa-solid fa-house nav-icon"></i>
-        </a>
-        <a class="nav-btn" href="portfolio.html" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)" onclick="setDefaultNav(this)">
-            <label>Portfolio</label>
-            <i class="fa-solid fa-file-alt nav-icon"></i>
-        </a>
-        <!-- <a class="nav-btn" href="contact.html" style="color: gray;">
-            <label>Contact</label>
-            <i class="fa-solid fa-user nav-icon"></i>
-        </a> -->
-        <a class="nav-btn" target="_blank" href="https://github.com/Raftatul" onmouseover="highlightNav(this)" onmouseout="unhighlightNav(this)">
-            <label>GitHub</label>
-            <i class="fab fa-github nav-icon"></i>
-        </a>
-    </div>
-    <div class="background">
-        <div class="blur"></div>
-        <video autoplay muted loop>
+    <div class="container">
+        <nav class="navbar navbar-expand"
+            style="height: 75px; width: 100%; position: fixed; left: 0; top: 0; padding: 0 7%; background-color: rgba(33, 37, 41, 0.5);">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Raphaël Daubelcour</a>
+                <div class="d-flex gap-4">
+                    <a class="nav-link active fs-5" href="#">Home</a>
+                    <a class="nav-link active fs-5" href="https://github.com/Raftatul" target="_blank">Github</a>
+                </div>
+                <a class="navbar-text btn btn-primary text-white bg-accent-color no-outline"
+                    style="border-radius: 100px; width: 150px;" href="portfolio.html"><span><i
+                            class="fa-regular fa-folder-open"></i> Portfolio</span></a>
+            </div>
+        </nav>
+
+        <video autoplay muted loop
+            style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
             <source src="videos/TheAtriumTrailer.mp4" type="video/mp4">
         </video>
+
+        <div class="container">
+            <div class="home-page" id="hiddenElement">
+                <label>Raphaël Daubelcour</label>
+                <label class="sub-big-title">Technical Designer</label>
+            </div>
+        </div>
+
     </div>
-    <div id="hiddenElement" class="home-page big-title">
-        <label>Raphaël Daubelcour</label>
-        <label class="sub-big-title">Technical Designer</label>
-    </div>
-    <div class="my-container">
-        <section class="flex-box flex-row back-black">
-            <!-- <div class="bio-projects">
-                <div class="project-overview flex-box flex-column">
-                    <div class="flex-row">
-                        <i class="fa-solid fa-gamepad text-white"></i>
-                        <label class="text-white" style="font-size: large;">1</label>
-                    </div>
-                    <label class="text-white" style="font-size: medium;">Professional Project</label>
-                </div>
-                <div class="project-overview flex-box flex-column">
-                    <div class="flex-box">
-                        <i class="fa-solid fa-file text-white"></i>
-                        <label class="text-white" style="font-size: large;">2</label>
-                    </div>
-                    <label class="text-white" style="font-size: medium;">Personnal Projects</label>
-                </div>
-                <div class="project-overview flex-box flex-column">
-                    <div class="flex-box">
-                        <i class="fa-solid fa-trash text-white"></i>
-                        <label class="text-white" style="font-size: large;">+9000</label>
-                    </div>
-                    <label class="text-white" style="font-size: medium;">Unfinished Garbage</label>
-                </div>
+
+    <section class="bg-main-color text-black primary" style="margin-top: 100vh;">
+        <p class="title" style="text-align: center;">My name is Raphaël Daubelcour, I'm a Technical Designer Student</p>
+        <p style="text-align: center;">
+            I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game
+            development easier by making tools and I love prototyping features from other games.
+            I mainly use C# languages and GDScripts (Godot programming language)
+            <br><br>My ultimate goal is to become a <b>technical game designer</b>, where I can use my skills and
+            knowledge to
+            help bring game ideas to life through programming and technical implementation.
+            <b>I am always excited to continue learning about programming and game engine features</b>.
+        </p>
+    </section>
+
+    <section class="text-white" style="height: 100vh; padding-top: 100px;">
+        <h1>Technical Skills</h1>
+        <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Unity</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Unreal</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Godot</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">...</div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                ...</div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                ...</div>
+            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+                tabindex="0">...</div>
+        </div> -->
+
+        <div class="flex-box-row" style="gap: 200px;">
+            <div>
+                <h3>Softwares</h3>
+                <ul>
+                    <li>
+                        Visual Studio
+                    </li>
+                    <li>
+                        Visual Studio Code
+                    </li>
+                    <li>
+                        Rider
+                    </li>
+                    <li>
+                        Figma
+                    </li>
+                    <li>
+                        Excel
+                    </li>
+                </ul>
             </div>
 
-            <div class="vertical-separator" style="height: 175px;"></div> -->
-
-            <div style="margin: 0 15px;">
-                <p class="title text-white" style="text-align: center;">My name is Raphaël Daubelcour, Technical Designer Student</p>
-                <p class="text-white" style="text-align: center;">
-                    I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game development easier by making tools and I love prototyping features from other games. 
-                    I mainly use C# languages and GDScripts (Godot programming language)
-                    My ultimate goal is to become a <b>technical game designer</b>, where I can use my skills and knowledge to help bring game ideas to life through programming and technical implementation. 
-                    <b>I am always excited to continue learning about programming and game engine features</b>.
-                </p>
+            <div>
+                <h3>Game Engines</h3>
+                <ul>
+                    <li>
+                        Unity
+                    </li>
+                    <li>
+                        unreal 4 / 5
+                    </li>
+                    <li>
+                        Godot
+                    </li>
+                </ul>
             </div>
 
-            <!-- <div class="vertical-separator" style="height: 175px;"></div>
-
-            <img style="width: 100%; max-width: 400px;" src="images/Moi.png"> -->
-        </section>
-
-        <section class="flex-box flex-column back-main-rgb">
-            <a class="hover-scale egg" target="_blank" href="https://github.com/Raftatul"><i class="fab fa-github nav-icon" style="color: white; font-size: 50px; margin-bottom: 15px;"></i></a>
-            <a class="clickable-text text-white">CHECK OUT MY REPOSTERIES</a>
-        </section>
-
-        <section class="flex-box flex-column back-black text-white">
-            <label class="title">Technical Skills</label>
-            <div class="flex-box flex-row" style="align-items: start; padding: 0;">
-                <div style="width: 100%; height: 100%;">
-                    <p class="bold">Softwares</p>
-                    <ul>
-                        <li>Visual Studio</li>
-                        <li>Rider</li>
-                        <li>VS Code</li>
-                        <li>GitHub Desktop</li>
-                        <li>GitKraken</li>
-                    </ul>
-                </div>
-        
-                <div style="width: 100%; height: 100%;">
-                    <p class="bold">Languages</p>
-                    <ul>
-                        <li>Unity C#</li>
-                        <li>Blueprint Visual Scripting</li>
-                        <li>GDScript</li>
-                    </ul>
-                </div>
-        
-                <div style="width: 100%; height: 100%;">
-                    <p class="bold">Engines</p>
-                    <ul>
-                        <li>Unity</li>
-                        <li>Unreal Engine 4/5</li>
-                        <li>Godot</li> 
-                    </ul>
-                </div>
+            <div>
+                <h3>Languages</h3>
+                <ul>
+                    <li>
+                        C# / Unity C#
+                    </li>
+                    <li>
+                        Unreal Engine Blueprint
+                    </li>
+                    <li>
+                        GDScript
+                    </li>
+                    <li>
+                        C++
+                    </li>
+                </ul>
             </div>
-        </section>
-
-        <section class="flex-box flex-column" style="color: white; height: 100vh;">
-            <label style="font-size: 60px; padding-top: 50px;">Portfolio Overview</label>
-            
-            <div class="flex-box flex-row article-container" id="swipe-area-portfolio">
-                <article class="project-preview flex-box flex-row" data-index="0" data-status="active" style="height: auto; align-items: start;">
-                    <img class="project-image" src="images/vetrix_world.png">
-                    <div style="position: relative; align-items: flex-start;">
-                        <h2 class="bullet-point" style="padding: 0; margin: 0;">Vetrix World - GAME DESIGNER (2022)</h2>
-                        <p>On Vetrix World, I have worked on the campain as a Game Designer. My duties included:</p>
-                        <ul>
-                            <li>Balancing the campain</li>
-                            <li>Introducing the mechanic of the game through the campain</li>
-                        </ul>
-                        <p>In general, my responsibility involved maintaining equilibrium among the scriptable objects' values in Unity.
-                            <br>This entailed incorporating core gameplay mechanics, such as blocks that vanish after a certain period or blocks that require two hits to destroy.
-                        </p>
-                    </div>
-                </article>
-                
-                <article class="project-preview flex-box flex-row" data-index="2" data-status="inactive left" style="height: auto; align-items: start;">
-                    <img class="project-image" src="images/SquareRoots.png" style="object-fit: contain;">
-                    <div style="position: relative; align-items: flex-start; width: 100%;">
-                        <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">Square Roots ! - PROGRAMMER (2023)</h2>
-                        <p>
-                            This project was created during the Global Game Jam and was developed using Unity, inspired by the theme "Root". 
-                            <br><br>
-                            In the game, players grow a tree by creating branches and roots, which collect sunlight, clouds, nutrients, and water. 
-                            Proper resource management is crucial for success. 
-                            <br><br>
-                            As a programmer/designer on this project, my duties included programming animations for roots and branches using DoTweens and designing the game loop.
-                        </p>
-                        <a class="game-link" target="_blank" href="https://play.unity.com/mg/other/squaredroots"><img class="software hover-scale" src="images/svg/unity-white.svg" style="width: 40px;"></a>
-                    </div>
-                </article>
-
-                <article class="project-preview flex-box flex-row" data-index="1" data-status="inactive right" style="height: auto; align-items: start;">
-                    <img class="project-image" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1281930/capsule_616x353.jpg?t=1654800634">
-                    <div style="position: relative; align-items: flex-start;">
-                        <h2 class="bullet-point" style="text-align: left; padding: 0; margin: 0;">TmodLoader - PROGRAMMER (2022)</h2>
-                        <p>On my <b>free time</b>, I'm working on a little mod for my favorite game <b>Terraria</b> (Using Tmodloader).</p>
-                        <p>This mod add:</p>
-                        <ul>
-                            <li>Bosses</li>
-                            <li>Items</li>
-                            <li>Weapons</li>
-                            <li>Pets</li>
-                            <li>Alternative Crafts</li>
-                        </ul>
-                        <p>The mod is <b>programmed in C#</b>, making this mod help me <b>improve my C# skills</b>.</p>
-                    </div>
-                </article>
-
-                <div class="touch-overlay"></div>
-            </div>
-
-            <button class="button-left hover-scale hover-main-rgb" onclick="handleRightAction()"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="button-right hover-scale hover-main-rgb" onclick="handleLeftAction()"><i class="fa-solid fa-arrow-right"></i></button>
-
-            <!-- <a class="btn" href="portfolio.html" style="text-align: center; width: 250px;">CHECK OUT MY PROJECTS</a> -->
-        </section>
-    </div>
+        </div>
+    </section>
 
     <!-- <div class="message">
         <p>Sorry, my portfolio isn't working on a mobile phone. Please, use a computer instead.</p>
@@ -225,4 +186,7 @@
         // Call the function to check and hide content if on a mobile device
         hideContentIfMobile();
     </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
