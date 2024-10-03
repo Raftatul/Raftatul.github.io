@@ -59,7 +59,9 @@ window.addEventListener('scroll', function() {
     var scrollPosition = window.scrollY;
     var navbar = this.document.getElementById('navbar');
 
-    var navbarColorPercent = scrollPosition / window.innerHeight;
+    var navbarColorPercent = clamp(scrollPosition / window.innerHeight, 0.0, 1.0);
+
+    console.log(lerp(0.0, 0.75, navbarColorPercent));
 
     navbar.style.backgroundColor = `rgba(33, 37, 41, ${lerp(0.0, 0.75, navbarColorPercent)})`;
 
@@ -141,4 +143,8 @@ function updatePreviewIndex(value) {
 
 function lerp(a, b, alpha ) {
     return a + alpha * (b - a);
+}
+
+function clamp( val, min, max ) {
+    return Math.min(Math.max(val, min ), max);
 }
