@@ -59,13 +59,9 @@ window.addEventListener('scroll', function() {
     var scrollPosition = window.scrollY;
     var navbar = this.document.getElementById('navbar');
 
-    console.log(scrollPosition);
+    var navbarColorPercent = scrollPosition / window.innerHeight;
 
-    if (scrollPosition > window.innerHeight){
-        navbar.style.backgroundColor = "rgba(33, 37, 41, 0.5)";
-    } else{
-        navbar.style.backgroundColor = "rgba(33, 37, 41, 0.0)";
-    }
+    navbar.style.backgroundColor = `rgba(33, 37, 41, ${lerp(0.0, 0.75, navbarColorPercent)})`;
 
     if (scrollPosition < window.innerHeight * 0.6) {
         hiddenElement.classList.remove('hidden');
@@ -141,4 +137,8 @@ function updatePreviewIndex(value) {
   }
 
   console.log(previewIndex);
+}
+
+function lerp(a, b, alpha ) {
+    return a + alpha * (b - a);
 }
