@@ -57,6 +57,15 @@ function unhighlightNav(navItem) {
 window.addEventListener('scroll', function() {
     var hiddenElement = document.getElementById('hiddenElement');
     var scrollPosition = window.scrollY;
+    var navbar = this.document.getElementById('navbar');
+
+    console.log(scrollPosition);
+
+    if (scrollPosition > window.innerHeight){
+        navbar.style.backgroundColor = "rgba(33, 37, 41, 0.5)";
+    } else{
+        navbar.style.backgroundColor = "rgba(33, 37, 41, 0.0)";
+    }
 
     if (scrollPosition < window.innerHeight * 0.6) {
         hiddenElement.classList.remove('hidden');
