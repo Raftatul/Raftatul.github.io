@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 
     --primary-color: 255, 255, 255;
-    --secondary-color: 200, 200, 200;
+    --secondary-color: 30, 25, 27;
     --accent-color: 150, 0, 150;
     --dark-accent-color: 100, 0, 100;
     --dark-main-rgb: 100, 0, 100;
@@ -152,9 +152,7 @@ video {
 }
 
 .category {
-    color: black;
-    text-align: center;
-    font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .effect {
@@ -391,8 +389,6 @@ video {
     padding: 20px;
     border-radius: 5px;
 }
-
-.ultra-width {}
 
 .flex-box {
     display: flex;
