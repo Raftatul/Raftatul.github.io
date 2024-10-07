@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 
     --primary-color: 255, 255, 255;
-    --secondary-color: 30, 25, 27;
+    --secondary-color: 5, 0, 17;
     --accent-color: 150, 0, 150;
     --dark-accent-color: 100, 0, 100;
     --dark-main-rgb: 100, 0, 100;
@@ -51,6 +51,14 @@ section {
 
 .btn:hover {
     background-color: rgb(var(--accent-color));
+}
+
+.project-title {
+    margin-bottom: 20px;
+}
+
+.list-item {
+    margin-bottom: 20px;
 }
 
 .hidden {
@@ -107,7 +115,7 @@ section {
 }
 
 video {
-    filter: blur(5px);
+    filter: blur(5px) brightness(50%);
 }
 
 .bold {
