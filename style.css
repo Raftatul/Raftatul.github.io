@@ -7,13 +7,12 @@ body {
 
     overflow-x: hidden;
 
-    --primary-color: 255, 255, 255;
-    --secondary-color: 5, 0, 17;
-    --accent-color: 150, 0, 150;
-    --dark-accent-color: 100, 0, 100;
-    --dark-main-rgb: 100, 0, 100;
+    --primary-color: 67, 56, 120;
+    --secondary-color: 245, 239, 255;
+    --accent-color: 205, 193, 255;
+    --dark-accent-color: 126, 96, 191;
 
-    --global-padding: 50px 200px;
+    --global-padding: 50px 500px;
 
     color: white;
     background-color: black;
@@ -41,7 +40,15 @@ section {
     border: 0;
 }
 
+.nav-link {
+    color: white;
+}
+
 .nav-link:hover {
+    color: white;
+}
+
+.nav-link-item:hover {
     color: rgb(var(--accent-color));
 }
 
@@ -102,6 +109,15 @@ section {
     z-index: -1;
 
     filter: saturate(100%);
+}
+
+.project-tag {
+    background-color: rgb(var(--dark-accent-color));
+    border-color: rgb(var(--accent-color));
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 100px;
+    padding: 12px;
 }
 
 .background video {

@@ -36,9 +36,9 @@
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="#">Raphaël Daubelcour</a>
                 <div class="d-flex gap-4">
-                    <a class="nav-link active fs-5" href="#">Home</a>
-                    <a class="nav-link active fs-5" href="https://github.com/Raftatul" target="_blank">Github</a>
-                    <a class="nav-link active fs-5" href="https://raftatul.itch.io/" target="_blank">Itch</a>
+                    <a class="nav-link nav-link-item active fs-5" href="#">Home</a>
+                    <a class="nav-link nav-link-item active fs-5" href="https://github.com/Raftatul" target="_blank">Github</a>
+                    <a class="nav-link nav-link-item active fs-5" href="https://raftatul.itch.io/" target="_blank">Itch</a>
                 </div>
                 <a class="navbar-text btn btn-primary text-white bg-accent-color no-outline"
                     style="border-radius: 100px; width: 150px;" href="portfolio.html"><span><i
@@ -60,7 +60,7 @@
 
     </div>
 
-    <section class="bg-main-color text-black primary" style="margin-top: 100vh;">
+    <section class="bg-secondary-color text-black primary" style="margin-top: 100vh;">
         <p class="title" style="text-align: center;">My name is Raphaël Daubelcour, I'm a Technical Designer Student</p>
         <p style="text-align: center;">
             I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game
@@ -127,7 +127,7 @@
         </div>
     </section>
 
-    <section class="text-white bg-secondary-color" style="min-height: 100vh; padding-top: 100px;">
+    <section class="text-white bg-main-color" style="min-height: 100vh; padding-top: 100px;">
         <h1 class="category">Projects</h1>
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -150,12 +150,19 @@
             <!-- The Atrium -->
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
                 tabindex="0">
+                <div class="d-flex gap-3 list-item">
+                    <div class="project-tag">Team of 8</div>
+                    <div class="project-tag">Unreal Engine 5</div>
+                    <div class="project-tag">Genre: FPS</div>
+                    <div class="project-tag">Platform: PC</div>
+                    <div class="project-tag">Role: Technical Designer</div>
+                </div>
                 <h1 class="project-title">The Atrium - Unreal Engine 5 Blueprints</h1>
                 <div style="margin-bottom: 30px;">
-                    <p>The Atrium is a team school project, I work on the Camera, Controller</p>
-                    <p>I have contribute to the design of the 3C and coding it.</p>
+                    <p>The Atrium is a team school project made in 2 months. I have contribute to the design of the 3C and coding it.</p>
+                    <!-- <p>I have contribute to the design of the 3C and coding it.</p> -->
                     <ul>
-                        <li>
+                        <li class="list-item">
                             <h4>Camera</h2>
                                 <p>
                                     The camera was designed to feel alive and dynamic without giving the sensation of
@@ -166,21 +173,21 @@
                                 </p>
                                 <ul>
                                     <li class="list-item">
-                                        Camera tilt, a little based on the x velocity relative to the camera of the
+                                        Camera tilt: The camera tilt a little based on the x velocity relative to the camera of the
                                         player.<br>
                                     </li>
                                     <li class="list-item">
                                         Camera Bobbing: Apply camera bobbing when the player is moving on the ground
-                                        using Camera Shake.<br>
-                                        The shake force depend of the run state of the player.<br>
+                                        using the Camera Shake system of Unreal Engine.<br>
+                                        The shake force depend of the run state of the player.
                                     </li>
                                     <li class="list-item">
-                                        The FOV increase when the player fall to enhance the sense of speed.<br>
+                                        FOV: The FOV increase when the player fall to enhance the sense of speed.
                                     </li>
                                 </ul>
                         </li>
 
-                        <li>
+                        <li class="list-item">
                             <h4>Controller</h4>
                             <p>
                                 I worked on the bump ability and the movements of the controller.
@@ -191,29 +198,44 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="list-item">
+                            <h4>UI</h4>
+                            <p>
+                                I worked on the bump ability feedback.
+                            </p>
+                        </li>
                     </ul>
                 </div>
 
                 <div>
                     <h1>Fog - Unreal Engine 5 Blueprints</h1>
                     <p>
-                        The level artistes <a class="link-offset-2 link-underline link-underline-opacity-0"
+                        The level artists <a class="link-offset-2 link-underline link-underline-opacity-0"
                             target="_blank" href="https://remitrotereau.myportfolio.com">Rémi Trotereau</a> and <a
                             class="link-offset-2 link-underline link-underline-opacity-0" target="_blank"
                             href="https://charlesdefoy-leveldesign2024.webflow.io/">Charle Defoy</a>
-                            ask me to make a fog that can lerp between multiple colors.
-                        </p>
-                        <ul>
-                            <li>
-                                Oui
-                            </li>
-                        </ul>
+                        asked me to create a fog that can alternate between multiple colors so they could adjust the
+                        fog's color according to the player's height.
+                    </p>
+                    <ul>
+                        <li>
+                            Oui
+                        </li>
+                    </ul>
                 </div>
             </div>
 
             <!-- DenTTT -->
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                 <div>
+                    <div class="d-flex gap-3 list-item">
+                        <div class="project-tag">Team of 8</div>
+                        <div class="project-tag">Unity</div>
+                        <div class="project-tag">Genre: VR Game</div>
+                        <div class="project-tag">Platform: Oculus Quest Pro</div>
+                        <div class="project-tag">Role: Technical Designer</div>
+                    </div>
                     <h1 class="project-title">Keep the Crown! - Unity C#</h1>
                     <p>
                         ...
@@ -224,6 +246,13 @@
             <!-- PFE -->
             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                 <div>
+                    <div class="d-flex gap-3 list-item">
+                        <div class="project-tag">Team of 10</div>
+                        <div class="project-tag">Unreal Engine 5</div>
+                        <div class="project-tag">Genre: ???</div>
+                        <div class="project-tag">Platform: PC</div>
+                        <div class="project-tag">Role: Technical Designer</div>
+                    </div>
                     <h1 class="project-title">PFE - Unreal Engine 5 Blueprints</h1>
                     <p>
                         ...
