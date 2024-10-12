@@ -37,16 +37,16 @@
                 <a class="navbar-brand text-white" href="#">Raphaël Daubelcour</a>
                 <div class="d-flex gap-4">
                     <a class="nav-link nav-link-item active fs-5" href="#">Home</a>
-                    <a class="nav-link nav-link-item active fs-5" href="https://github.com/Raftatul" target="_blank">Github</a>
-                    <a class="nav-link nav-link-item active fs-5" href="https://raftatul.itch.io/" target="_blank">Itch</a>
+                    <!-- <a class="nav-link nav-link-item active fs-5" href="#about" target="_self">About Me</a> -->
+                    <a class="nav-link nav-link-item active fs-5" href="https://raftatul.itch.io/"
+                        target="_blank">Itch</a>
                 </div>
                 <a class="navbar-text btn btn-primary text-white bg-accent-color no-outline"
-                    style="border-radius: 100px; width: 150px;" href="portfolio.html"><span><i
-                            class="fa-regular fa-folder-open"></i> Portfolio</span></a>
+                    style="border-radius: 100px; width: 150px;" href="https://github.com/Raftatul" target="_blank"><span><i class="fab fa-github nav-icon"></i> Github</span></a>
             </div>
         </nav>
 
-        <video autoplay muted loop disablePictureInPicture="true"
+        <video class="background-video" autoplay muted loop disablePictureInPicture="true"
             style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
             <source src="videos/TheAtriumTrailer.mp4" type="video/mp4">
         </video>
@@ -60,7 +60,7 @@
 
     </div>
 
-    <section class="bg-secondary-color text-black primary" style="margin-top: 100vh;">
+    <section class="bg-secondary-color text-black primary" style="margin-top: 100vh;" id="about">
         <p class="title" style="text-align: center;">My name is Raphaël Daubelcour, I'm a Technical Designer Student</p>
         <p style="text-align: center;">
             I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game
@@ -160,70 +160,124 @@
                 </div>
                 <h1 class="project-title">The Atrium - Unreal Engine 5 Blueprints</h1>
                 <div style="margin-bottom: 30px;">
-                    <p>The Atrium is a team school project made in 2 months. I have contribute to the design of the 3C and coding it.</p>
-                    <!-- <p>I have contribute to the design of the 3C and coding it.</p> -->
-                    <ul>
-                        <li class="list-item">
-                            <h4>Camera</h2>
+                    <div class="sub-category">
+                        <h1>3C</h1>
+                        <p>The Atrium is a team school project made in 2 months. I have contribute to the design of the 3C
+                            and coding it.</p>
+                        <!-- <p>I have contribute to the design of the 3C and coding it.</p> -->
+                        <ul>
+                            <li class="list-item">
+                                <h4>Camera</h2>
+                                    <p>
+                                        The camera was designed to feel alive and dynamic without giving the sensation of
+                                        motion sickness.
+                                    </p>
+                                    <p>
+                                        Here is a list of elements implement:
+                                    </p>
+                                    <ul>
+                                        <li class="list-item">
+                                            Camera tilt: The camera tilt a little based on the x velocity relative to the
+                                            camera of the
+                                            player.<br>
+                                            <!-- <img src="images/CameraTilt.png"> -->
+                                             <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/tilt.mp4" type="video/mp4"></video>
+                                        </li>
+                                        <li class="list-item">
+                                            Camera Bobbing: Apply camera bobbing when the player is moving on the ground
+                                            using the Camera Shake system of Unreal Engine.<br>
+                                            The shake force depend of the run state of the player.<br>
+                                            <!-- <img src="images/CameraBobbing.png"> -->
+                                            <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bobbing.mp4" type="video/mp4"></video>
+                                        </li>
+                                        <li class="list-item">
+                                            FOV: The FOV increase when the player fall to enhance the sense of speed.<br>
+                                            <!-- <img src="images/CameraFOV.png"> -->
+                                            <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/fov.mp4" type="video/mp4"></video>
+                                        </li>
+                                    </ul>
+                            </li>
+    
+                            <li class="list-item">
+                                <h4>Character - Controller</h4>
                                 <p>
-                                    The camera was designed to feel alive and dynamic without giving the sensation of
-                                    motion sickness.
+                                    I worked on the bump ability and the movements of the controller.
                                 </p>
-                                <p>
-                                    Here is a list of elements implement:
-                                </p>
+                                <p>Bump Ability:</p>
                                 <ul>
-                                    <li class="list-item">
-                                        Camera tilt: The camera tilt a little based on the x velocity relative to the camera of the
-                                        player.<br>
+                                    <li>
+                                        The player can push himself in the opposite direction he is facing when bumping on certain surfaces.<br>
                                     </li>
-                                    <li class="list-item">
-                                        Camera Bobbing: Apply camera bobbing when the player is moving on the ground
-                                        using the Camera Shake system of Unreal Engine.<br>
-                                        The shake force depend of the run state of the player.
-                                    </li>
-                                    <li class="list-item">
-                                        FOV: The FOV increase when the player fall to enhance the sense of speed.
+                                    <li>
+                                        There is a max amount of 3 charges, the charges reload when the player touch the ground.<br>
                                     </li>
                                 </ul>
-                        </li>
+                            </li>
+                        </ul>
+                        <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bump.mp4" type="video/mp4"></video>
+                    </div>
 
-                        <li class="list-item">
-                            <h4>Controller</h4>
-                            <p>
-                                I worked on the bump ability and the movements of the controller.
-                            </p>
-                            <p>Bump Ability:</p>
-                            <ul>
-                                <li>Project the player in the opposite direction he is facing when bumping on a surface.
-                                </li>
-                            </ul>
-                        </li>
+                    <div class="sub-category">
+                        <h1>UI</h1>
+                        <p>I implement the bump ability feedback:</p>
+                        <ul>
+                            <li>
+                                The player is notice he can bump when the white dot appear.
+                            </li>
+                            <li>
+                                An animation is played when the player use the bump input.
+                            </li>
+                            <li>
+                                When a bump is successfully made, a charge is removed (turning gray).
+                            </li>
+                        </ul>
+                        <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bump_feedback.mp4" type="video/mp4"></video>
+                    </div>
 
-                        <li class="list-item">
-                            <h4>UI</h4>
-                            <p>
-                                I worked on the bump ability feedback.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="sub-category">
+                        <h1>Save System - Settings</h1>
+                        <p>I worked on the save system, it register the player position, time and settings.</p>
+                        <p>I implement the graphics, audio and gameplay settings. Each parameters are saved by the Save System.</p>
+                    </div>
 
-                <div>
-                    <h1>Fog - Unreal Engine 5 Blueprints</h1>
-                    <p>
-                        The level artists <a class="link-offset-2 link-underline link-underline-opacity-0 text-white bold"
-                            target="_blank" href="https://remitrotereau.myportfolio.com">Rémi Trotereau</a> and <a
-                            class="link-offset-2 link-underline link-underline-opacity-0 text-white bold" target="_blank"
-                            href="https://charlesdefoy-leveldesign2024.webflow.io/">Charle Defoy</a>
-                        asked me to create a fog that can alternate between multiple colors so they could adjust the
-                        fog's color according to the player's height.
-                    </p>
-                    <ul>
-                        <li>
-                            Oui
-                        </li>
-                    </ul>
+                    <div class="sub-category">
+                        <h1>Steam Integration</h1>
+                        <p>
+                            I implement Steam using the Steam SDK and Unreal C++ to be able to use the Steam leaderboard system for the game. (Not working perfectly because it's not released on Steam yet.)
+                        </p>
+                        <img src="images/leaderboards.png">
+                    </div>
+
+
+                    <div>
+                        <h1>Fog</h1>
+                        <p>
+                            The level artists <a
+                                class="link-offset-2 link-underline link-underline-opacity-0 text-white bold"
+                                target="_blank" href="https://remitrotereau.myportfolio.com">Rémi Trotereau</a> and <a
+                                class="link-offset-2 link-underline link-underline-opacity-0 text-white bold"
+                                target="_blank" href="https://charlesdefoy-leveldesign2024.webflow.io/">Charle Defoy</a>
+                            asked me to create a fog that can alternate between multiple colors so they could adjust the
+                            fog's color according to the player's height.
+                        </p>
+                        <p>Here is what I made to accomplish this effect:</p>
+                        <ul>
+                            <li>
+                                First, I search the color range based on the z position of the camera.
+                            </li>
+                            <li>
+                                Then, I blend the material color based on a lerp between the colors and the camera z
+                                position.
+                            </li>
+                            <li>
+                                Finally, I applied the color.
+                            </li>
+                        </ul>
+                        <div class="flex-box-row gap-3">
+                            <img src="images/Fog.png" style="width: 100%;">
+                            <video style="width: 100%;" autoplay muted loop disablePictureInPicture="true"><source src="videos/fog.mp4" type="video/mp4"></video>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -12,12 +12,16 @@ body {
     --accent-color: 205, 193, 255;
     --dark-accent-color: 126, 96, 191;
 
-    --global-padding: 50px 500px;
+    --global-padding: 50px 20%;
 
     color: white;
     background-color: black;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+}
+
+.sub-category {
+    margin-bottom: 50px;
 }
 
 .test {
@@ -144,8 +148,13 @@ section {
     min-height: 100vh;
 }
 
-video {
+.background-video {
     filter: blur(5px) brightness(50%);
+}
+
+.example-video {
+    max-width: 750px;
+    width: 100%;
 }
 
 .bold {
