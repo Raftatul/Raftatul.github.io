@@ -1,7 +1,11 @@
-.text-white{
+.text-white {
     color: white !important;
 }
 
-.text-black{
+.text-black {
     color: black !important;
+}
+
+.bold {
+    font-style: bold;
 }

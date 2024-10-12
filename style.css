@@ -7,18 +7,38 @@ body {
 
     overflow-x: hidden;
 
-    --primary-color: 255, 255, 255;
-    --secondary-color: 200, 200, 200;
-    --accent-color: 150, 0, 150;
-    --dark-accent-color: 100, 0, 100;
-    --dark-main-rgb: 100, 0, 100;
+    --primary-color: 67, 56, 120;
+    --secondary-color: 245, 239, 255;
+    --accent-color: 205, 193, 255;
+    --dark-accent-color: 126, 96, 191;
 
-    --global-padding: 50px 200px;
+    --global-padding: 50px 20%;
 
     color: white;
     background-color: black;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+}
+
+.sub-category {
+    margin-bottom: 50px;
+}
+
+.test {
+    background: linear-gradient(45deg, #0000 calc(25%/3), #050505 0 calc(50%/3),
+            #0000 0 calc(250%/3), #050505 0 calc(275%/3),
+            #0000 0), linear-gradient(45deg, #050505 calc(25%/3), #0000 0 calc(50%/3),
+            #050505 0 25%, #0000 0 75%,
+            #050505 0 calc(250%/3), #0000 0 calc(275%/3),
+            #050505 0),
+        linear-gradient(-45deg, #0000 calc(25%/3), #050505 0 calc(50%/3),
+            #0000 0 calc(250%/3), #050505 0 calc(275%/3),
+            #0000 0), linear-gradient(-45deg, #050505 calc(25%/3), #0000 0 calc(50%/3),
+            #050505 0 25%, #0000 0 75%,
+            #050505 0 calc(250%/3), #0000 0 calc(275%/3),
+            #050505 0) #000000;
+    background-size: 64px 64px;
+    background-position: 0 0, 32px 32px;
 }
 
 section {
@@ -41,7 +61,15 @@ section {
     border: 0;
 }
 
+.nav-link {
+    color: white;
+}
+
 .nav-link:hover {
+    color: white;
+}
+
+.nav-link-item:hover {
     color: rgb(var(--accent-color));
 }
 
@@ -51,6 +79,14 @@ section {
 
 .btn:hover {
     background-color: rgb(var(--accent-color));
+}
+
+.project-title {
+    margin-bottom: 20px;
+}
+
+.list-item {
+    margin-bottom: 20px;
 }
 
 .hidden {
@@ -96,6 +132,12 @@ section {
     filter: saturate(100%);
 }
 
+.project-tag {
+    background-color: rgb(var(--dark-accent-color));
+    border-radius: 100px;
+    padding: 5px 12px;
+}
+
 .background video {
     min-width: 100vw;
     min-height: 100vh;
@@ -106,8 +148,13 @@ section {
     min-height: 100vh;
 }
 
-video {
-    filter: blur(5px);
+.background-video {
+    filter: blur(5px) brightness(50%);
+}
+
+.example-video {
+    max-width: 750px;
+    width: 100%;
 }
 
 .bold {
@@ -152,9 +199,7 @@ video {
 }
 
 .category {
-    color: black;
-    text-align: center;
-    font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .effect {
@@ -391,8 +436,6 @@ video {
     padding: 20px;
     border-radius: 5px;
 }
-
-.ultra-width {}
 
 .flex-box {
     display: flex;

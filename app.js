@@ -63,7 +63,7 @@ window.addEventListener('scroll', function () {
 
     console.log(lerp(0.0, 0.75, navbarColorPercent));
 
-    navbar.style.backgroundColor = `rgba(33, 37, 41, ${lerp(0.0, 0.75, navbarColorPercent)})`;
+    navbar.style.backgroundColor = `rgba(0, 0, 0, ${lerp(0.0, 0.75, navbarColorPercent)})`;
 
     if (scrollPosition < window.innerHeight * 0.6) {
         hiddenElement.classList.remove('hidden');
