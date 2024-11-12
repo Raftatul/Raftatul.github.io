@@ -1,360 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>Tech Design Portfolio - Raphaël Daubelcour</title>
-    <link rel="icon" href="images/svg/onglet.svg">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="text-style.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <title>Portfolio - Home</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand"
-            style="height: 65px; width: 100%; position: fixed; left: 0; top: 0; padding: 0 7%;" id="navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Raphaël Daubelcour</a>
-                <div class="d-flex gap-4">
-                    <a class="nav-link nav-link-item active fs-5" href="#">Home</a>
-                    <!-- <a class="nav-link nav-link-item active fs-5" href="#about" target="_self">About Me</a> -->
-                    <a class="nav-link nav-link-item active fs-5" href="https://raftatul.itch.io/"
-                        target="_blank">Itch</a>
-                </div>
-                <a class="navbar-text btn btn-primary text-white bg-accent-color no-outline"
-                    style="border-radius: 100px; width: 150px;" href="https://github.com/Raftatul" target="_blank"><span><i class="fab fa-github nav-icon"></i> Github</span></a>
-            </div>
-        </nav>
-
-        <video class="background-video" autoplay muted loop disablePictureInPicture="true"
-            style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
-            <source src="videos/TheAtriumTrailer.mp4" type="video/mp4">
-        </video>
-
-        <div class="container">
-            <div class="home-page" id="hiddenElement">
-                <label>Raphaël Daubelcour</label>
-                <label class="sub-big-title">Technical Designer</label>
-            </div>
+    <header style="margin: auto;">
+        <div class="container flex align-center gap-5">
+            <a class="nav-button nav-head" href="index.html">Raphaël Daubelcour</a>
+            <a class="nav-button nav-button-secondary" href="#about">About Me</a>
+            <a class="nav-button nav-button-secondary" href="#projects">Projects</a>
+            <a class="highlight-button" style="margin-left: auto;" href="https://github.com/Raftatul">
+                <i class="fab fa-github nav-icon"></i>
+                Github
+            </a>
         </div>
-
+    </header>
+    <div class="hero">
+        <div style="position: absolute; text-align: center; width: 100%; height: 70vh; display: flex; flex-direction: column; justify-content: center;">
+            <h1 style="margin-bottom: 0;">Raphaël Daubelcour</h1>
+            <h3 style="margin-top: 0;">Technical Game Designer</h3>
+        </div>
     </div>
-
-    <section class="bg-secondary-color text-black primary" style="margin-top: 100vh;" id="about">
-        <p class="title" style="text-align: center;">My name is Raphaël Daubelcour, I'm a Technical Designer Student</p>
-        <p style="text-align: center;">
-            I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game
-            development easier by making tools and I love prototyping features from other games.
-            I mainly use C# languages and GDScripts (Godot programming language)
-            <br><br>My ultimate goal is to become a <b>technical game designer</b>, where I can use my skills and
-            knowledge to
-            help bring game ideas to life through programming and technical implementation.
-            <b>I am always excited to continue learning about programming and game engine features</b>.
-        </p>
-    </section>
-
-    <section class="text-white" style="padding-top: 100px;">
-        <h1 class="category">Technical Skills</h1>
-
-        <div class="flex-box-row" style="gap: 200px;">
-            <div>
-                <h3>Game Engines</h3>
-                <ul>
-                    <li>
-                        Unity
-                    </li>
-                    <li>
-                        Unreal Engine 4 / 5
-                    </li>
-                    <li>
-                        Godot
-                    </li>
-                </ul>
+    <video class="background-image" autoplay="" muted="" loop="" disablepictureinpicture="true">
+        <source src="videos/TheAtriumTrailer.mp4">
+    </video>
+    <div class="container" style="padding-bottom: 60px;">
+        <div class="content">
+            <div id="about">
+                <h1>About Me</h1>
+                <p>Hi, I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game development easier by making tools and I love prototyping features from other games. I mainly use C# languages and GDScripts (Godot programming language)</p>
+                <p>My ultimate goal is to become a technical game designer, where I can use my skills and knowledge to help bring game ideas to life through programming and technical implementation. I am always excited to continue learning about programming and game engine features.</p>
             </div>
-
-            <div>
-                <h3>Languages</h3>
-                <ul>
-                    <li>
-                        C# / Unity C#
-                    </li>
-                    <li>
-                        Unreal Engine Blueprint
-                    </li>
-                    <li>
-                        GDScript
-                    </li>
-                    <li>
-                        C++
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Source Control</h3>
-                <ul>
-                    <li>
-                        Perforce
-                    </li>
-                    <li>
-                        GitHub Desktop
-                    </li>
-                    <li>
-                        GitKraken
-                    </li>
-                </ul>
+            <h1 id="projects">My Projects</h1>
+            <div class="grid-container grid-2 gap-20">
+                <a class="project-button" href="project_1.html">
+                    <img class="rounded" src="images/the_atrium.png">
+                    The Atrium
+                </a>
+                <!-- <a class="project-button" href="project_2.html">
+                    <img class="rounded" src="images/keep_the_crown.png">
+                    Keep the Crown!
+                </a> -->
+                <!-- <a class="project-button" href="project_3.html">
+                    <img class="rounded" src="images/the_atrium.png">
+                    Isart Digital - PFE
+                </a> -->
             </div>
         </div>
-    </section>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;">
 
-    <!-- Projects -->
-    <section class="text-white test" style="min-height: 100vh; padding-top: 100px;">
-        <h1 class="category">Projects</h1>
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">The Atrium</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">DenTTT: Dental
-                    traitement</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">PFE</button>
-            </li>
-        </ul>
-
-        <div class="tab-content" style="padding-top: 20px;" id="myTabContent">
-            <!-- The Atrium -->
-            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                tabindex="0">
-                <div class="d-flex gap-3 list-item">
-                    <div class="project-tag">Team of 8</div>
-                    <div class="project-tag">Unreal Engine 5</div>
-                    <div class="project-tag">Genre: FPS</div>
-                    <div class="project-tag">Platform: PC</div>
-                    <div class="project-tag">Role: Technical Designer</div>
-                </div>
-                <h1 class="project-title">The Atrium - Unreal Engine 5 Blueprints</h1>
-                <div style="margin-bottom: 30px;">
-                    <div class="sub-category">
-                        <h1>3C</h1>
-                        <p>The Atrium is a team school project made in 2 months. I have contribute to the design of the 3C
-                            and coding it.</p>
-                        <!-- <p>I have contribute to the design of the 3C and coding it.</p> -->
-                        <ul>
-                            <li class="list-item">
-                                <h4>Camera</h2>
-                                    <p>
-                                        The camera was designed to feel alive and dynamic without giving the sensation of
-                                        motion sickness.
-                                    </p>
-                                    <p>
-                                        Here is a list of elements implement:
-                                    </p>
-                                    <ul>
-                                        <li class="list-item">
-                                            Camera tilt: The camera tilt a little based on the x velocity relative to the
-                                            camera of the
-                                            player.<br>
-                                            <!-- <img src="images/CameraTilt.png"> -->
-                                             <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/tilt.mp4" type="video/mp4"></video>
-                                        </li>
-                                        <li class="list-item">
-                                            Camera Bobbing: Apply camera bobbing when the player is moving on the ground
-                                            using the Camera Shake system of Unreal Engine.<br>
-                                            The shake force depend of the run state of the player.<br>
-                                            <!-- <img src="images/CameraBobbing.png"> -->
-                                            <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bobbing.mp4" type="video/mp4"></video>
-                                        </li>
-                                        <li class="list-item">
-                                            FOV: The FOV increase when the player fall to enhance the sense of speed.<br>
-                                            <!-- <img src="images/CameraFOV.png"> -->
-                                            <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/fov.mp4" type="video/mp4"></video>
-                                        </li>
-                                    </ul>
-                            </li>
-    
-                            <li class="list-item">
-                                <h4>Character - Controller</h4>
-                                <p>
-                                    I worked on the bump ability and the movements of the controller.
-                                </p>
-                                <p>Bump Ability:</p>
-                                <ul>
-                                    <li>
-                                        The player can push himself in the opposite direction he is facing when bumping on certain surfaces.<br>
-                                    </li>
-                                    <li>
-                                        There is a max amount of 3 charges, the charges reload when the player touch the ground.<br>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bump.mp4" type="video/mp4"></video>
-                    </div>
-
-                    <div class="sub-category">
-                        <h1>UI</h1>
-                        <p>I implement the bump ability feedback:</p>
-                        <ul>
-                            <li>
-                                The player is notice he can bump when the white dot appear.
-                            </li>
-                            <li>
-                                An animation is played when the player use the bump input.
-                            </li>
-                            <li>
-                                When a bump is successfully made, a charge is removed (turning gray).
-                            </li>
-                        </ul>
-                        <video class="example-video" autoplay muted loop disablePictureInPicture="true"><source src="videos/bump_feedback.mp4" type="video/mp4"></video>
-                    </div>
-
-                    <div class="sub-category">
-                        <h1>Save System - Settings</h1>
-                        <p>I worked on the save system, it register the player position, time and settings.</p>
-                        <p>I implement the graphics, audio and gameplay settings. Each parameters are saved by the Save System.</p>
-                    </div>
-
-                    <div class="sub-category">
-                        <h1>Steam Integration</h1>
-                        <p>
-                            I implement Steam using the Steam SDK and Unreal C++ to be able to use the Steam leaderboard system for the game. (Not working perfectly because it's not released on Steam yet.)
-                        </p>
-                        <img src="images/leaderboards.png">
-                    </div>
-
-
-                    <div>
-                        <h1>Fog</h1>
-                        <p>
-                            The level artists <a
-                                class="link-offset-2 link-underline link-underline-opacity-0 text-white bold"
-                                target="_blank" href="https://remitrotereau.myportfolio.com">Rémi Trotereau</a> and <a
-                                class="link-offset-2 link-underline link-underline-opacity-0 text-white bold"
-                                target="_blank" href="https://charlesdefoy-leveldesign2024.webflow.io/">Charle Defoy</a>
-                            asked me to create a fog that can alternate between multiple colors so they could adjust the
-                            fog's color according to the player's height.
-                        </p>
-                        <p>Here is what I made to accomplish this effect:</p>
-                        <ul>
-                            <li>
-                                First, I search the color range based on the z position of the camera.
-                            </li>
-                            <li>
-                                Then, I blend the material color based on a lerp between the colors and the camera z
-                                position.
-                            </li>
-                            <li>
-                                Finally, I applied the color.
-                            </li>
-                        </ul>
-                        <div class="flex-box-row gap-3">
-                            <img src="images/Fog.png" style="width: 100%;">
-                            <video style="width: 100%;" autoplay muted loop disablePictureInPicture="true"><source src="videos/fog.mp4" type="video/mp4"></video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DenTTT -->
-            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                <div>
-                    <div class="d-flex gap-3 list-item">
-                        <div class="project-tag">Team of 8</div>
-                        <div class="project-tag">Unity</div>
-                        <div class="project-tag">Genre: VR Game</div>
-                        <div class="project-tag">Platform: Oculus Quest Pro</div>
-                        <div class="project-tag">Role: Technical Designer</div>
-                    </div>
-                    <h1 class="project-title">Keep the Crown! - Unity C#</h1>
-                    <p>
-                        ...
-                    </p>
-                </div>
-            </div>
-
-            <!-- PFE -->
-            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                <div>
-                    <div class="d-flex gap-3 list-item">
-                        <div class="project-tag">Team of 10</div>
-                        <div class="project-tag">Unreal Engine 5</div>
-                        <div class="project-tag">Genre: ???</div>
-                        <div class="project-tag">Platform: PC</div>
-                        <div class="project-tag">Role: Technical Designer</div>
-                    </div>
-                    <h1 class="project-title">PFE - Unreal Engine 5 Blueprints</h1>
-                    <p>
-                        ...
-                    </p>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                tabindex="0">...</div>
         </div>
-    </section>
-
-    <footer class="bg-accent-color container-fluid">
-
     </footer>
-
-    <!-- <div class="message">
-        <p>Sorry, my portfolio isn't working on a mobile phone. Please, use a computer instead.</p>
-    </div> -->
-
-    <!-- <script>
-        // Function to check if the browser is on a mobile device
-        function isMobileDevice() {
-          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-    
-        // Function to hide content and display the message on mobile devices
-        function hideContentIfMobile() {
-          if (isMobileDevice()) {
-            contentDiv = document.querySelector(".my-container");
-            contentDiv.style.display = "none";
-            contentDiv = document.querySelector(".background");
-            contentDiv.style.display = "none";
-            contentDiv = document.querySelector(".home-page");
-            contentDiv.style.display = "none";
-            contentDiv = document.querySelector(".nav-bar");
-            contentDiv.style.display = "none";
-          }
-          else{
-            contentDiv = document.querySelector(".message");
-            contentDiv.style.display = "none";
-          }
-        }
-    
-        // Call the function to check and hide content if on a mobile device
-        hideContentIfMobile();
-    </script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </body>
