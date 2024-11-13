@@ -6,23 +6,14 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="icon" href="images/icon.png">
+    <script src="html_importer.js"></script>
     <title>Portfolio - The Atrium</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header style="margin: auto;">
-        <div class="container flex align-center gap-5">
-            <a class="nav-button nav-head" href="index.html">Raphaël Daubelcour</a>
-            <a class="nav-button nav-button-secondary" href="index.html#about">About Me</a>
-            <a class="nav-button nav-button-secondary" href="index.html#projects">Projects</a>
-            <a class="highlight-button" style="margin-left: auto;" href="https://github.com/Raftatul">
-                <i class="fab fa-github nav-icon"></i>
-                Github
-            </a>
-        </div>
-    </header>
+    <div w3-include-html="header.html"></div>
     <div class="container" style="padding-bottom: 60px;">
         <article class="padded">
             <div class="content">
@@ -128,3 +119,7 @@
         </div>
     </footer>
 </body>
+
+<script>
+    includeHTML();
+</script>
