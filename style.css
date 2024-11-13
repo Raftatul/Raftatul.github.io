@@ -282,6 +282,7 @@ a {
 .yt-embed {
     width: 100%;
     aspect-ratio: 16/9;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 @media all and (max-width: 600px) {
