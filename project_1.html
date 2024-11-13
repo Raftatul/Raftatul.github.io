@@ -29,42 +29,31 @@
                     </div>
                     <img class="rounded" src="images/the_atrium.png">
                     <p>The Atrium is a team school project made in 2 months.</p>
-                    <p>I worked on the project as a Technical Game Designer. I programmed the 3Cs as well as other features.</p>
+                    <p>I worked on the project as a Technical Game Designer. I programmed the 3Cs as well as other features like the <a href="#steam">Steam integration</a> and the <a href="#fog">dynamic fog</a>.</p>
                 </div>
                 <div>
-                    <h2>3C</h2>
-                    <h3>Camera</h3>
+                    <h2>Camera</h2>
                     <p>The camera was designed to feel alive and dynamic without giving the sensation of motion sickness.</p>
                     <p>Here is a list of elements implemented:</p>
-                    <ul>
-                        <li>
-                            <b>Camera tilt:</b> The camera tilt a little based on the x velocity relative to the camera of the player.
-                        </li>
-                    </ul>
+                    <h3>Camera tilt</h3>
+                    <p>The camera tilt a little based on the x velocity relative to the camera of the player.</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/tilt.mp4">
                     </video>
-                    <ul>
-                        <li>
-                            <b>Camera Bobbing:</b> Apply camera bobbing when the player is moving on the ground using the Camera Shake system of Unreal Engine.
-                            The shake force depend of the run state of the player.
-                        </li>
-                    </ul>
+                    <h3>Camera Bobbing</h3>
+                    <p>Apply camera bobbing when the player is moving on the ground using the Camera Shake system of Unreal Engine. The shake force depend of the movement state of the player (walk/run).</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/bobbing.mp4">
                     </video>
-                    <ul>
-                        <li>
-                            <b>FOV:</b> The FOV increase when the player fall to enhance the sense of speed.
-                        </li>
-                    </ul>
+                    <h3>FOV</h3>
+                    <p>Since the player constantly needs to focus on a surface, the field of view is kept wide to allow them to see more around the edges of the screen. The FOV expands further when the player falls, enhancing the feeling of speed.</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/fov.mp4">
                     </video>
                 </div>
                 <div>
-                    <h3>Character - Controller</h3>
-                    <p>To navigate through the level, the player can use his bump ability.</p>
+                    <h2>Character</h2>
+                    <p>To navigate through the level, the player can walk/run and use his bump ability.</p>
                     <p>Bump Ability</p>
                     <ul>
                         <li>The player can push himself in the opposite direction he is facing when bumping on certain surfaces.</li>
@@ -76,23 +65,23 @@
                 </div>
                 <div>
                     <h2>UI</h2>
-                    <p>I implement the bump ability feedback:</p>
+                    <p>Bump ability feedback:</p>
                     <ul>
                         <li>The player is notice he can bump when the white dot appear. </li>
                         <li>An animation is played when the player use the bump input. </li>
-                        <li>When a bump is successfully made, a charge is removed (turning gray). </li>
+                        <li>When a bump is successfully made, a charge is removed (turning a charge gray). </li>
                     </ul>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/bump_feedback.mp4">
                     </video>
                 </div>
                 <div>
-                    <h2>Steam Integration</h2>
-                    <p>I implement Steam using the Steam SDK and Unreal C++ to be able to use the Steam leaderboard system for the game. (Not working perfectly because it's not released on Steam yet.)</p>
+                    <h2 id="steam">Steam Integration</h2>
+                    <p>I implement Steam using the <a href="https://partner.steamgames.com/doc/sdk" target="_blank">Steam SDK</a> and Unreal C++ to be able to use the leaderboard system of Steam for the game.</p>
                     <img class="rounded" src="images/the_atrium.png">
                 </div>
                 <div>
-                    <h2>Dynamic Fog</h2>
+                    <h2 id="fog">Dynamic Fog</h2>
                     <p>The level artists <a href="https://remitrotereau.myportfolio.com/" target="_blank">Rémi Trotereau</a> and <a href="https://charlesdefoy-leveldesign2024.webflow.io/" target="_blank">Charle Defoy</a> asked me to create a fog that can alternate between multiple colors so they could adjust the fog's color according to the player's height.</p>
                     <p>Here is what I made to accomplish this effect:</p>
                     <ul>
