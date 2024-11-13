@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="icon" href="images/icon.png">
+    <script src="html_importer.js"></script>
     <title>Portfolio - The Atrium</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
         <article class="padded">
             <div class="content">
                 <div>
-                    <h1 style="margin-top: 0;">Keep the Crown! </h1>
+                    <h1 style="margin-top: 0;">Tween Component</h1>
                     <div class="tag-container">
                         <span class="tag"><b>Team of 9</b></span>
                         <span class="tag"><b>Engine:</b> Unity VR</span>
@@ -41,12 +42,11 @@
                     <p>I worked on the project as a programmer along with <a href="https://vivianb11.github.io/Vivian/" target="_blank"><b>Vivian Boudon</b></a>, my duties was implementing the Eye Tracking feature.</p>
                 </div>
                 <div>
-                    <h2>Eye Tracking</h2>
+                    <h2>Tweener</h2>
                     <p>We used the </p>
-                    <!-- <img class="rounded" src="images/the_atrium.png"> -->
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
-                        <source src="videos/keep_the_crown_demo.mp4">
-                    </video>
+                    <div class="code-container">
+                        <div w3-include-html="scripts/tweener_code.html"></div>                                                                                                                                                         
+                    </div>
                 </div>
             </div>
         </article>
@@ -57,3 +57,7 @@
         </div>
     </footer>
 </body>
+
+<script>
+    includeHTML();
+</script>
