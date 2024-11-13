@@ -130,6 +130,7 @@ a {
     grid-template-columns: 1fr;
     gap: 10px;
     align-items: center;
+    margin: 12px 0;
 }
 
 .hero {
@@ -265,13 +266,22 @@ a {
 }
 
 .tag {
-    flex-grow: 1;
+    margin-right: 12px;
     font-weight: 500;
     font-size: 18px;
 }
 
+.tag-last {
+    flex-grow: 1;
+}
+
 .date {
     color: hsla(200, 0%, 100%, 0.5);
+}
+
+.yt-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
 }
 
 @media all and (max-width: 600px) {
