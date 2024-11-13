@@ -96,9 +96,10 @@
                     <p>The level artists <a href="https://remitrotereau.myportfolio.com/" target="_blank">Rémi Trotereau</a> and <a href="https://charlesdefoy-leveldesign2024.webflow.io/" target="_blank">Charle Defoy</a> asked me to create a fog that can alternate between multiple colors so they could adjust the fog's color according to the player's height.</p>
                     <p>Here is what I made to accomplish this effect:</p>
                     <ul>
-                        <li>First, I search the color range based on the z position of the camera.</li>
-                        <li>Then, I blend the material color based on a lerp between the colors and the camera z position.</li>
-                        <li>Finally, I applied the color.</li>
+                        <li>First, I create an array of structures containing a color variable and a height variable.</li>
+                        <li>Next, I need to find the 2 colors closest to the camera's height position</li>
+                        <li>Then, I blend the colors based on the camera's position between the two color positions.</li>
+                        <li>Finally, I apply the color in a post process material.</li>
                     </ul>
                     <div class="grid-container grid-2">
                         <img class="rounded" src="images/Fog.png">
