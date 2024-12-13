@@ -285,6 +285,16 @@ a {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
+.project-engine-icon {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 32px;
+    background-color: black;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
 @media all and (max-width: 600px) {
     .content {
       width: 90%;
