@@ -7,24 +7,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="icon" href="images/icon.png">
     <script src="html_importer.js"></script>
-    <title>Portfolio - Tween Component</title>
+    <script src="effects.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - Tween Component</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+    <div style="position: fixed; perspective: 100px; width: 50px; z-index: 5; display: none;" id="move" >
+        <img id="rotate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" style="position: absolute; width: 100%; transform-style: preserve-3d;">
+    </div>
     <div w3-include-html="header.html"></div>
     <div class="container" style="padding-bottom: 60px;">
         <article class="padded">
             <div class="content">
                 <div>
-                    <h1 style="margin-top: 0;">Tween Component <i class="fa-brands fa-unity"></i></h1>
+                    <h1 style="margin-top: 0;">Tween Component <i class="fa-brands fa-unity easter_egg" onclick="easter_egg()"></i></h1>
                     <div class="tag-container">
                         <span class="tag"><b>Engine:</b> Unity</span>
                         <span class="tag-last"><b>Genre:</b> Tool</span>
                         <span class="date">2024</span>
                     </div>
-                    <img class="rounded" src="images/tween/tween_cover.gif">
+                    <img class="rounded thumbnail" src="images/tween/tween_cover.gif">
                     <p>I made a Tween component that allows me to animate things inside the editor.</p>
                     <p>With this project, I learned how to create custom inspectors for components.</p>
                 </div>
@@ -43,7 +47,7 @@
                         <b>Stop Everything:</b> This button calls the stop function for every tween component on the object.
                     </li>
                 </ul>
-                <img class="rounded" src="images/tween/buttons_overview.png">
+                <img class="rounded thumbnail" src="images/tween/buttons_overview.png">
                 <h3>Parameters</h3>
                 <ul>
                     <li>
@@ -56,7 +60,7 @@
                         <b>Curve:</b> This parameter represents how the value will change over time.
                     </li>
                 </ul>
-                <img class="rounded" src="images/tween/parameter_overview_1.png">
+                <img class="rounded thumbnail" src="images/tween/parameter_overview_1.png">
                 <h3>Tween Types</h3>
                 <p>This is used to set which variable will be impacted in the object's transform.</p>
                 <ul>
@@ -73,10 +77,10 @@
                         <b>Rotate:</b> Change the object's relative rotation.
                     </li>
                 </ul>
-                <img class="rounded" src="images/tween/tween_types.png">
+                <img class="rounded thumbnail" src="images/tween/tween_types.png">
                 <h3>Auto Play & Loop</h3>
                 <p>I can toggle whether the tween should start automatically and set it to play indefinitely.</p>
-                <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                <video class="rounded thumbnail" autoplay="" muted="" loop="" disablepictureinpicture="true">
                     <source src="videos/tween/autoplay_loop.mp4">
                 </video>
                 <h3>Initial Variables</h3>
@@ -90,8 +94,8 @@
                     </li>
                 </ul>
                 <div class="grid-container grid-2">
-                    <img class="rounded" src="images/tween/tween_value.png">
-                    <img class="rounded" src="images/tween/tween_from.png">
+                    <img class="rounded thumbnail" src="images/tween/tween_value.png">
+                    <img class="rounded thumbnail" src="images/tween/tween_from.png">
                 </div>
                 <h3>Tween Target Mode</h3>
                 <p>This parameter allows me to switch between 2 targeting modes.</p>
@@ -103,10 +107,10 @@
                         <p><b>Target:</b> Use the object's target variables (based on the tween type).</p>
                     </li>
                 </ul>
-                <img class="rounded" src="images/tween/tween_target_types.png">
+                <img class="rounded thumbnail" src="images/tween/tween_target_types.png">
                 <div class="grid-container grid-2">
-                    <img class="rounded" src="images/tween/tween_value.png">
-                    <img class="rounded" src="images/tween/tween_target.png">
+                    <img class="rounded thumbnail" src="images/tween/tween_value.png">
+                    <img class="rounded thumbnail" src="images/tween/tween_target.png">
                 </div>
                 <h3>Callback</h3>
                 <ul>
@@ -114,7 +118,7 @@
                         <b>Completed:</b> This event is invoked at the end of the tween.
                     </li>
                 </ul>
-                <img class="rounded" src="images/tween/callback_overview.png">
+                <img class="rounded thumbnail" src="images/tween/callback_overview.png">
                 <h2>Video Demo</h2>
                 <p>Here is a little demo to show you how to make an animation using the tween component.</p>
                 <div class="flex" style="justify-content: center;">
