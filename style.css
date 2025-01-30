@@ -59,6 +59,12 @@ article h3 {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
+.thumbnail-main {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
 video {
     max-width: 100%;
     height: auto;
@@ -102,6 +108,11 @@ a {
     text-decoration: none;
     color: white;
     font-weight: 800;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .container {
