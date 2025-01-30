@@ -206,6 +206,9 @@ a {
     margin-left: 5px;
     background-color: hsla(280, 75%, 50%, 0.5);
     text-decoration: none;
+    width: 18px;
+    height: 18px;
+    text-align: center;
 }
 
 .highlight-button:hover {
