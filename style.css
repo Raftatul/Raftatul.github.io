@@ -1,6 +1,9 @@
 :root {
     --header-height: 64px;
     --header-font-family: Montserrat, sans-serif;
+
+    --secondary-color-dark: hsla(280, 75%, 50%, 0.5);
+    --secondary-color-light: hsla(280, 75%, 50%, 0.7);
 }
 
 html {
@@ -262,22 +265,26 @@ a {
 
 .tag-container {
     display: flex;
-    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-bottom: 24px;
 }
 
 .tag {
-    margin-right: 12px;
     font-weight: 500;
     font-size: 18px;
-}
-
-.tag-last {
-    flex-grow: 1;
+    background-color: var(--secondary-color-dark);
+    border-radius: 2rem;
+    padding: 7px 15px;
+    white-space: nowrap;
+    width: min-content;
 }
 
 .date {
     color: hsla(200, 0%, 100%, 0.5);
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .yt-embed {
@@ -301,7 +308,7 @@ a {
     transition: all 0.1s;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 1200px) {
     .content {
       width: 90%;
     }
@@ -313,11 +320,6 @@ a {
 
     .highlight-button {
         margin: 0 1rem;
-    }
-
-    .tag-container {
-        display: flex;
-        flex-direction: column;
     }
 
     .nav-button-secondary {
