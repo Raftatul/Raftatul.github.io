@@ -312,9 +312,12 @@ a {
 
 .project-engine-icon {
     position: absolute;
+    width: 35px;
+    height: 35px;
+
     bottom: 16px;
     left: 16px;
-    font-size: 32px;
+    font-size: 50px;
     background-color: black;
     padding: 10px;
     border-radius: .5rem;
