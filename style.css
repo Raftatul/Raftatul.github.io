@@ -201,12 +201,15 @@ a {
     background-color: rgb(61, 63, 66);
 }
 
+.navbar {
+    gap: 15px;
+}
+
 .highlight-button {
     color: white;
     border-radius: 2rem;
     /* padding: 10px 15px; */
     padding: 10px;
-    margin-left: 5px;
     background-color: hsla(280, 75%, 50%, 0.5);
     text-decoration: none;
     width: 18px;
@@ -322,7 +325,7 @@ a {
     transition: all 0.1s;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1250px) {
     .content {
       width: 90%;
     }
@@ -332,15 +335,18 @@ a {
         grid-template-columns: auto;
     }
 
-    .highlight-button {
-        margin: 0 1rem;
-    }
-
-    .nav-button-secondary {
-        display: none;
+    .navbar {
+        gap: 15px;
+        margin-right: 15px;
     }
 
     #move {
+        display: none;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .nav-button-secondary {
         display: none;
     }
 }
