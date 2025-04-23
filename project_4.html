@@ -1,0 +1,114 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <script src="html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - The Atrium</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="container" style="padding-bottom: 60px;">
+        <article class="padded">
+            <div class="content">
+                <div>
+                    <!-- PROJECT NAME HERE -->
+                    <h1 style="margin-top: 0;">Wire and Whiskers</h1>
+
+                    <!-- Project Overall Description HERE -->
+                    <div class="tag-container">
+                        <span class="tag"><b>Team 8</b></span>
+                        <span class="tag"><b>Engine:</b> Unreal Engine 5</span>
+                        <span class="tag"><b>Genre:</b> Adventure/Puzzle</span>
+                        <span class="tag"><b>Platform:</b> PC</span>
+                        <span class="tag-last"><b>Role:</b> Technical Designer</span>
+                        <span class="date">Date 2024-2025</span>
+                    </div>
+
+                    <!-- Project Thumnail HERE -->
+                    <img class="rounded thumbnail-main" src="images/the_atrium.png">
+
+                    <!-- Project Description HERE -->
+                    <p><b>Wire and Whiskers</b> is a local multiplayer game inspired by <b>It Takes Two</b> and <b>Little Nightmares</b>.
+                        <br>The game is designed for 2 players: one controls a mouse, and the other controls a robot. The objective is to defeat monsters and solve puzzles.
+                        <br><br>As a Technical Designer, I was responsible for implementing the 3Cs (Camera, Character, Controls) and other features such as the gui.</p>
+                    </p>
+                </div>
+
+                <!-- First Category -->
+                <div>
+                    <h2>Controls</h2>
+                    <p>The controls are designed to be intuitive and easy to use. The mouse uses the left stick to move and to aim. The robot uses the left stick to move and the right stick to aim.</p>
+                    <p>They can dash to avoid taking damage from enemies and the environment</p>
+                    <p>But that not all, each characters has their own unique way to play.</p>
+
+                    <h2>Characters</h2>
+
+                    <h3>The Mouse</h3>
+                    <p>The mouse is a brawler style combat.</p>
+                    <p>He can unleash powerful close-range attacks.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/UX_Tuto_Atk.mp4">
+                    </video>
+
+                    <h4>Synergy:</h4>
+                    <p>The mouse can pull the robot. The robot deal damage during this state.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/UX_Tuto_RappelDmg.mp4">
+                    </video>
+
+                    <h4>Air Attack</h4>
+                    <p>When launched, the mouse can perform a special attack that damages all enemies beneath him.</p>
+                    <p>If it hits successfully, the mouse is launched back into the air and can perform the special attack again.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/UX_Tuto_AirAtk.mp4">
+                    </video>
+
+                    <h3>The Robot</h3>
+                    <p>The mouse is a ranger combat style.</p>
+                    <p>It can unleash powerful long-range attacks.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/UX_Tuto_Atk.mp4">
+                    </video>
+                    
+                    <h4>Synergy:</h4>
+                    <p>The robot can launch the mouse when they are close to each other. This action can be used to solve puzzles or in combat ().</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/UX_TutoProjRappel_Video.mp4">
+                    </video>
+                </div>
+
+                <div>
+                    <h2>Camera</h2>
+                    <p>The camera follows the 2 players, and they cannot leave the screen.</p>
+                    <p>The camera has 2 main modes:</p>
+
+                    <h3>Side Scrolling</h3>
+                    <p>This camera is used during puzzle phases.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/CameraSideScrolling.mp4">
+                    </video>
+
+                    <h3>Top Down</h3>
+                    <p>This camera is used during combat phases.</p>           
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/wire_and_whiskers/CameraTopDown.mp4">
+                    </video>                
+                </div>
+
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;">
+
+        </div>
+    </footer>
+</body>
