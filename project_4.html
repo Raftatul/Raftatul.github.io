@@ -24,16 +24,19 @@
 
                     <!-- Project Overall Description HERE -->
                     <div class="tag-container">
-                        <span class="tag"><b>Team 8</b></span>
-                        <span class="tag"><b>Engine:</b> Unreal Engine 5</span>
-                        <span class="tag"><b>Genre:</b> Adventure/Puzzle</span>
-                        <span class="tag"><b>Platform:</b> PC</span>
-                        <span class="tag-last"><b>Role:</b> Technical Designer</span>
+                        <span class="tag"><i class="fa-solid fa-people-group"></i> 8</span>
+                        <span class="tag"><i class="fa-solid fa-gear"></i> Unreal Engine 5</span>
+                        <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Adventure/Puzzle</span>
+                        <span class="tag"><i class="fa-solid fa-computer"></i> PC</span>
+                        <span class="tag"><i class="fa-solid fa-user"></i> Technical Designer</span>
                         <span class="date">Date 2024-2025</span>
                     </div>
 
                     <!-- Project Thumnail HERE -->
-                    <img class="rounded thumbnail-main" src="images/the_atrium.png">
+                    <!-- <img class="rounded thumbnail-main" src="images/the_atrium.png"> -->
+                    <video class="rounded thumbnail-main" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="https://eu-central.storage.cloudconvert.com/tasks/9e3b9e84-d78b-48f4-a54b-c44e88a35643/Walkthrough%20_Alpha_T-Rex.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250424%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20250424T192212Z&X-Amz-Expires=86400&X-Amz-Signature=34bb68aec9bafb45d628a40e036f17274f516b4c32abc14d1499032cd9ea5743&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Walkthrough%20_Alpha_T-Rex.mp4%22&response-content-type=video%2Fmp4&x-id=GetObject">
+                    </video>
 
                     <!-- Project Description HERE -->
                     <p><b>Wire and Whiskers</b> is a local multiplayer game inspired by <b>It Takes Two</b> and <b>Little Nightmares</b>.
@@ -42,8 +45,18 @@
                     </p>
                 </div>
 
-                <!-- First Category -->
                 <div>
+                    <h2>My Contributions</h2>
+                    <ul>
+                        <li>Participated in the design of the 3Cs (movement, camera, combat control) for both player states (fused and separated)</li>
+                        <li>Implemented the characters in blueprints</li>
+                        <li>Developed dynamic camera systems (top-down & 2.5D) with adaptive framing</li>
+                        <li>Implemented editor tools for level design</li>
+                    </ul>
+                </div>
+
+                <!-- First Category -->
+                <!-- <div>
                     <h2>Controls</h2>
                     <p>The controls are designed to be intuitive and easy to use. The mouse uses the left stick to move and to aim. The robot uses the left stick to move and the right stick to aim.</p>
                     <p>They can dash to avoid taking damage from enemies and the environment</p>
@@ -83,24 +96,33 @@
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/wire_and_whiskers/UX_TutoProjRappel_Video.mp4">
                     </video>
-                </div>
+                </div> -->
 
                 <div>
                     <h2>Camera</h2>
+                    <h3>Primary Components</h3>
+                    <ul>
+                        <li>Trigger box to apply data to the camera</li>
+                        <li>Rail to force the camera following a specific path using a spline</li>
+                        <li>Single point to snap the camera on a point, used in combat phases</li>
+                    </ul>
+                    <h3>Behaviors</h3>
                     <p>The camera follows the 2 players, and they cannot leave the screen.</p>
                     <p>The camera has 2 main modes:</p>
 
-                    <h3>Side Scrolling</h3>
+                    <img class="rounded thumbnail" src="images/wire_and_whiskers/BP_Camera.png">
+
+                    <h4>Side Scrolling</h4>
                     <p>This camera is used during puzzle phases.</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/wire_and_whiskers/CameraSideScrolling.mp4">
                     </video>
 
-                    <h3>Top Down</h3>
+                    <h4>Top Down</h4>
                     <p>This camera is used during combat phases.</p>           
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/wire_and_whiskers/CameraTopDown.mp4">
-                    </video>                
+                    </video>
                 </div>
 
             </div>
