@@ -4,25 +4,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
     <link rel="icon" href="images/icon.png">
-    <title>Portfolio - Home</title>
+    <script src="html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - Home</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header style="margin: auto;">
-        <div class="container flex align-center gap-5">
-            <a class="nav-button nav-head" href="index.html">Raphaël Daubelcour</a>
-            <a class="nav-button nav-button-secondary" href="#about">About Me</a>
-            <a class="nav-button nav-button-secondary" href="#projects">Projects</a>
-            <a class="highlight-button" style="margin-left: auto;" href="https://github.com/Raftatul">
-                <i class="fab fa-github nav-icon"></i>
-                Github
-            </a>
-        </div>
-    </header>
+    <div w3-include-html="header.html"></div>    
     <div class="hero">
         <div style="position: absolute; text-align: center; width: 100%; height: 70vh; display: flex; flex-direction: column; justify-content: center;">
             <h1 style="margin-bottom: 0;">Raphaël Daubelcour</h1>
@@ -36,23 +28,27 @@
         <div class="content">
             <div id="about">
                 <h1>About Me</h1>
-                <p>Hi, I am a Technical Designer student at Isart Digital Montreal. I have a great interest in making game development easier by making tools and I love prototyping features from other games. I mainly use C# languages and GDScripts (Godot programming language)</p>
+                <p>Hi, I am a student at Isart Digital Montreal. I have a great interest in making game development easier by making tools and I love prototyping features from other games. I mainly use C# languages and GDScripts (Godot programming language)</p>
                 <p>My ultimate goal is to become a technical game designer, where I can use my skills and knowledge to help bring game ideas to life through programming and technical implementation. I am always excited to continue learning about programming and game engine features.</p>
             </div>
-            <h1 id="projects">My Projects</h1>
+            <h1 id="projects">Projects</h1>
             <div class="grid-container grid-2 gap-20">
                 <a class="project-button" href="project_1.html">
-                    <img class="rounded" src="images/the_atrium.png">
-                    The Atrium
+                    <p>The Atrium - Game <i class="fa-solid fa-star"></i></p>
+                    <img class="rounded thumbnail" src="images/TheAtrium_Title_V1-1.png">
                 </a>
-                <!-- <a class="project-button" href="project_2.html">
-                    <img class="rounded" src="images/keep_the_crown.png">
-                    Keep the Crown!
-                </a> -->
-                <!-- <a class="project-button" href="project_3.html">
-                    <img class="rounded" src="images/the_atrium.png">
-                    Isart Digital - PFE
-                </a> -->
+                <a class="project-button" href="project_2.html">
+                    <p>Tween Component - Tool</p>
+                    <img class="rounded thumbnail" src="images/tween/tween_cover.gif">
+                </a>
+                <a class="project-button" href="project_3.html">
+                    <p>Desktop Warrior - Game Jam <i class="fa-solid fa-star"></i></p>
+                    <img class="rounded thumbnail" src="images/desktop_warrior/thumbnail.png">
+                </a>
+                <a class="project-button" href="project_4.html">
+                    <p>Wire and Whiskers - PFE</p>
+                    <img class="rounded thumbnail" style="background-position: 0px 500px;" src="images/wire_and_whiskers/Affiche.png">
+                </a>
             </div>
         </div>
     </div>

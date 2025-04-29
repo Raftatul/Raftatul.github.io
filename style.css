@@ -1,6 +1,9 @@
 :root {
     --header-height: 64px;
     --header-font-family: Montserrat, sans-serif;
+
+    --secondary-color-dark: hsla(280, 75%, 50%, 0.5);
+    --secondary-color-light: hsla(280, 75%, 50%, 0.7);
 }
 
 html {
@@ -53,10 +56,16 @@ article h3 {
     margin-top: 42px;
 }
 
-img {
+.thumbnail {
     width: 100%;
     object-fit: contain;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnail-main {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
 }
 
 video {
@@ -104,15 +113,38 @@ a {
     font-weight: 800;
 }
 
+.page-title {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
+}
+
+.code-container {
+    background-color: hsl(210, 7%, 17%);
+    border-color: hsl(210, 6%, 21%);
+    border-style: solid;
+    border-width: 5px;
+    max-width: 1200px;
+    min-height: 500px;
+    max-height: auto;
+    height: 80vh;
+    white-space: nowrap;
+    overflow: scroll;
+    padding: 15px;
+
+    font-size: 16px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    align-items: center;
+    margin: 12px 0;
 }
 
 .hero {
@@ -169,13 +201,20 @@ a {
     background-color: rgb(61, 63, 66);
 }
 
+.navbar {
+    gap: 15px;
+}
+
 .highlight-button {
     color: white;
     border-radius: 2rem;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
+    padding: 10px;
     background-color: hsla(280, 75%, 50%, 0.5);
-
     text-decoration: none;
+    width: 18px;
+    height: 18px;
+    text-align: center;
 }
 
 .highlight-button:hover {
@@ -216,7 +255,7 @@ a {
 }
 
 .gap-20 {
-    gap: 15px;
+    gap: 20px;
 }
 
 .align-center {
@@ -243,21 +282,57 @@ a {
 
 .tag-container {
     display: flex;
-    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-bottom: 24px;
 }
 
 .tag {
-    flex-grow: 1;
     font-weight: 500;
     font-size: 18px;
+    background-color: var(--secondary-color-dark);
+    border-radius: 2rem;
+    padding: 7px 15px;
+    white-space: nowrap;
+    width: min-content;
+}
+
+.tag img {
+    width: 18px;
 }
 
 .date {
     color: hsla(200, 0%, 100%, 0.5);
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-@media all and (max-width: 600px) {
+.yt-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.project-engine-icon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+
+    bottom: 16px;
+    left: 16px;
+    font-size: 50px;
+    background-color: black;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+.easter_egg:hover {
+    scale: 1.25;
+    transition: all 0.1s;
+}
+
+@media all and (max-width: 1250px) {
     .content {
       width: 90%;
     }
@@ -267,15 +342,17 @@ a {
         grid-template-columns: auto;
     }
 
-    .highlight-button {
-        margin: 0 1rem;
+    .navbar {
+        gap: 15px;
+        margin-right: 15px;
     }
 
-    .tag-container {
-        display: flex;
-        flex-direction: column;
+    #move {
+        display: none;
     }
+}
 
+@media all and (max-width: 800px) {
     .nav-button-secondary {
         display: none;
     }
