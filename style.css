@@ -4,6 +4,8 @@
 
     --secondary-color-dark: hsla(280, 75%, 50%, 0.5);
     --secondary-color-light: hsla(280, 75%, 50%, 0.7);
+
+    --project-details-tag-font-size: 14px;
 }
 
 html {
@@ -263,10 +265,44 @@ a {
 }
 
 .project-button {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    flex-direction: row;
     transition: all 0.1s;
     width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    height: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+}
+
+.project-tag-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-tag {
+    font-weight: 500;
+    font-size: var(--project-details-tag-font-size);
+    background-color: var(--secondary-color-dark);
+    border-radius: 2rem;
+    padding: 7px 15px;
+    white-space: nowrap;
+    width: min-content;
+    margin-right: 7px;
 }
 
 .project-button:hover {
@@ -277,7 +313,6 @@ a {
     max-width: 400px;
     max-height: 200px;
     object-fit: cover;
-    margin-bottom: 12px;
 }
 
 .tag-container {
