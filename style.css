@@ -59,8 +59,9 @@ article h3 {
 }
 
 .thumbnail {
-    width: 100%;
-    object-fit: contain;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -264,6 +265,10 @@ a {
     align-items: center;
 }
 
+.project-card-title {
+    margin: 0;
+}
+
 .project-button {
     position: relative;
     flex-direction: row;
@@ -271,14 +276,14 @@ a {
     width: 100%;
 }
 
-.overlay {
-    position: absolute;
-    bottom: 100%;
+.overlay::before {
+    content: '';
     width: 100%;
-    height: 0;
-    left: 0;
-    right: 0;
-    background-color: #008CBA;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0) 75%);
+    border-radius: .5rem;
 }
 
 .project-details {
