@@ -6,6 +6,9 @@
     --secondary-color-light: hsla(280, 75%, 50%, 0.7);
 
     --project-details-tag-font-size: 14px;
+
+    --code-background-color: hsl(222, 21%, 16%);
+    --code-border-color: hsl(222, 18%, 25%);
 }
 
 html {
@@ -104,6 +107,20 @@ article video {
     margin-top: 16px;
     margin-bottom: 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.code {
+  background-color: var(--code-background-color);
+  border-color: var(--code-border-color);
+  border-style: solid;
+  tab-size: 4;
+  border-radius: .5rem;
+  padding: 16px;
+}
+
+.centered {
+    display: block;
+    margin: auto;
 }
 
 .thumbnail {
