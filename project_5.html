@@ -33,7 +33,7 @@
                     </div>
 
                     <!-- Project Thumbnail HERE -->
-                    <img class="rounded thumbnail-main" src="images/league_of_godot/league_of_godot.png">
+                    <img class="rounded thumbnail-main" src="projects/league_of_godot/images/league_of_godot.png">
 
                     <!-- Project Description HERE -->
                     <p>I wanted to make a multiplayer game prototype to learn more about networking, so I made League of Godot. This project is inspired by League of Legends.</p>
@@ -58,26 +58,26 @@
                         <li><b>Health Display</b> – A 3D progress bar that can be placed anywhere to show the current health of a Health Component.</li>
                         <li><b>Spell Manager</b> – A script that manages spell casting and cooldowns.</li>
                     </ul>
-                    <img class="rounded" src="images/league_of_godot/composition_examples.png">
+                    <img class="rounded" src="projects/league_of_godot/images/composition_examples.png">
                 </div>
 
                 <div>
                     <h2>Spells</h2>
                     <p>I'm using Godot Nodes for my spell system. I can easily manage the data and switch spell from a character to another.</p>
                     <p>Each spell is a node that can be added to the Spell Manager. The Spell Manager is a component that manages the cooldown and the casting of the spells.</p>
-                    <img class="rounded" src="images/league_of_godot/spell_manager.png">
+                    <img class="rounded" src="projects/league_of_godot/images/spell_manager.png">
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
-                        <source src="projects/league_of_godot/spell_switch_example.mp4">
+                        <source src="projects/league_of_godot/videos/spell_switch_example.mp4">
                     </video>
                     <p>Each spell has its data exposed to the editor, so I can easily change the amount of damage or what type of target the spell can hit.</p>
-                    <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="images/league_of_godot/spell_data.png">
+                    <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="projects/league_of_godot/images/spell_data.png">
                 </div>
 
                 <div>
                     <h2>Items</h2>
                     <p>I’ve implemented the item system from League of Legends. Items can be purchased in the shop. The example below demonstrates an item that gradually increases movement and attack speed over time.</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true" title="Doran sword increasing attack and movement speed overtime">
-                        <source src="projects/league_of_godot/items.mp4">
+                        <source src="projects/league_of_godot/videos/items.mp4">
                     </video>
                     <p>This is the code of the item (C#).</p>
                     <pre class="code"><code>using Godot;
@@ -105,7 +105,19 @@ public partial class DoranSword : Accessory
                     <p>The game’s networking works with a dedicated server, so each player is a client. The server has authority over the game, and the clients have authority over the inputs.</p>
                     <p>A dedicated server is a great way to prevent cheating and can easily be deployed on cloud servers.</p>
                     <p>I'm using Godot's multiplayer system to handle the networking. Each input is sent via RPCs.</p>
+                    <p>Every Items/Spells/Input are automatically sync to the server. I only need to sync special interaction like the ultimate of Mordekaiser.</p>
                     <img class="rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*i80sJ0-84TYQArl14vCKtg.png">
+                </div>
+
+                <div>
+                    <h2>What did I learn ?</h2>
+                    <p>This project was a wonderful experience! But it wasn’t without its challenges. Here’s a list of choices I should have made differently.</p>
+                    <ul>
+                    <li><b>Used a state machine</b> to manage each character's state.</li>
+                    <li><b>Spent less time on visuals</b> – I focused too much on integrating character models and animations, which wasn’t essential for a prototype.</li>
+                    <li><b>Networking is hard!</b> I managed to make the multiplayer work, but the package send over the network are too heavy (peak at 60KiB/s).</li>
+                    <li><b>And finally...</b> If you’re reading this, it means you were interested enough to go through the whole page ! And for that, thank you!</li>
+                    </ul>
                 </div>
 
             </div>
