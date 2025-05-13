@@ -88,6 +88,14 @@ article h3 {
     margin-bottom: 8px;
 }
 
+article img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
 article video {
     max-width: 100%;
     height: auto;
@@ -299,12 +307,6 @@ a {
     transition: all 0.1s;
     height: 200px;
     width: 400px;
-}
-
-.project-img {
-    width: 100%;
-    object-fit: cover;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 .overlay::before {
