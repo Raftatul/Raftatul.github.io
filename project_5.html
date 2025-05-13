@@ -36,50 +36,41 @@
                     <img class="rounded thumbnail-main" src="projects/league_of_godot/images/league_of_godot.png">
 
                     <!-- Project Description HERE -->
-                    <p>I wanted to make a multiplayer game prototype to learn more about networking, so I made League of Godot. This project is inspired by League of Legends.</p>
+                    <p>I wanted to make a multiplayer game prototype to learn more about networking, so I created <strong>League of Godot</strong>. This project is inspired by <em>League of Legends</em>.</p>
                 </div>
 
-                <!-- <div>
-                    <h2>Controller</h2>
-                    <p>Feature description</p>
-                    <img class="rounded" src="images/the_atrium.png">
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
-                        <source src="videos/bump_feedback.mp4">
-                    </video>
-                </div> -->
-
                 <div>
-                    <h2>Composition over inheritance</h2>
-                    <p>Composition is great for making modular games. The idea is to create small components that can be used anywhere.</p>
-                    <p>Composition in Godot works by making a script inherit from a node such as Area3D (Trigger) or Control (UI), and communicating through signals. This workflow is great because it avoids having hard references.</p>
-                    <p>For example, I made multiples components for the entities such as:</p>
+                    <h2>Composition over Inheritance</h2>
+                    <p>Composition is great for making modular games. The idea is to create small, reusable components.</p>
+                    <p>In Godot, composition works by making scripts inherit from nodes such as <code>Area3D</code> (Trigger) or <code>Control</code> (UI), and communicating through signals. This workflow is effective because it avoids hard-coded references.</p>
+                    <p>For example, I created multiple components for entities, such as:</p>
                     <ul>
-                        <li><b>Health Component</b> - Manages health and life state. Everything useful is communicated through signals, such as when health reaches 0 (death) or when health changes.</li>
-                        <li><b>Health Display</b> – A 3D progress bar that can be placed anywhere to show the current health of a Health Component.</li>
-                        <li><b>Spell Manager</b> – A script that manages spell casting and cooldowns.</li>
+                        <li><b>Health Component</b> – Manages health and life state. Key events like death or health changes are communicated via signals.</li>
+                        <li><b>Health Display</b> – A 3D progress bar that visually displays the health of a Health Component.</li>
+                        <li><b>Spell Manager</b> – A script that handles spell casting and cooldowns.</li>
                     </ul>
                     <img class="rounded" src="projects/league_of_godot/images/composition_examples.png">
                 </div>
 
                 <div>
                     <h2>Spells</h2>
-                    <p>I'm using Godot Nodes for my spell system. I can easily manage the data and switch spell from a character to another.</p>
-                    <p>Each spell is a node that can be added to the Spell Manager. The Spell Manager is a component that manages the cooldown and the casting of the spells.</p>
+                    <p>I'm using Godot nodes for the spell system. This allows me to manage spell data easily and assign spells to different characters.</p>
+                    <p>Each spell is a node that can be added to the Spell Manager, which manages cooldowns and casting.</p>
                     <img class="rounded" src="projects/league_of_godot/images/spell_manager.png">
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                    <video class="rounded" autoplay muted loop disablepictureinpicture>
                         <source src="projects/league_of_godot/videos/spell_switch_example.mp4">
                     </video>
-                    <p>Each spell has its data exposed to the editor, so I can easily change the amount of damage or what type of target the spell can hit.</p>
+                    <p>All spell data is exposed in the editor, so I can easily tweak values like damage and target types.</p>
                     <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="projects/league_of_godot/images/spell_data.png">
                 </div>
 
                 <div>
                     <h2>Items</h2>
-                    <p>I’ve implemented the item system from League of Legends. Items can be purchased in the shop. The example below demonstrates an item that gradually increases movement and attack speed over time.</p>
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true" title="Doran sword increasing attack and movement speed overtime">
+                    <p>I implemented an item system inspired by <em>League of Legends</em>. Items can be purchased in the shop. The example below shows an item that gradually increases movement and attack speed over time.</p>
+                    <video class="rounded" autoplay muted loop disablepictureinpicture title="Doran sword increasing attack and movement speed over time">
                         <source src="projects/league_of_godot/videos/items.mp4">
                     </video>
-                    <p>This is the code of the item (C#).</p>
+                    <p>Here's the code for the item (in C#):</p>
                     <pre class="code"><code>using Godot;
 
 public partial class DoranSword : Accessory
@@ -102,21 +93,21 @@ public partial class DoranSword : Accessory
 
                 <div>
                     <h2>Networking</h2>
-                    <p>The game’s networking works with a dedicated server, so each player is a client. The server has authority over the game, and the clients have authority over the inputs.</p>
-                    <p>A dedicated server is a great way to prevent cheating and can easily be deployed on cloud servers.</p>
-                    <p>I'm using Godot's multiplayer system to handle the networking. Each input is sent via RPCs.</p>
-                    <p>Every Items/Spells/Input are automatically sync to the server. I only need to sync special interaction like the ultimate of Mordekaiser.</p>
+                    <p>The game uses a dedicated server architecture. Each player is a client; the server has authority over the game world, while the clients have authority over player inputs.</p>
+                    <p>Using a dedicated server helps prevent cheating and makes it easy to deploy on cloud platforms.</p>
+                    <p>I'm using Godot's multiplayer system. Inputs are sent using RPCs (Remote Procedure Calls).</p>
+                    <p>Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser’s ultimate.</p>
                     <img class="rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*i80sJ0-84TYQArl14vCKtg.png">
                 </div>
 
                 <div>
-                    <h2>What did I learn ?</h2>
-                    <p>This project was a wonderful experience! But it wasn’t without its challenges. Here’s a list of choices I should have made differently.</p>
+                    <h2>What Did I Learn?</h2>
+                    <p>This project was a wonderful experience — but not without its challenges! Here are a few things I would do differently:</p>
                     <ul>
-                    <li><b>Used a state machine</b> to manage each character's state.</li>
-                    <li><b>Spent less time on visuals</b> – I focused too much on integrating character models and animations, which wasn’t essential for a prototype.</li>
-                    <li><b>Networking is hard!</b> I managed to make the multiplayer work, but the package send over the network are too heavy (peak at 60KiB/s).</li>
-                    <li><b>And finally...</b> If you’re reading this, it means you were interested enough to go through the whole page ! And for that, thank you!</li>
+                        <li><b>Use a state machine</b> – It would have made character state management much cleaner.</li>
+                        <li><b>Spend less time on visuals</b> – I spent too much time on character models and animations, which weren’t essential for a prototype.</li>
+                        <li><b>Networking is hard!</b> – I got it working, but network traffic is heavy, up to 60KiB/s at peak. That doesn't sound like a lot but I only had 2 characters inside my scene and no game logic was implemented.</li>
+                        <li><b>And finally...</b> If you made it this far, it means you were interested enough to read the entire page — and for that, thank you!</li>
                     </ul>
                 </div>
 
