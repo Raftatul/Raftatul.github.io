@@ -17,8 +17,8 @@
     <div w3-include-html="header.html"></div>    
     <div class="hero">
         <div style="position: absolute; text-align: center; width: 100%; height: 70vh; display: flex; flex-direction: column; justify-content: center;">
-            <h1 style="margin-bottom: 0;">Raphaël Daubelcour</h1>
-            <h3 style="margin-top: 0;">Technical Game Designer</h3>
+            <h1 class="name-title">Raphaël Daubelcour</h1>
+            <h3 class="name-title">Technical Game Designer</h3>
         </div>
     </div>
     <video class="background-image" autoplay="" muted="" loop="" disablepictureinpicture="true">
@@ -34,9 +34,9 @@
             <h1 id="projects">Projects</h1>
             <div class="grid-container grid-2 gap-20">
                 <a class="project-button" href="project_1.html">
-                    <div class="overlay"><img class="rounded thumbnail" src="images/TheAtrium_Title_V1-1.png"></div>
+                    <div class="overlay"><img class="rounded thumbnail" src="images/TheAtrium_Title_V1-1.png"><i class="favorite fa-solid fa-star"></i></div>
                     <div class="project-details">
-                        <p class="project-card-title">The Atrium - Game <i class="fa-solid fa-star"></i></p>
+                        <p class="project-card-title">The Atrium - Game</p>
                         <div class="project-tag-container">
                             <span class="project-tag">Unreal Engine 5</span>
                             <span class="project-tag">PC</span>
@@ -44,7 +44,12 @@
                     </div>
                 </a>
                 <a class="project-button" href="project_2.html">
-                    <div class="overlay"><img class="rounded thumbnail" src="images/tween/tween_cover.gif"></div>
+                    <div class="overlay">
+                        <video class="rounded thumbnail" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                            <source src="videos/tween/demo.mov">
+                        </video>
+                        <i class="favorite fa-solid fa-star"></i>
+                    </div>
                     <div class="project-details">
                         <p class="project-card-title">Tween Component - Tool</p>
                         <div class="project-tag-container">
@@ -53,9 +58,9 @@
                     </div>
                 </a>
                 <a class="project-button" href="project_3.html">
-                    <div class="overlay"><img class="rounded thumbnail" src="images/desktop_warrior/thumbnail.png"></div>
+                    <div class="overlay"><img class="rounded thumbnail" src="images/desktop_warrior/thumbnail.png"><i class="favorite fa-solid fa-star"></i></div>
                     <div class="project-details">
-                        <p class="project-card-title">Desktop Warrior - Game Jam <i class="fa-solid fa-star"></i></p>
+                        <p class="project-card-title">Desktop Warrior - Game Jam</p>
                         <div class="project-tag-container">
                             <span class="project-tag">Godot</span>
                             <span class="project-tag">Web - PC</span>
