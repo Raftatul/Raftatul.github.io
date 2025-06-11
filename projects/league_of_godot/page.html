@@ -1,20 +1,20 @@
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
-    <link rel="icon" href="images/icon.png">
-    <script src="html_importer.js"></script>
+    <link rel="icon" href="/images/icon.png">
+    <script src="/html_importer.js"></script>
     <title>Raphaël Daubelcour - Portfolio - The Atrium</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div w3-include-html="header.html"></div>
+    <div w3-include-html="/header.html"></div>
     <div class="container" style="padding-bottom: 60px;">
         <article class="padded">
             <div class="content">
@@ -33,7 +33,7 @@
                     </div>
 
                     <!-- Project Thumbnail HERE -->
-                    <img class="rounded thumbnail-main" src="projects/league_of_godot/images/league_of_godot.png">
+                    <img class="rounded thumbnail-main" src="images/league_of_godot.png">
 
                     <!-- Project Description HERE -->
                     <p>I wanted to make a multiplayer game prototype to learn more about networking, so I created <strong>League of Godot</strong>. This project is inspired by <em>League of Legends</em>.</p>
@@ -50,26 +50,26 @@
                         <li><b>Health Display</b> – A 3D progress bar that visually displays the health of a Health Component.</li>
                         <li><b>Spell Manager</b> – A script that handles spell casting and cooldowns.</li>
                     </ul>
-                    <img class="rounded" src="projects/league_of_godot/images/composition_examples.png">
+                    <img class="rounded" src="images/composition_examples.png">
                 </div>
 
                 <div>
                     <h2>Spells</h2>
                     <p>I'm using Godot nodes for the spell system. This allows me to manage spell data easily and assign spells to different characters.</p>
                     <p>Each spell is a node that can be added to the Spell Manager, which manages cooldowns and casting.</p>
-                    <img class="rounded" src="projects/league_of_godot/images/spell_manager.png">
+                    <img class="rounded" src="images/spell_manager.png">
                     <video class="rounded" autoplay muted loop disablepictureinpicture>
-                        <source src="projects/league_of_godot/videos/spell_switch_example.mp4">
+                        <source src="videos/spell_switch_example.mp4">
                     </video>
                     <p>All spell data is exposed in the editor, so I can easily tweak values like damage and target types.</p>
-                    <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="projects/league_of_godot/images/spell_data.png">
+                    <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="images/spell_data.png">
                 </div>
 
                 <div>
                     <h2>Items</h2>
                     <p>I implemented an item system inspired by <em>League of Legends</em>. Items can be purchased in the shop. The example below shows an item that gradually increases movement and attack speed over time.</p>
                     <video class="rounded" autoplay muted loop disablepictureinpicture title="Doran sword increasing attack and movement speed over time">
-                        <source src="projects/league_of_godot/videos/items.mp4">
+                        <source src="videos/items.mp4">
                     </video>
                     <p>Here's the code for the item (in C#):</p>
                     <pre class="code"><code>using Godot;
