@@ -1,0 +1,234 @@
+<p style='text-indent: 0px; margin: 0;'><em style='margin: 0; color: 569cd6;'>using</em> System.Collections;</p>
+<p style='text-indent: 0px; margin: 0;'><em style='margin: 0; color: 569cd6;'>using</em> UnityEngine;</p>
+<p style='text-indent: 0px; margin: 0;'><em style='margin: 0; color: 569cd6;'>using</em> UnityEngine.Events;</p>
+<br>
+<p style='text-indent: 0px; margin: 0;'><em style='margin: 0; color: 569cd6;'>namespace</em> Tween</p>
+<p style='text-indent: 0px; margin: 0;'>{</p>
+<p style='text-indent: 32px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>class</em> Tweener : MonoBehaviour</p>
+<p style='text-indent: 32px; margin: 0;'>{</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>enum</em> Properties</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'>NONE, MOVE, SCALE, ROTATE</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>enum</em> TargetingMode</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'>VALUE, TARGET</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>enum</em> StartPoint</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'>FROM, TO</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>bool</em> autoPlay, repeat, takeShortestWay, isPlaying;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>float</em> duration, delay;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 8fffdb;'>Vector3</em> to;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> Properties property;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> StartPoint startPoint;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> TargetingMode toTargetingMode;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 8fffdb;'>Transform</em> toTarget;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>AnimationCurve</em></em> curve = <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>AnimationCurve</em></em>.<em style='margin: 0; color: ffa500;'>Linear</em>(0, 0, 1, 1);</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'>[HideInInspector]</p>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 8fffdb;'>UnityEvent</em> completed;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em></em> initialValue = <em style='margin: 0; color: 569cd6;'>new</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em></em>();</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> Tweener[] tweeners;</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>OnEnable</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (autoPlay)</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ffa500;'>PlayDelay</em>();</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>OnDisable</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>StopEverything</em>(<em style='margin: 0; color: 569cd6;'>true</em>);</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>Play</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>ResetValue</em>();</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: 8fffdb;'>Vector3</em> tmpFrom = <em style='margin: 0; color: ffa500;'>GetProperty</em>(property);</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em></em> tmpTo = <em style='margin: 0; color: 569cd6;'>new</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em></em>();</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (toTargetingMode)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> TargetingMode.VALUE:</p>
+<p style='text-indent: 160px; margin: 0;'>tmpTo = to;</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> TargetingMode.TARGET:</p>
+<p style='text-indent: 160px; margin: 0;'>tmpTo = <em style='margin: 0; color: ffa500;'>GetTargetProperty</em>(toTarget, property);</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (startPoint)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> StartPoint.FROM:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ffa500;'>StartCoroutine</em>(PropertyCoroutine(property, tmpFrom, tmpTo, duration, curve));</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> StartPoint.TO:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ffa500;'>StartCoroutine</em>(PropertyCoroutine(property, tmpTo, tmpFrom, duration, curve));</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>PlayDelay</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>Stop</em>(<em style='margin: 0; color: 569cd6;'>false</em>);</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>SetInitialValue</em>();</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (repeat)</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ffa500;'>InvokeRepeating</em>(nameof(Play), delay, duration + delay);</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>else</em></p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ffa500;'>Invoke</em>(nameof(Play), delay);</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>PlayEverything</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (isPlaying)</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ffa500;'>Stop</em>(<em style='margin: 0; color: 569cd6;'>true</em>);</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>foreach</em> (Tweener tweenerInstance<em style='margin: 0; color: ff8ccc;'> in </em>GetComponents<Tweener>())</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'>tweenerInstance.<em style='margin: 0; color: ffa500;'>PlayDelay</em>();</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>Stop</em>(<em style='margin: 0; color: 569cd6;'>bool</em> resetValue)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (!isPlaying)</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em>;</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>CancelInvoke</em>();</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>StopAllCoroutines</em>();</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'>isPlaying = <em style='margin: 0; color: 569cd6;'>false</em>;</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (resetValue) <em style='margin: 0; color: ffa500;'>SetProperty</em>(property, initialValue);</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>StopEverything</em>(<em style='margin: 0; color: 569cd6;'>bool</em> resetValue)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>foreach</em> (Tweener tweenerInstance<em style='margin: 0; color: ff8ccc;'> in </em>GetComponents<Tweener>())</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'>tweenerInstance.<em style='margin: 0; color: ffa500;'>Stop</em>(resetValue);</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>SetInitialValue</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'>initialValue = <em style='margin: 0; color: ffa500;'>GetProperty</em>(property);</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>public</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>ResetValue</em>()</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>SetProperty</em>(property, initialValue);</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: 8fffdb;'>Vector3</em> <em style='margin: 0; color: ffa500;'>GetProperty</em>(Properties property)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (property)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.MOVE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> transform.localPosition;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.SCALE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> transform.localScale;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.ROTATE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> transform.localEulerAngles;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>default</em>:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> <em style='margin: 0; color: 569cd6;'>new</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em>();</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: 8fffdb;'>Vector3</em> <em style='margin: 0; color: ffa500;'>GetTargetProperty</em>(<em style='margin: 0; color: 8fffdb;'>Transform</em> trans, Properties property)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (property)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.MOVE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> transform.parent ? transform.parent.<em style='margin: 0; color: ffa500;'>InverseTransformPoint</em>(trans.position) : trans.position;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.SCALE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> trans.lossyScale;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.ROTATE:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> transform.parent ? transform.parent.<em style='margin: 0; color: ffa500;'>InverseTransformPoint</em>(trans.eulerAngles) : trans.eulerAngles;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>default</em>:</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>return</em> <em style='margin: 0; color: 569cd6;'>new</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em>();</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> <em style='margin: 0; color: 569cd6;'>void</em> <em style='margin: 0; color: ffa500;'>SetProperty</em>(Properties property, <em style='margin: 0; color: 8fffdb;'>Vector3</em> value)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (property)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.MOVE:</p>
+<p style='text-indent: 160px; margin: 0;'>transform.localPosition = value;</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.SCALE:</p>
+<p style='text-indent: 160px; margin: 0;'>transform.localScale = value;</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.ROTATE:</p>
+<p style='text-indent: 160px; margin: 0;'>transform.localEulerAngles = value;</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 64px; margin: 0;'><em style='margin: 0; color: 569cd6;'>private</em> IEnumerator <em style='margin: 0; color: ffa500;'>PropertyCoroutine</em>(Properties property, <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em> startValue, <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em> endValue, <em style='margin: 0; color: 569cd6;'>float</em> tweenTime, <em style='margin: 0; color: 8fffdb;'>AnimationCurve</em> ease)</p>
+<p style='text-indent: 64px; margin: 0;'>{</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ffa500;'>SetProperty</em>(property, startValue);</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: 569cd6;'>float</em> currentTime = 0.0f;</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em> startRotation = <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em>.<em style='margin: 0; color: ffa500;'>Euler</em>(startValue);</p>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em> targetRotation = <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em>.<em style='margin: 0; color: ffa500;'>Euler</em>(endValue);</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'>isPlaying = <em style='margin: 0; color: 569cd6;'>true</em>;</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>while</em> (currentTime < tweenTime)</p>
+<p style='text-indent: 96px; margin: 0;'>{</p>
+<p style='text-indent: 128px; margin: 0;'>currentTime += Time.deltaTime;</p>
+<br>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>switch</em> (property)</p>
+<p style='text-indent: 128px; margin: 0;'>{</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>default</em>:</p>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em> value = <em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Vector3</em></em>.<em style='margin: 0; color: ffa500;'>LerpUnclamped</em>(startValue, endValue, ease.Evaluate(currentTime / tweenTime));</p>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ffa500;'>SetProperty</em>(property, value);</p>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 160px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>case</em> Properties.ROTATE:</p>
+<br>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em></em> rotation = <em style='margin: 0; color: 569cd6;'>new</em> <em style='margin: 0; color: ffa500;'><em style='margin: 0; color: 8fffdb;'><em style='margin: 0; color: 8fffdb;'>Quaternion</em></em></em>();</p>
+<br>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>if</em> (takeShortestWay)</p>
+<p style='text-indent: 224px; margin: 0;'>rotation = <em style='margin: 0; color: 8fffdb;'>Quaternion</em>.<em style='margin: 0; color: ffa500;'>SlerpUnclamped</em>(startRotation, targetRotation, ease.Evaluate(currentTime / tweenTime));</p>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>else</em></p>
+<p style='text-indent: 224px; margin: 0;'>rotation = <em style='margin: 0; color: 8fffdb;'>Quaternion</em>.<em style='margin: 0; color: ffa500;'>Euler</em>(<em style='margin: 0; color: 8fffdb;'>Vector3</em>.LerpUnclamped(startValue, endValue, ease.Evaluate(currentTime / tweenTime)));</p>
+<br>
+<p style='text-indent: 192px; margin: 0;'>transform.localRotation = rotation;</p>
+<p style='text-indent: 192px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>break</em>;</p>
+<p style='text-indent: 128px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 128px; margin: 0;'><em style='margin: 0; color: ff8ccc;'>yield</em> <em style='margin: 0; color: ff8ccc;'>return</em> <em style='margin: 0; color: 569cd6;'>null</em>;</p>
+<p style='text-indent: 96px; margin: 0;'>}</p>
+<br>
+<p style='text-indent: 96px; margin: 0;'>isPlaying = <em style='margin: 0; color: 569cd6;'>false</em>;</p>
+<p style='text-indent: 96px; margin: 0;'>completed?.<em style='margin: 0; color: ffa500;'>Invoke</em>();</p>
+<p style='text-indent: 64px; margin: 0;'>}</p>
+<p style='text-indent: 32px; margin: 0;'>}</p>
+<p style='text-indent: 0px; margin: 0;'>}</p>

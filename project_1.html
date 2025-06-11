@@ -1,0 +1,112 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <script src="html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - The Atrium</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="container" style="padding-bottom: 60px;">
+        <article class="padded">
+            <div class="content">
+                <div>
+                    <h1>The Atrium</h1>
+                    <div class="tag-container">
+                        <span class="tag"><i class="fa-solid fa-people-group"></i> 8</span>
+                        <span class="tag"><i class="fa-solid fa-gear"></i> Unreal Engine 5</span>
+                        <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> FPS</span>
+                        <span class="tag"><i class="fa-solid fa-computer"></i> PC</span>
+                        <span class="tag"><i class="fa-solid fa-user"></i> Technical Game Designer</span>
+                        <span class="date">2024</span>
+                    </div>
+                    <p>I worked on the project as a Technical Game Designer. I programmed the 3Cs as well as other features like the <a href="#steam">Steam integration</a> and the <a href="#fog">dynamic fog</a>.</p>
+                    <img class="rounded thumbnail-main" src="images/TheAtrium_Title_V1-1.png">
+                    <iframe class="rounded yt-embed" src="https://www.youtube.com/embed/501YzZFsVBk?si=BzlH-gdU314m78FH?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; mute; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <h2>Camera</h2>
+                    <p>The camera was designed to feel alive and dynamic without giving the sensation of motion sickness.</p>
+                    <p>Here is a list of elements implemented:</p>
+                    <h3>Camera tilt</h3>
+                    <p>The camera tilt a little based on the x velocity relative to the camera of the player.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/tilt.mp4">
+                    </video>
+                    <h3>Camera Bobbing</h3>
+                    <p>Apply camera bobbing when the player is moving on the ground using the Camera Shake system of Unreal Engine. The shake force depend of the movement state of the player (walk/run).</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/bobbing.mp4">
+                    </video>
+                    <h3>FOV</h3>
+                    <p>Since the player constantly needs to focus on a surface, the field of view is kept wide to allow them to see more around the edges of the screen. The FOV expands further when the player falls, enhancing the feeling of speed.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/fov.mp4">
+                    </video>
+                </div>
+                <div>
+                    <h2>Character</h2>
+                    <p>To navigate through the level, the player can walk/run and use his bump ability.</p>
+                    <p>Bump Ability</p>
+                    <ul>
+                        <li>The player can push himself in the opposite direction he is facing when bumping on certain surfaces.</li>
+                        <li>There is a max amount of 3 charges, the charges reload when the player touch the ground.</li>
+                    </ul>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/bump.mp4">
+                    </video>
+                </div>
+                <div>
+                    <h2>UI</h2>
+                    <p>Bump ability feedback:</p>
+                    <ul>
+                        <li>The player is notice he can bump when the white dot appear. </li>
+                        <li>An animation is played when the player use the bump input. </li>
+                        <li>When a bump is successfully made, a charge is removed (turning a charge gray). </li>
+                    </ul>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/bump_feedback.mp4">
+                    </video>
+                </div>
+                <div>
+                    <h2 id="steam">Steam Integration</h2>
+                    <p>I implement Steam using the <a href="https://partner.steamgames.com/doc/sdk" target="_blank">Steam SDK</a> and Unreal C++ to be able to use the leaderboard system of Steam.</p>
+                    <img class="rounded" src="images/the_atrium.png">
+                </div>
+                <div>
+                    <h2 id="fog">Dynamic Fog</h2>
+                    <p>A fog that can alternate between multiple colors so they could adjust the fog's color according to the player's height position.</p>
+                    <p>Here is what I made to accomplish this effect:</p>
+                    <ul>
+                        <li>First, I create an array of structures containing a color variable and a height variable.</li>
+                        <li>Next, I need to find the 2 colors closest to the camera's height position</li>
+                        <li>Then, I blend the colors based on the camera's position between the two color positions.</li>
+                        <li>Finally, I apply the color in a post process material.</li>
+                    </ul>
+                    <div class="grid-container grid-2">
+                        <img class="rounded" src="images/Fog.png">
+                        <video class=" rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                            <source src="videos/fog.mp4">
+                        </video>
+                    </div>
+                </div>
+                <h2>Save System - Settings</h2>
+                <p>I worked on the save system, it register the player position, time and settings.</p>
+                <p>I implement the graphics, audio and gameplay settings. Each parameters are saved by the Unreal Save System.</p>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;">
+
+        </div>
+    </footer>
+</body>

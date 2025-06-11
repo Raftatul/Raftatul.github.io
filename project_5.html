@@ -1,0 +1,123 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <script src="html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - The Atrium</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div w3-include-html="header.html"></div>
+    <div class="container" style="padding-bottom: 60px;">
+        <article class="padded">
+            <div class="content">
+                <div>
+                    <!-- PROJECT NAME HERE -->
+                    <h1>League of Godot</h1>
+
+                    <!-- Project Overall Description HERE -->
+                    <div class="tag-container">
+                        <span class="tag"><i class="fa-solid fa-people-group"></i> 1</span>
+                        <span class="tag"><i class="fa-solid fa-gear"></i> Godot</span>
+                        <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Prototype</span>
+                        <span class="tag"><i class="fa-solid fa-computer"></i> PC</span>
+                        <span class="tag"><i class="fa-solid fa-user"></i> Dev</span>
+                        <span class="date">Date 2024-2025</span>
+                    </div>
+
+                    <!-- Project Thumbnail HERE -->
+                    <img class="rounded thumbnail-main" src="projects/league_of_godot/images/league_of_godot.png">
+
+                    <!-- Project Description HERE -->
+                    <p>I wanted to make a multiplayer game prototype to learn more about networking, so I created <strong>League of Godot</strong>. This project is inspired by <em>League of Legends</em>.</p>
+                    <p>I only recreated the characters, spells and items system for this project.</p>
+                </div>
+
+                <div>
+                    <h2>Composition over Inheritance</h2>
+                    <p>Composition is great for making modular games. The idea is to create small, reusable components.</p>
+                    <p>In Godot, composition works by making scripts inherit from nodes such as <code>Area3D</code> (Trigger) or <code>Control</code> (UI), and communicating through signals. This workflow is effective because it avoids hard-coded references.</p>
+                    <p>For example, I created multiple components for entities, such as:</p>
+                    <ul>
+                        <li><b>Health Component</b> – Manages health and life state. Key events like death or health changes are communicated via signals.</li>
+                        <li><b>Health Display</b> – A 3D progress bar that visually displays the health of a Health Component.</li>
+                        <li><b>Spell Manager</b> – A script that handles spell casting and cooldowns.</li>
+                    </ul>
+                    <img class="rounded" src="projects/league_of_godot/images/composition_examples.png">
+                </div>
+
+                <div>
+                    <h2>Spells</h2>
+                    <p>I'm using Godot nodes for the spell system. This allows me to manage spell data easily and assign spells to different characters.</p>
+                    <p>Each spell is a node that can be added to the Spell Manager, which manages cooldowns and casting.</p>
+                    <img class="rounded" src="projects/league_of_godot/images/spell_manager.png">
+                    <video class="rounded" autoplay muted loop disablepictureinpicture>
+                        <source src="projects/league_of_godot/videos/spell_switch_example.mp4">
+                    </video>
+                    <p>All spell data is exposed in the editor, so I can easily tweak values like damage and target types.</p>
+                    <img class="rounded centered" style="height: 500px; object-fit: contain; width: auto;" src="projects/league_of_godot/images/spell_data.png">
+                </div>
+
+                <div>
+                    <h2>Items</h2>
+                    <p>I implemented an item system inspired by <em>League of Legends</em>. Items can be purchased in the shop. The example below shows an item that gradually increases movement and attack speed over time.</p>
+                    <video class="rounded" autoplay muted loop disablepictureinpicture title="Doran sword increasing attack and movement speed over time">
+                        <source src="projects/league_of_godot/videos/items.mp4">
+                    </video>
+                    <p>Here's the code for the item (in C#):</p>
+                    <pre class="code"><code>using Godot;
+
+public partial class DoranSword : Accessory
+{
+    private float _speedBonus = 0;
+
+    public override void OnHit(Entity entity, Entity damager)
+    {
+        entity.HealEntity(100);
+    }
+
+    public override void Tick(Entity entity, float delta)
+    {
+        _speedBonus += delta;
+        entity.BonusMoveSpeed += _speedBonus;
+        entity.BonusAttackSpeed += _speedBonus;
+    }
+}</code></pre>
+                </div>
+
+                <div>
+                    <h2>Networking</h2>
+                    <p>The game uses a dedicated server architecture. Each player is a client; the server has authority over the game world, while the clients have authority over player inputs.</p>
+                    <p>Using a dedicated server helps prevent cheating and makes it easy to deploy on cloud platforms.</p>
+                    <p>I'm using Godot's multiplayer system. Inputs are sent using RPCs (Remote Procedure Calls).</p>
+                    <p>Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser’s ultimate.</p>
+                    <img class="rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*i80sJ0-84TYQArl14vCKtg.png">
+                </div>
+
+                <div>
+                    <h2>What Did I Learn?</h2>
+                    <p>This project was a wonderful experience — but not without its challenges! Here are a few things I would do differently:</p>
+                    <ul>
+                        <li><b>Use a state machine</b> – It would have made character state management much cleaner.</li>
+                        <li><b>Spend less time on visuals</b> – I spent too much time on character models and animations, which weren’t essential for a prototype.</li>
+                        <li><b>Networking is hard!</b> – I got it working, but network traffic is heavy, up to 60KiB/s at peak. That doesn't sound like a lot but I only had 2 characters inside my scene and no game logic was implemented.</li>
+                        <li><b>And finally...</b> If you made it this far, it means you were interested enough to read the entire page — and for that, thank you!</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;">
+
+        </div>
+    </footer>
+</body>
