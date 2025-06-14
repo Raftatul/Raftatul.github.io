@@ -289,6 +289,10 @@ a {
     border-radius: .5rem;
 }
 
+.square {
+    width: 50%;
+}
+
 .no-shadow {
     box-shadow: none;
 }
@@ -462,5 +466,9 @@ a {
 
     .nav-button-secondary {
         display: none;
+    }
+
+    .square {
+        width: 100%;
     }
 }

@@ -41,10 +41,10 @@
                         <br>The game is designed for 2 players: one controls a mouse, and the other controls a robot. The objective is to defeat monsters and solve puzzles.
                         <br><br>As a Technical Designer, I was responsible for implementing the 3Cs (Camera, Character, Controls) and other features such as the gui.</p>
                     </p>
-                    <img class="rounded thumbnail-main" src="images/Affiche.png">
-                    <!-- <video class="rounded thumbnail-main" autoplay="" muted="" loop="" disablepictureinpicture="true">
-                        <source src="https://eu-central.storage.cloudconvert.com/tasks/9e3b9e84-d78b-48f4-a54b-c44e88a35643/Walkthrough%20_Alpha_T-Rex.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250424%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20250424T192212Z&X-Amz-Expires=86400&X-Amz-Signature=34bb68aec9bafb45d628a40e036f17274f516b4c32abc14d1499032cd9ea5743&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Walkthrough%20_Alpha_T-Rex.mp4%22&response-content-type=video%2Fmp4&x-id=GetObject">
-                    </video> -->
+                    <!-- <img class="rounded thumbnail-main" src="images/Affiche.png"> -->
+                    <video class="rounded thumbnail-main" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/SplashArt.mp4">
+                    </video>
                 </div>
 
                 <div>
@@ -64,38 +64,40 @@
                     <p>They can dash to avoid taking damage from enemies and the environment</p>
                     <p>But that not all, each characters has their own unique way to play.</p>
 
-                    <h2>The Mouse</h2>
+                    <h2>Characters</h2>
+
+                    <h3>The Mouse</h3>
+                    <img class="rounded no-shadow img-txt-right" src="images/Mouse.gif">
                     <p>The mouse is a brawler style combat.</p>
                     <p>He can unleash powerful close-range attacks.</p>
-                    <img class="rounded no-shadow img-txt-right" src="images/Mouse.gif">
-                    <img class="rounded no-shadow img-txt-right" src="images/Robot.gif">
                     <!-- <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/wire_and_whiskers/UX_Tuto_Atk.mp4">
                     </video> -->
 
                     <h4>Synergy:</h4>
                     <p>The mouse can pull the robot. The robot deal damage during this state.</p>
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                    <video class="rounded square" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/UX_Tuto_RappelDmg.mp4">
                     </video>
 
                     <h4>Air Attack</h4>
                     <p>When launched, the mouse can perform a special attack that damages all enemies beneath him.</p>
                     <p>If it hits successfully, the mouse is launched back into the air and can perform the special attack again.</p>
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                    <video class="rounded square" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/UX_Tuto_AirAtk.mp4">
                     </video>
 
-                    <h2>The Robot</h2>
+                    <h3>The Robot</h3>
+                    <img class="rounded no-shadow img-txt-right" src="images/Robot.gif">
                     <p>The mouse is a ranger combat style.</p>
                     <p>It can unleash powerful long-range attacks.</p>
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                    <video class="rounded square" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/UX_Tuto_Atk.mp4">
                     </video>
                     
                     <h4>Synergy:</h4>
                     <p>The robot can launch the mouse when they are close to each other. This action can be used to solve puzzles or in combat ().</p>
-                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                    <video class="rounded square" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/UX_TutoProjRappel_Video.mp4">
                     </video>
                 </div>
@@ -118,7 +120,7 @@
                     <p>The angle of the camera dynamically change during the game</p>
 
                     <h4>Side Scrolling</h4>
-                    <p>This camera is used during puzzle phases.</p>
+                    <p>This camera is used during exploration/puzzle phases.</p>
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/CameraSideScrolling.mp4">
                     </video>
@@ -128,6 +130,19 @@
                     <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
                         <source src="videos/CameraTopDown.mp4">
                     </video>
+
+                    <h3>Camera Rail</h3>
+                    <p>An actor that forces the camera to follow a rail — perfect for cinematic transitions.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/camera_rail.mp4">
+                    </video>
+
+                    <h3>Camera Focus Point</h3>
+                    <p>An actor that forces the camera to move to a specific point.</p>
+                    <video class="rounded" autoplay="" muted="" loop="" disablepictureinpicture="true">
+                        <source src="videos/focus_point.mp4">
+                    </video>
+
                 </div>
 
             </div>
