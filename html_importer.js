@@ -1,29 +1,49 @@
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
-  }
+function includeHTML(callback) {
+  const elements = document.querySelectorAll('[w3-include-html]');
+  let remaining = elements.length;
+
+  if (remaining === 0 && typeof callback === "function") callback();
+
+  elements.forEach((elmnt) => {
+    const file = elmnt.getAttribute('w3-include-html');
+    if (!file) return;
+
+    fetch(file)
+      .then((response) => {
+        if (!response.ok) throw new Error('Page not found');
+        return response.text();
+      })
+      .then((html) => {
+        elmnt.innerHTML = html;
+        elmnt.removeAttribute('w3-include-html');
+        executeScripts(elmnt); // ✅ Execute scripts inside injected HTML
+        remaining--;
+        if (remaining === 0 && typeof callback === "function") callback();
+      })
+      .catch((err) => {
+        elmnt.innerHTML = err.message;
+        elmnt.removeAttribute('w3-include-html');
+        remaining--;
+        if (remaining === 0 && typeof callback === "function") callback();
+      });
+  });
 }
 
-addEventListener("DOMContentLoaded", (event) => includeHTML());
+function executeScripts(container) {
+  const scripts = container.querySelectorAll('script');
+  scripts.forEach((oldScript) => {
+    const newScript = document.createElement('script');
+    // Copy attributes (e.g. src, type)
+    [...oldScript.attributes].forEach(attr => newScript.setAttribute(attr.name, attr.value));
+    // If it's inline JS, copy the code too
+    if (!oldScript.src) newScript.textContent = oldScript.textContent;
+    // Replace the old script tag to execute
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  includeHTML(() => {
+    console.log("All HTML includes loaded and scripts executed.");
+  });
+});
