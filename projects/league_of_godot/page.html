@@ -33,7 +33,7 @@
                     <p>I wanted to make a multiplayer game prototype to learn more about networking, so I created <strong>League of Godot</strong>. This project is inspired by <em>League of Legends</em>.</p>
                 </div>
                 <div>
-<p>I only recreated the characters, spells and items system for this project.</p>
+<p>I only recreated the character, spell and item systems for this project.</p>
 <iframe class="rounded yt-embed" src="https://www.youtube.com/embed/JexvWwFhzRM" title="League of Godot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h2 id="composition-over-inheritance">Composition over Inheritance</h2>
 <p>Composition is great for making modular games. The idea is to create small, reusable components.</p>
@@ -79,14 +79,13 @@ public partial class DoranSword : Accessory
 <p>The game uses a dedicated server architecture. Each player is a client; the server has authority over the game world, while the clients have authority over player inputs.</p>
 <p>Using a dedicated server helps prevent cheating and makes it easy to deploy on cloud platforms.</p>
 <p>I&#39;m using Godot&#39;s multiplayer system. Inputs are sent using RPCs (Remote Procedure Calls).</p>
-<p>Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser’s ultimate.</p>
+<p>Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser&#39;s ultimate.</p>
 <img class="rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*i80sJ0-84TYQArl14vCKtg.png" alt="Dedicated server architecture" loading="lazy">
 <h2 id="what-did-i-learn">What Did I Learn?</h2>
 <p>This project was a wonderful experience — but not without its challenges! Here are a few things I would do differently:</p>
 <ul>
 <li><strong>Use a state machine</strong> – It would have made character state management much cleaner.</li>
-<li><strong>Spend less time on visuals</strong> – I spent too much time on character models and animations, which weren’t essential for a prototype.</li>
-<li><strong>Networking is hard!</strong> – I got it working, but network traffic is heavy, up to 60KiB/s at peak. That doesn&#39;t sound like a lot but I only had 2 characters inside my scene and no game logic was implemented.</li>
+<li><strong>Spend less time on visuals</strong> – I spent too much time on character models and animations, which weren&#39;t essential for a prototype.</li>
 <li><strong>And finally...</strong> If you made it this far, it means you were interested enough to read the entire page — and for that, thank you!</li>
 </ul>
 

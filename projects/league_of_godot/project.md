@@ -11,7 +11,7 @@ cover: images/league_of_godot.png
 order: 5
 ---
 
-I only recreated the characters, spells and items system for this project.
+I only recreated the character, spell and item systems for this project.
 
 ![League of Godot](https://www.youtube.com/watch?v=JexvWwFhzRM)
 
@@ -80,7 +80,7 @@ Using a dedicated server helps prevent cheating and makes it easy to deploy on c
 
 I'm using Godot's multiplayer system. Inputs are sent using RPCs (Remote Procedure Calls).
 
-Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser’s ultimate.
+Items, spells, and inputs are automatically synced with the server. I only need to manually sync special interactions like Mordekaiser's ultimate.
 
 ![Dedicated server architecture](https://miro.medium.com/v2/resize:fit:1400/1*i80sJ0-84TYQArl14vCKtg.png)
 
@@ -89,6 +89,5 @@ Items, spells, and inputs are automatically synced with the server. I only need 
 This project was a wonderful experience — but not without its challenges! Here are a few things I would do differently:
 
 - **Use a state machine** – It would have made character state management much cleaner.
-- **Spend less time on visuals** – I spent too much time on character models and animations, which weren’t essential for a prototype.
-- **Networking is hard!** – I got it working, but network traffic is heavy, up to 60KiB/s at peak. That doesn't sound like a lot but I only had 2 characters inside my scene and no game logic was implemented.
+- **Spend less time on visuals** – I spent too much time on character models and animations, which weren't essential for a prototype.
 - **And finally...** If you made it this far, it means you were interested enough to read the entire page — and for that, thank you!

@@ -14,9 +14,9 @@ cover: https://i.ytimg.com/vi/QYD6lnw51_Q/maxresdefault.jpg   # replace with ima
 
 ## Overview
 
-For the demo, I made a small test arena with a third-person character. The character doesn't know any ability at the start, he unlock them by entering triggers.
+For the demo, I made a small test arena with a third-person character. The character doesn't have any ability at the start, he unlocks them by entering triggers.
 
-*The character model, animations and ability icons are not mine, they come from the game **Marvel Rivals**. I only used them for this demo.*
+*The character model, animations and ability icons are not mine; they come from the game **Marvel Rivals**. I only used them for this demo.*
 
 ## How It Works
 

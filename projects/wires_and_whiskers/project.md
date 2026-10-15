@@ -2,7 +2,7 @@
 title: Wires and Whiskers
 card_title: Wires and Whiskers - PFE
 date: 2024-2025
-summary: "**Wires and Whiskers** is a local multiplayer game inspired by **It Takes Two** and **Little Nightmares**.<br>The game is designed for 2 players: one controls a mouse, and the other controls a robot. The objective is to defeat monsters and solve puzzles.<br><br>As a Technical Designer, I was responsible for implementing the 3Cs (Camera, Character, Controls) and other features such as the gui."
+summary: "**Wires and Whiskers** is a local multiplayer game inspired by **It Takes Two** and **Little Nightmares**.<br>The game is designed for 2 players: one controls a mouse, and the other controls a robot. The objective is to defeat monsters and solve puzzles.<br><br>As a Technical Designer, I was responsible for implementing the 3Cs (Camera, Character, Controls) and other features such as the GUI."
 team: 8
 engine: Unreal Engine 5
 genre: Adventure/Puzzle
@@ -24,9 +24,9 @@ order: 4
 
 The controls are designed to be intuitive and easy to use. The mouse uses the left stick to move and to aim. The robot uses the left stick to move and the right stick to aim.
 
-They can dash to avoid taking damage from enemies and the environment
+They can dash to avoid taking damage from enemies and the environment.
 
-But that not all, each characters has their own unique way to play.
+But that's not all, each character has their own unique way to play.
 
 ## Characters
 
@@ -34,13 +34,13 @@ But that not all, each characters has their own unique way to play.
 
 ![The Mouse](images/Mouse.gif "no-shadow img-txt-right")
 
-The mouse is a brawler style combat.
+The mouse has a brawler combat style.
 
 He can unleash powerful close-range attacks.
 
-#### Synergy:
+#### Synergy
 
-The mouse can pull the robot. The robot deal damage during this state.
+The mouse can pull the robot. The robot deals damage during this state.
 
 ![Pull synergy](videos/UX_Tuto_RappelDmg.mp4 "square")
 
@@ -56,15 +56,15 @@ If it hits successfully, the mouse is launched back into the air and can perform
 
 ![The Robot](images/Robot.gif "no-shadow img-txt-right")
 
-The mouse is a ranger combat style.
+The robot has a ranged combat style.
 
 It can unleash powerful long-range attacks.
 
 ![Robot attack](videos/UX_Tuto_Atk.mp4 "square")
 
-#### Synergy:
+#### Synergy
 
-The robot can launch the mouse when they are close to each other. This action can be used to solve puzzles or in combat ().
+The robot can launch the mouse when they are close to each other. This action can be used to solve puzzles or in combat.
 
 ![Launch synergy](videos/UX_TutoProjRappel_Video.mp4 "square")
 
@@ -73,7 +73,7 @@ The robot can launch the mouse when they are close to each other. This action ca
 ### Primary Components
 
 - **Trigger box** to apply data to the camera
-- **Rail** to force the camera following a specific path using a spline
+- **Rail** to force the camera to follow a specific path using a spline
 - **Single point trigger** to snap the camera on a point, used in combat phases
 
 ### Behaviors
@@ -86,7 +86,7 @@ The camera has 3 main modes:
 
 ### Camera Angles
 
-The angle of the camera dynamically change during the game
+The angle of the camera dynamically changes during the game.
 
 #### Side Scrolling
 

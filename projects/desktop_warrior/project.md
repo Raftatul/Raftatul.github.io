@@ -17,13 +17,13 @@ order: 3
 ## Tasks
 
 - Windows Mechanic
-- Enemies' Interactions
+- Enemy Interactions
 - Player Interactions
 
 ## Windows
 
 - Create windows when dragged, if the boundary is big enough.
-- Kill enemies inside the window if close button is pressed.
+- Kill enemies inside the window if the close button is pressed.
 - Shrink enemies inside the window when the reduce button is pressed.
 - Expand the window when the expand button is pressed.
 
@@ -33,20 +33,20 @@ order: 3
 
 ### "Le Mage"
 
-- Disable the windows in which it is located
+- Disables the window in which it is located
 - Needs to be crushed to die
 
 ![Le Mage](videos/mage.mp4)
 
-### "Le Geant"
+### "Le Géant"
 
 - Needs to be shrunk down to be killed
 
-![Le Geant](videos/giant.mp4)
+![Le Géant](videos/giant.mp4)
 
 ### "Le Rock"
 
-- Block the window from expanding upon contact
+- Blocks the window from expanding upon contact
 
 ![Le Rock](videos/rock.mp4)
 
@@ -58,8 +58,8 @@ order: 3
 
 ## Player
 
-- Can be moved around (Unless Healing)
-- Right click to heal (Loading bar)
+- Can be moved around (unless healing)
+- Right click to heal (loading bar)
 
 ![Player](videos/player.mp4)
 

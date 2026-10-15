@@ -25,15 +25,15 @@ Here is a little demo to show you how to make an animation using the tween compo
 
 ## Overview
 
-The Tween component is an easy to use script that allows me to animate the position/rotation/scale of a 3D object or UI element.
+The Tween component is an easy-to-use script that allows me to animate the position/rotation/scale of a 3D object or UI element.
 
-I just need to add the component to the object and then change the parameters
+I just need to add the component to the object and then change the parameters.
 
 ### Functions
 
-- **Play:** This button calls the function play.
-- **Play Everything:** This button calls the function play for every tween component on the object.
-- **Stop Everything:** This button calls the stop function for every tween component on the object.
+- **Play:** This button calls the Play function.
+- **Play Everything:** This button calls the Play function for every tween component on the object.
+- **Stop Everything:** This button calls the Stop function for every tween component on the object.
 
 ![Buttons](images/buttons_overview.png)
 
@@ -66,7 +66,7 @@ I can toggle whether the tween should start automatically and set it to play ind
 
 This parameter is used to set the initial variables from which the tween will start.
 
-- **To:** The object will start the tween from the objects values (based on the tween type) then tween to the tween values (X,Y,Z).
+- **To:** The object will start the tween from the object's values (based on the tween type) then tween to the tween values (X,Y,Z).
 - **From:** The object will start the tween from the tween values (X,Y,Z) then tween to its values before the tween started (based on the tween type).
 
 ```grid
@@ -78,7 +78,7 @@ images/tween_from.png | From
 
 This parameter allows me to switch between 2 targeting modes.
 
-- **Value:** Use the Vector3
+- **Value:** Use the Vector3.
 - **Target:** Use the object's target variables (based on the tween type).
 
 ![Target modes](images/tween_target_types.png)
