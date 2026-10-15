@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Generated from project.md by tools/build.js. Edit project.md, not this file. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="/images/icon.png">
+    <script src="/html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - Godot GAS</title>
+    <meta name="description" content="I wanted to see if I could bring the Gameplay Ability System from Unreal Engine to Godot, so I made my own version of it. With this project, I can give abilities to a character at runtime without hard-coding them inside the character.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div w3-include-html="/header.html"></div>
+    <div class="container" style="padding-bottom: 60px;">
+        <article class="padded">
+            <div class="content">
+                <div>
+                    <h1>Godot GAS</h1>
+                    <div class="tag-container">
+                        <span class="tag"><i class="fa-solid fa-people-group"></i> 1</span>
+                        <span class="tag"><i class="fa-solid fa-gear"></i> Godot</span>
+                        <span class="tag"><i class="fa-solid fa-puzzle-piece"></i> Prototype</span>
+                        <span class="tag"><i class="fa-solid fa-computer"></i> PC</span>
+                        <span class="tag"><i class="fa-solid fa-user"></i> Gameplay Programmer</span>
+                        <span class="date">2026</span>
+                    </div>
+                    <p>I wanted to see if I could bring the Gameplay Ability System from Unreal Engine to Godot, so I made my own version of it. With this project, I can give abilities to a character at runtime without hard-coding them inside the character.</p>
+                </div>
+                <div>
+<iframe class="rounded yt-embed" src="https://www.youtube.com/embed/QYD6lnw51_Q" title="Godot GAS Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h2 id="overview">Overview</h2>
+<p>For the demo, I made a small test arena with a third-person character. The character doesn&#39;t have any ability at the start, he unlocks them by entering triggers.</p>
+<p><em>The character model, animations and ability icons are not mine; they come from the game <strong>Marvel Rivals</strong>. I only used them for this demo.</em></p>
+<h2 id="how-it-works">How It Works</h2>
+<p>The system is a Godot plugin built around 4 parts:</p>
+<ul>
+<li><strong>Ability System:</strong> A node I add to a character. It holds the character&#39;s abilities, effects, attributes and tags.</li>
+<li><strong>Abilities:</strong> Nodes with virtual functions (activate, end, process...) that I override for each ability. An ability can have a cost and a cooldown, and can be blocked or allowed by tags (for example, the extra jump needs the character to be in the air).</li>
+<li><strong>Effects:</strong> Resources that change the character. They can be instant, infinite or last for a duration, tick periodically, stack, and scale with the ability level using curves. Cooldowns and costs are effects too.</li>
+<li><strong>Attributes and Modifiers:</strong> Attributes are values like health or mana. Effects change them through modifiers (add, multiply, divide, override).</li>
+</ul>
+<p>Tags are used everywhere to describe the character&#39;s state, so abilities and effects can react to each other without hard-coded references. Attributes are synced over the network with RPCs, so the system also works in multiplayer.</p>
+
+                </div>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;"></div>
+    </footer>
+</body>
+</html>
