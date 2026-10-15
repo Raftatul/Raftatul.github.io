@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const move = document.getElementById("move");
     const rotate = document.getElementById("rotate");
 
+    document.querySelectorAll(".easter_egg").forEach(el => el.addEventListener("click", easter_egg));
+
     let last_x_pos = 0.0;
     let last_y_pos = 0.0;
     

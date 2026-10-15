@@ -1,0 +1,12 @@
+{
+  "name": "raftatul-portfolio",
+  "private": true,
+  "scripts": {
+    "new": "node tools/new-project.js",
+    "build": "node tools/build.js",
+    "preview": "node tools/build.js && npx --yes http-server@14.1.1 -c-1 -o"
+  },
+  "dependencies": {
+    "marked": "15.0.12"
+  }
+}
