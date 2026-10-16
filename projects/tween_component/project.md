@@ -5,6 +5,7 @@ scripts: [/effects.js]
 card_title: Tween Component - Tool
 date: 2024
 summary: I made a Tween component that allows me to animate things inside the editor. With this project, I learned how to create custom inspectors for components.
+team: 1
 engine: Unity
 type: Tool - Plugin
 cover: videos/demo.mov

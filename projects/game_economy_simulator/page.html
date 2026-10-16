@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Generated from project.md by tools/build.js. Edit project.md, not this file. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="/images/icon.png">
+    <script src="/html_importer.js"></script>
+    <title>Raphaël Daubelcour - Portfolio - Game Economy Simulator</title>
+    <meta name="description" content="Game Economy Simulator is a playable template of a hero collection game, made for the second-year Game Design students at Isart Digital to design and test a game economy. All the game data (heroes, abilities, levels, buildings, upgrades, shop...) is made in Google Sheets, then imported into Godot in one click, so the students can play with their numbers right away. I worked on it in a team of 3, where I programmed most of the gameplay systems and the data pipeline.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div w3-include-html="/header.html"></div>
+    <div class="container" style="padding-bottom: 60px;">
+        <article class="padded">
+            <div class="content">
+                <div>
+                    <h1>Game Economy Simulator</h1>
+                    <div class="tag-container">
+                        <span class="tag"><i class="fa-solid fa-people-group"></i> 3</span>
+                        <span class="tag"><i class="fa-solid fa-gear"></i> Godot</span>
+                        <span class="tag"><i class="fa-solid fa-user-gear"></i> Tool - Simulator</span>
+                        <span class="tag"><i class="fa-solid fa-computer"></i> PC</span>
+                        <span class="tag"><i class="fa-solid fa-user"></i> Gameplay/Tools Programmer</span>
+                        <span class="date">2025</span>
+                    </div>
+                    <p>Game Economy Simulator is a playable template of a hero collection game, made for the second-year Game Design students at Isart Digital to design and test a game economy. All the game data (heroes, abilities, levels, buildings, upgrades, shop...) is made in Google Sheets, then imported into Godot in one click, so the students can play with their numbers right away. I worked on it in a team of 3, where I programmed most of the gameplay systems and the data pipeline.</p>
+                    <video class="rounded thumbnail-main" autoplay muted loop playsinline disablepictureinpicture><source src="videos/combat.mp4"></video>
+                </div>
+                <div>
+<h2 id="data-pipeline">Data Pipeline</h2>
+<p>The main goal of the project is to let designers balance the game without touching Godot.</p>
+<ul>
+<li>Wrote a Google Apps Script that exports every sheet of the spreadsheet to JSON. Designers mark their tables with <code>[Table Start]</code>, <code>[Table End]</code> and <code>[Ignore]</code> tags.</li>
+<li>Made a data parser panel inside the Godot editor that downloads the JSON and generates the game resources: heroes, abilities, campaigns, levels, rewards, upgrades, buildings, shop offers and lootboxes.</li>
+<li>Added a build button, error logs and checks for missing references, so a mistake in the spreadsheet is easy to find.</li>
+<li>Made editor tools to fill data arrays, and an editor profile that simplifies the Godot editor for students.</li>
+</ul>
+<h3 id="how-to-use-it">How to use it</h3>
+<ol>
+<li>Publish the Apps Script as a web app, then paste its URL in the Project Settings (one URL per type of data).</li>
+</ol>
+<img class="rounded" src="images/parser_settings.jpg" alt="Parser URLs in the Project Settings" loading="lazy">
+<ol start="2">
+<li>In the Parser panel, click <strong>Build Game</strong> to pull everything at once, or pick one type of data and click <strong>Parse Data</strong>.</li>
+<li>The parser creates or updates the resources in the <code>parsed_data</code> folder, ready to be used by the game.</li>
+</ol>
+<div class="grid-container grid-2 gap-20">
+<img class="rounded" src="images/parser_panel.jpg" alt="Parser panel" loading="lazy">
+<img class="rounded" src="images/parser_output.jpg" alt="Generated resources" loading="lazy">
+</div>
+<h2 id="combat">Combat</h2>
+<ul>
+<li>Implemented an automatic combat system: a combat server, an attack queue and a damage/heal formula based on ability power.</li>
+<li>Made an ability targeting system (AoE, closest, weakest/strongest, tagged heroes).</li>
+<li>Made the combat field, the team builder, the hero details panel and a pause menu.</li>
+<li>Added a combat log and a speed debugger to test fights faster.</li>
+<li>Added feedbacks: damage/heal numbers, flash, squish animation and death sprites.</li>
+</ul>
+<div class="grid-container grid-2 gap-20">
+<img class="rounded" src="images/team_builder.jpg" alt="Team builder" loading="lazy">
+<img class="rounded" src="images/hero_inventory.jpg" alt="Hero inventory" loading="lazy">
+</div>
+<h2 id="progression">Progression</h2>
+<ul>
+<li>Campaigns and levels with selection, unlocking, progression and rewards.</li>
+<li>Buildings with upgrades, costs and build times.</li>
+<li>Unlock conditions that give their rewards only once.</li>
+<li>Lootboxes and currencies in the shop.</li>
+</ul>
+<div class="grid-container grid-2 gap-20">
+<img class="rounded" src="images/campaigns.jpg" alt="Campaign selection" loading="lazy">
+<img class="rounded" src="images/levels.jpg" alt="Level selection" loading="lazy">
+</div>
+<img class="rounded" src="images/shop.jpg" alt="Shop" loading="lazy">
+<h2 id="save-system-and-ui">Save System and UI</h2>
+<ul>
+<li>Made a dynamic save system that saves the inventory, the progression and the building timers, with a &quot;Delete save&quot; button for debugging.</li>
+<li>Added the settings panel, and the victory/defeat panels with reward animations and sound effects.</li>
+</ul>
+<h2 id="games-made-with-it">Games Made With It</h2>
+<p>The second-year Game Design students at Isart Digital used the project as a base for their own games. They designed their own heroes, resources, buildings and campaigns in the spreadsheets, and replaced the art, without changing the code.</p>
+<h3 id="les-aventures-de-fercule">Les Aventures de Fercule</h3>
+<div class="grid-container grid-2 gap-20">
+<img class="rounded" src="images/fercule_campaigns.jpg" alt="Campaigns" loading="lazy">
+<img class="rounded" src="images/fercule_team_builder.jpg" alt="Team builder" loading="lazy">
+<img class="rounded" src="images/fercule_hero_details.jpg" alt="Hero details and level up cost" loading="lazy">
+<img class="rounded" src="images/fercule_fight.jpg" alt="Fight" loading="lazy">
+</div>
+<h3 id="team-goobers">Team Goobers</h3>
+<div class="grid-container grid-2 gap-20">
+<img class="rounded" src="images/goobers_buildings.jpg" alt="Buildings" loading="lazy">
+<img class="rounded" src="images/goobers_team_builder.jpg" alt="Team builder" loading="lazy">
+<img class="rounded" src="images/goobers_levels.jpg" alt="Levels" loading="lazy">
+<img class="rounded" src="images/goobers_fight.jpg" alt="Fight" loading="lazy">
+</div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-content" style="height: 100px;"></div>
+    </footer>
+</body>
+</html>
